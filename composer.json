@@ -1,0 +1,15 @@
+{
+    "name": "certificationy/symfony-pack",
+    "type": "certificationy-pack",
+    "description": "A series of questions to prepare for the certification Symfony2",
+    "keywords": ["symfony", "certification", "test", "exam"],
+    "homepage": "http://github.com/certificationy/symfony-pack",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mickaël Andrieu",
+            "email": "andrieu.travail@gmail.com"
+        }
+    ]
+}
+
