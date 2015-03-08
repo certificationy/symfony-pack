@@ -68,7 +68,7 @@ questions:
     -
         question: 'According to the PHP Framework Interoperability Group, which PSRs concern best coding practices ?'
         answers:
-            - {value: "PSR-0", correct: false}
+            - {value: "PSR-0", correct: true}
             - {value: "PSR-1", correct: true}
             - {value: "PSR-2", correct: true}
             - {value: "PSR-3", correct: false}
