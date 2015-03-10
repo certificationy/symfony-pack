@@ -60,6 +60,6 @@ questions:
         question: 'Using Symfony dependency injection container, how can you retrieve all bundles list?'
         answers:
             - {value: "$container->getParameter('kernel.bundles')",       correct: true}
-            - {value: "$container->getParameter('kernel')->getBundles()", correct: true}
+            - {value: "$container->get('kernel')->getBundles()",          correct: true}
             - {value: "$container->getParameter('bundles')",              correct: false}
             - {value: "$container->getParameter('application.bundles')",  correct: false}
