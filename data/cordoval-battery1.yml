@@ -52,7 +52,7 @@ questions:
             - {value: 'needsEnvironment()', correct: false}
             - {value: 'needsContext()', correct: false}
             - {value: 'getSafe() and getPreEscape()', correct: false}
-            - {value: 'b and d', correct: false}
+            - {value: '1 and 3', correct: false}
 
     -
         question: 'In Twig, a visitor priority varies between:'
