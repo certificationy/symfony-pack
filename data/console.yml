@@ -3,7 +3,7 @@ questions:
     -
         question: 'Which helper is not available in the Console component?'
         answers:
-            - {value: QuestionHelper, correct: false}
+            - {value: QuestionHelper, correct: true}
             - {value: TableHelper,    correct: false}
             - {value: FileHelper,     correct: true}
             - {value: DialogHelper,   correct: false}

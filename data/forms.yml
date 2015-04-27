@@ -54,3 +54,57 @@ questions:
             - {value: groups_validation, correct: false}
             - {value: validator_groups,  correct: false}
             - {value: groups_validator,  correct: false}
+    -
+        question: 'Which form event exist?'
+        answers:
+            - {value: "FormEvents::PRE_SET_DATA",   correct: true}
+            - {value: "FormEvents::SUBMIT",         correct: true}
+            - {value: "FormEvents::POST_SET_DATA",  correct: true}
+            - {value: "FormEvents::POST_REQUEST",   correct: false}
+    -
+        question: 'What data is inside FormEvent object at FormEvents::PRE_SET_DATA?'
+        answers:
+            - {value: "Model data",      correct: true}
+            - {value: "Normalized data", correct: false}
+            - {value: "Request data",    correct: false}
+            - {value: "View data",       correct: false}
+    -
+        question: 'What data is inside FormEvent object at FormEvents::PRE_SUBMIT?'
+        answers:
+            - {value: "Model data",      correct: false}
+            - {value: "Normalized data", correct: false}
+            - {value: "Request data",    correct: true}
+            - {value: "View data",       correct: false}
+    -
+        question: 'Which ones of these types extends from TextType?'
+        answers:
+            - {value: "money",    correct: true}
+            - {value: "currency", correct: true}
+            - {value: "textarea", correct: true}
+            - {value: "surname",  correct: false}
+    -
+        question: 'Which date type exist?'
+        answers:
+            - {value: "date",       correct: true}
+            - {value: "datetime",   correct: true}
+            - {value: "time",       correct: true}
+            - {value: "timestamp",  correct: false}
+    -
+        question: 'How do you bind a constraint to a form field?'
+        answers:
+            - {value: "Using option 'constraints' in $formBuilder->add()",          correct: true}
+            - {value: "Passing constraint instance in $this->createFormBuilder()",  correct: false}
+            - {value: "Invoke $formBuilder->setConstraints() method",               correct: false}
+            - {value: "Add an annotation in model",                                 correct: true}
+    -
+        question: 'Using form component, option "error_bubbling" will include error in current field.'
+        answers:
+            - {value: "True",  correct: false}
+            - {value: "False", correct: true}
+    -
+        question: 'How do you set default value?'
+        answers:
+            - {value: "$this->createFormBuilder($defaults)",                correct: true}
+            - {value: "$this->createFormBuilder(null, $defaults)",          correct: false}
+            - {value: "$this->createFormBuilder()->setDefaults($defaults)", correct: false}
+            - {value: "$this->createFormBuilder()->addDefaults($defaults)", correct: false}

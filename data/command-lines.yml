@@ -50,3 +50,10 @@ questions:
             - {value: 'php app/console doctrine:schema:update --force',    correct: false}
             - {value: 'php app/console doctrine:mapping:convert',          correct: false}
             - {value: 'php app/console doctrine:mapping:import',           correct: false}
+    -
+        question: "How do you display complete configration of a bundle ?"
+        answers:
+            - {value: "php app/console dump:config acme",                   correct: false}
+            - {value: "php app/console config:dump-reference acme",         correct: true}
+            - {value: "php app/console config:dump AcmeBundle",             correct: false}
+            - {value: "php app/console config:dump-reference AcmeBundle",   correct: true}
