@@ -49,3 +49,25 @@ questions:
             - {value: "$container->getService('my.service')->setDefinition('My\Service\Class')", correct: false}
             - {value: "$container->getDefinition('my.service')->setService('My\Service\Class')", correct: false}
             - {value: "$container->getService('my.service')->setClass('My\Service\Class')",      correct: false}
+    -
+        question: 'Using a compiler pass, how do you retrieve a definition of service ?'
+        answers:
+            - {value: "$container->getDefinition('my.service')",        correct: true}
+            - {value: "$container->findDefinition('my.service')",       correct: true}
+            - {value: "$container->retrieveDefinition('my.service')",   correct: false}
+            - {value: "$container->getService('my.service')",           correct: false}
+    -
+        question: 'What are existing pass order ?'
+        answers:
+            - {value: "PassConfig::TYPE_BEFORE_OPTIMIZATION", correct: true}
+            - {value: "PassConfig::TYPE_OPTIMIZE",            correct: true}
+            - {value: "PassConfig::TYPE_BEFORE_REMOVING",     correct: true}
+            - {value: "PassConfig::TYPE_REMOVE",              correct: true}
+            - {value: "PassConfig::TYPE_AFTER_COMPILING",     correct: false}
+    -
+        question: "As dev environment, what is the name of dumped container ?"
+        answers:
+            - {value: "appDevDebugProjectContainer.php",    correct: true}
+            - {value: "appDevProjectContainer.php",         correct: false}
+            - {value: "appDevDebugProjectServiceContainer", correct: false}
+            - {value: "appDevDebugContainer",               correct: false}
