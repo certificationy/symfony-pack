@@ -76,10 +76,10 @@ questions:
             - {value: "Request data",    correct: true}
             - {value: "View data",       correct: false}
     -
-        question: 'Which ones of these types extends from TextType?'
+        question: 'Which one of these types extends from text?'
         answers:
-            - {value: "money",    correct: true}
-            - {value: "currency", correct: true}
+            - {value: "money",    correct: false}
+            - {value: "currency", correct: false}
             - {value: "textarea", correct: true}
             - {value: "surname",  correct: false}
     -
