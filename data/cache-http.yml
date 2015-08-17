@@ -1,4 +1,4 @@
-category: Cache HTTP
+category: HTTP Cache
 questions:
     -
         question: 'What is the correct way to render a ESI tag using HTML?'
