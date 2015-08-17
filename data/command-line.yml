@@ -1,5 +1,40 @@
-category: Command lines
+category: The Command Line
 questions:
+    -
+        question: 'Which helper is not available in the Console component?'
+        answers:
+            - {value: QuestionHelper, correct: true}
+            - {value: TableHelper,    correct: false}
+            - {value: FileHelper,     correct: true}
+            - {value: DialogHelper,   correct: false}
+    -
+        question: 'Which event is not available in the Console Component?'
+        answers:
+            - {value: ConsoleEvents::COMMAND,   correct: false}
+            - {value: ConsoleEvents::TERMINATE, correct: false}
+            - {value: ConsoleEvents::EXCEPTION, correct: false}
+            - {value: ConsoleEvents::LAUNCH,    correct: true}
+    -
+        question: 'How to launch Console application in interactive mode?'
+        answers:
+            - {value: php app/console -s,            correct: true}
+            - {value: php app/console --interactive, correct: false}
+            - {value: no one,                        correct: false}
+    -
+        question: 'Using Console component, which of these events are available in Symfony\Component\Console\ConsoleEvents?'
+        answers:
+            - {value: ConsoleEvents::COMMAND,   correct: true}
+            - {value: ConsoleEvents::TERMINATE, correct: true}
+            - {value: ConsoleEvents::EXCEPTION, correct: true}
+            - {value: ConsoleEvents::BEFORE,    correct: false}
+            - {value: ConsoleEvents::AFTER,     correct: false}
+    -
+        question: 'Using Console component, which of these class allows to create custom output styles?'
+        answers:
+            - {value: Symfony\Component\Console\OutputFormatterStyle, correct: true}
+            - {value: Symfony\Component\Console\OutputStyleFormatter, correct: false}
+            - {value: Symfony\Component\Console\OutputStyle,          correct: false}
+            - {value: Symfony\Component\Console\OutputFormatter,      correct: false}
     -
         question: 'What is the console command to create a new bundle?'
         answers:
@@ -57,3 +92,13 @@ questions:
             - {value: "php app/console config:dump-reference acme",         correct: true}
             - {value: "php app/console config:dump AcmeBundle",             correct: false}
             - {value: "php app/console config:dump-reference AcmeBundle",   correct: true}
+    -
+        question: 'Descriptors are objects to render documentation on Symfony Console Apps?'
+        answers:
+            - {value: 'Yes', correct: true}
+            - {value: 'No',  correct: false}
+    -
+        question: 'Does the Symfony Console component needs PHP globals internals variables to work?'
+        answers:
+            - {value: 'Yes', correct: false}
+            - {value: 'No',  correct: true}
