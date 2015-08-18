@@ -64,7 +64,6 @@ questions:
             - {value: "protected",  correct: false}
             - {value: "incomplete", correct: false}
             - {value: "implements", correct: false}
-
     -
         question: 'According to the PHP Framework Interoperability Group, which PSRs concern best coding practices ?'
         answers:
@@ -73,7 +72,6 @@ questions:
             - {value: "PSR-2", correct: true}
             - {value: "PSR-3", correct: false}
             - {value: "PSR-4", correct: false}
-
     -
         question: 'Since PHP 5.4, which functionnality allow  horizontal composition of behavior ?'
         answers:

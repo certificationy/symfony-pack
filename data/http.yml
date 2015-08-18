@@ -1,13 +1,6 @@
 category: HTTP
 questions:
     -
-        question: 'Using XML, how to ensure that a route is accessed via HTTPS?'
-        answers:
-            - {value: schemes="https",  correct: true}
-            - {value: https="true",     correct: false}
-            - {value: protocol="https", correct: false}
-            - {value: ensure="https",   correct: false}
-    -
         question: 'Which of these HTTP headers does not exist?'
         answers:
             - {value: Control-Cache,  correct: true}
@@ -31,10 +24,50 @@ questions:
             - {value: $response->isInvalid(),       correct: true}
             - {value: $response->isError(),         correct: false}
     -
-        question: 'Which HTTP status code must be returned if the cache is still valid ?'
+        question: 'How to access the `foo` GET parameter from Request object $request ?'
         answers:
-            - {value: '304', correct: true}
-            - {value: '200', correct: false}
-            - {value: '202', correct: false}
-            - {value: '300', correct: false}
-            - {value: '305', correct: false}
+            - {value: "$request->query->get('foo');",     correct: true}
+            - {value: "$request->request->get('foo');",   correct: false}
+            - {value: "{$request->query->all()}['foo'];", correct: true}
+            - {value: "$request->get('foo');",            correct: false}
+    -
+        question: 'How to access the `bar` POST parameter from Request object $request ?'
+        answers:
+            - {value: "$request->query->get('bar');",     correct: false}
+            - {value: "$request->request->get('bar');",   correct: false}
+            - {value: "{$request->query->all()}['baz'];", correct: false}
+            - {value: "$request->post('bar');",           correct: false}
+    -
+        question: 'The method getLanguages() from Request object:'
+        answers:
+            - {value: 'return the value of the metadata lang',                   correct: false}
+            - {value: 'return an array of languages available in translations',  correct: false}
+            - {value: 'return an array of languages the client accepts',         correct: true}
+            - {value: 'does not exists',                                         correct: false}
+    -
+        question: 'How to get the Content Type from Request ?'
+        answers:
+            - {value: "$request->headers->get('content_type');", correct: true}
+            - {value: "$request->headers->get('content-type');", correct: true}
+            - {value: "$request->headers->get('Content-Type');", correct: true}
+            - {value: "$request->getContentType();",             correct: true}
+    -
+        question: 'How to check if a request have been sent using AJAX ?'
+        answers:
+            - {value: $request->isXmlHttpRequest();,                                   correct: true}
+            - {value: $request->isAJAX();,                                             correct: false}
+            - {value: "$this->headers->get('X-Requested-With') === 'XMLHttpRequest';", correct: true}
+    -
+        question: 'Theses Response subclasses are available: true or false ?'
+        answers:
+            - {value: JsonResponse,       correct: true}
+            - {value: StreamResponse,     correct: false}
+            - {value: BinaryFileResponse, correct: true}
+            - {value: XmlResponse,        correct: true}
+    -
+        question: 'Which HTTP status code should for a resource that moved temporarily ?'
+        answers:
+            - {value: 301, correct: false}
+            - {value: 302, correct: true}
+            - {value: 201, correct: false}
+            - {value: 204, correct: false}
