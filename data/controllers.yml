@@ -15,7 +15,7 @@ questions:
             - {value: return $this->getContainer()->get('service.name'), correct: false}
             - {value: return $this->container->get('service.name'),      correct: true}
     -
-        question: 'Which class must be extended by your controllers?'
+        question: 'Which class may be extended by your controllers?'
         answers:
             - {value: Symfony\Bundle\FrameworkBundle\Controller,    correct: true}
             - {value: Symfony\Component\FrameworkBundle\Controller, correct: false}
@@ -49,3 +49,11 @@ questions:
             - {value: FrameworkBundle:Template:action,     correct: false}
             - {value: FrameworkBundle:Template:render,     correct: false}
             - {value: FrameworkBundle:Template:template,   correct: true}
+    -
+        question: 'Theses variables are available in Controllers: true or false ?'
+        answers:
+            - {value: $_controller,  correct: true}
+            - {value: $_route,       correct: true}
+            - {value: $request,      correct: true}
+            - {value: $_locale,      correct: true}
+            - {value: $_format,      correct: true}

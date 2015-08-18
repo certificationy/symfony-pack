@@ -14,3 +14,10 @@ questions:
             - {value: $_controller,       correct: false}
             - {value: $_method,           correct: false}
             - {value: $_action,           correct: false}
+    -
+        question: 'Using XML, how to ensure that a route is accessed via HTTPS?'
+        answers:
+            - {value: schemes="https",  correct: true}
+            - {value: https="true",     correct: false}
+            - {value: protocol="https", correct: false}
+            - {value: ensure="https",   correct: false}
