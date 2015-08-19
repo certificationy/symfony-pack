@@ -34,7 +34,7 @@ questions:
         question: 'How to access the `bar` POST parameter from Request object $request ?'
         answers:
             - {value: "$request->query->get('bar');",     correct: false}
-            - {value: "$request->request->get('bar');",   correct: false}
+            - {value: "$request->request->get('bar');",   correct: true}
             - {value: "{$request->query->all()}['baz'];", correct: false}
             - {value: "$request->post('bar');",           correct: false}
     -
@@ -63,7 +63,7 @@ questions:
             - {value: JsonResponse,       correct: true}
             - {value: StreamResponse,     correct: false}
             - {value: BinaryFileResponse, correct: true}
-            - {value: XmlResponse,        correct: true}
+            - {value: XmlResponse,        correct: false}
     -
         question: 'Which HTTP status code should for a resource that moved temporarily ?'
         answers:
