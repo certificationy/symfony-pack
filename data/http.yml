@@ -71,3 +71,8 @@ questions:
             - {value: 302, correct: true}
             - {value: 201, correct: false}
             - {value: 204, correct: false}
+    -
+        question: 'True or False ? Server returns an 403 HTTP status code when you are not allowed to access a resource'
+        answers:
+            - {value: "True",    correct: true}
+            - {value: "False",   correct: false}

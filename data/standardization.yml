@@ -15,3 +15,9 @@ questions:
             - {value: "@AcmeTestBundle:Question/Item/list.html.twig",  correct: false}
             - {value: "@Acme:TestBundle:Question:Item/list.html.twig", correct: false}
             - {value: "@Acme:TestBundle:Question/Item/list.html.twig", correct: false}
+    -
+        question: 'Service naming conventions: select all valid services identifiers'
+        answers:
+            - {value: "fos_user.listener.email_confirmation",  correct: true}
+            - {value: "sensio_framework_extra.PSR7.http_message_factory",  correct: false}
+            - {value: "sensio_distribution.security_checker",  correct: true}

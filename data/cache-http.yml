@@ -38,3 +38,8 @@ questions:
             - {value: '202', correct: false}
             - {value: '300', correct: false}
             - {value: '305', correct: false}
+    -
+        question: 'True or False ? ESI need to be activated in configuration.'
+        answers:
+            - {value: "True",     correct: true}
+            - {value: "False",    correct: false}
