@@ -35,3 +35,16 @@ questions:
             - {value: public static function create($errorReportingLevel = null, $displayErrors = true), correct: false}
             - {value: public static function load($errorReportingLevel = null, $displayErrors = true),   correct: false}
             - {value: public static function start($errorReportingLevel = null, $displayErrors = true),  correct: false}
+    -
+        question: 'In order to be able to use render_hinclude(url(...)), we need to add this configuration in ``framework` section:'
+        answers:
+            - {value: 'hinclude: enabled',             correct: false}
+            - {value: 'fragments: {path:/_fragment}',  correct: false}
+            - {value: 'none of the above',             correct: false}
+    -
+        question: 'What is the correct CssSelector class namespace?'
+        answers:
+            - {value: Symfony\Component\CssSelector\CssSelector,  correct: true}
+            - {value: Symfony\Component\BrowserKit\CssSelector,   correct: false}
+            - {value: Symfony\Component\DomCrawler\CssSelector,   correct: false}
+            - {value: Symfony\Bundle\FrameworkBundle\CssSelector, correct: false}

@@ -168,3 +168,14 @@ questions:
         answers:
             - {value: 'Yes', correct: true}
             - {value: 'No',  correct: false}
+    -
+        question: 'In Twig, how to render a controller asynchronously ?'
+        answers:
+            - {value: 'hinclude_render(controller(...))',  correct: false}
+            - {value: 'render_hinclude(controller(...))',  correct: true}
+            - {value: 'none of above',                     correct: false}
+    -
+        question: 'True or false ? path() Twig function generates absolute urls.'
+        answers:
+            - {value: 'True',    correct: false}
+            - {value: 'False',   correct: true}

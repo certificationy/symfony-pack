@@ -8,7 +8,7 @@ questions:
             - {value: Add a "path" attribute,      correct: false}
             - {value: Add a "subdomain" attribute, correct: false}
     -
-        question: 'What variable you can use as controller argument for getting the name of the route that was matched?'
+        question: 'What variable can be used as controller argument to get the name of the route name?'
         answers:
             - {value: $_route,            correct: true}
             - {value: $_controller,       correct: false}
@@ -21,3 +21,10 @@ questions:
             - {value: https="true",     correct: false}
             - {value: protocol="https", correct: false}
             - {value: ensure="https",   correct: false}
+    -
+        question: 'Three special routing parameters are available in Symfony:'
+        answers:
+            - {value: "_controller, _locale, _schemes",      correct: false}
+            - {value: "_route, _controller, _action",        correct: false}
+            - {value: "_controller, _locale, _format",       correct: true}
+            - {value: "_locale, _format and another one.",   correct: false}

@@ -79,3 +79,13 @@ questions:
             - {value: "Object Cloning",   correct: false}
             - {value: "ReflectionClass",  correct: false}
             - {value: "Inheritance",      correct: false}
+    -
+        question: 'True or False ? A closure is a lambda function that is aware of its surrounding context.'
+        answers:
+            - {value: "True",    correct: true}
+            - {value: "False",   correct: false}
+    -
+        question: 'True or False ? A lambda function is an named PHP function that can be stored in a variable.'
+        answers:
+            - {value: "True",    correct: false}
+            - {value: "False",   correct: true}

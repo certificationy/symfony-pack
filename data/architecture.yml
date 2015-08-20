@@ -105,3 +105,16 @@ questions:
             - {value: "public function registerConfigurationContainer(LoaderInterface $loader)", correct: false}
             - {value: "public function registerConfiguration(LoaderInterface $loader)",          correct: false}
             - {value: "public function registerConfigurationPath(LoaderInterface $loader)",      correct: false}
+    -
+        question: 'According to Symfony best practices, ____ is/are located in _____ file/folder.'
+        answers:
+            - {value: "templates, app/",                                      correct: true}
+            - {value: "assets, web/",                                         correct: true}
+            - {value: "routes, app/routes.yml",                               correct: false}
+            - {value: "translations, AppBundle/Resources/translations/",      correct: false}
+    -
+        question: 'Where can you find the file `form_table_layout.html.twig` ?'
+        answers:
+            - {value: "In Twig Bundle",                                         correct: false}
+            - {value: "In Twig Bridge",                                         correct: true}
+            - {value: "In FrameworkExtraBundle",                                correct: false}

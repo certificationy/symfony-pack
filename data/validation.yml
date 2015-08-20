@@ -14,3 +14,8 @@ questions:
             - {value: "$validator->validateValue($object, $constraint)", correct: true}
             - {value: "$validator->isValid($object, $constraint)",       correct: false}
             - {value: "$validator->validation($object, $constraint)",    correct: false}
+    -
+        question: 'True or False ? All entities have at least 2 validation groups.'
+        answers:
+            - {value: "True",    correct: true}
+            - {value: "False",   correct: false}

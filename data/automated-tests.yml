@@ -58,16 +58,16 @@ questions:
             - {value: restart(),  correct: true}
             - {value: next(),     correct: false}
     -
-        question: 'What is the correct CssSelector class namespace?'
-        answers:
-            - {value: Symfony\Component\CssSelector\CssSelector,  correct: true}
-            - {value: Symfony\Component\BrowserKit\CssSelector,   correct: false}
-            - {value: Symfony\Component\DomCrawler\CssSelector,   correct: false}
-            - {value: Symfony\Bundle\FrameworkBundle\CssSelector, correct: false}
-    -
         question: 'Using Swiftmailer, which of these configuration allows to disable email delivery?'
         answers:
             - {value: swiftmailer.disable_delivery: true, correct: true}
             - {value: swiftmailer.delivery: false,        correct: false}
             - {value: swiftmailer.enable_delivery: false, correct: false}
             - {value: swiftmailer.disable: true,          correct: false}
+    -
+        question: 'Using the Crawler client, how to follow a redirection ?'
+        answers:
+            - {value: $client->redirect(),          correct: false}
+            - {value: $client->followRedirect(),    correct: true}
+            - {value: $client->followRedirects(),   correct: true}
+            - {value: $client->redirectAll(),       correct: false}
