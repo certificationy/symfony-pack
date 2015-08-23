@@ -144,20 +144,21 @@ questions:
         question: 'in Twig, suppose you have an object person'
         shuffle: false
         answers:
-            - {value: 'If person has a property address-main, I can access it with person.getAddressMain()', correct: false}
-            - {value: "If person has a property address_main, I better access it with person.['address_main']", correct: false}
-            - {value: 'a and b are possible', correct: false}
-            - {value: 'I have to create a special getter for accessing the property above', correct: false}
-            - {value: 'no, the [] operand works in any situation', correct: false}
-            - {value: "get_attribute(person, 'address-main') does it", correct: false}
-            - {value: 'none of the above, Twig comes with a special function for this', correct: true}
+            - {value: 'If person has a property address-main, I can access it with person.getAddressMain()',       correct: false}
+            - {value: "If person has a property address_main, I better access it with person.['address_main']",    correct: false}
+            - {value: 'a and b are possible',                                                                      correct: false}
+            - {value: 'I have to create a special getter for accessing the property above',                        correct: false}
+            - {value: 'no, the [] operand works in any situation',                                                 correct: false}
+            - {value: "get_attribute(person, 'address-main') does it",                                             correct: false}
+            - {value: 'none of the above, Twig comes with a special function for this',                            correct: true}
     -
         question: 'In Twig:'
         answers:
-            - {value: 'you can chain filters with filters and functions with functions but not mix them', correct: false}
-            - {value: 'you can chain anything', correct: false}
-            - {value: 'you can access global vars only provided by Symfony on TwigBundle', correct: false}
-            - {value: 'there is only three global vars that come by default _self, _superglobals, _charset', correct: false}
+            - {value: 'you can chain filters with filters and functions with functions but not mix them',       correct: false}
+            - {value: 'you can chain anything',                                                                 correct: false}
+            - {value: 'Escaping is enabled by default',                                                         correct: true}
+            - {value: 'you can access global vars only provided by Symfony on TwigBundle',                      correct: false}
+            - {value: 'there is only three global vars that come by default _self, _superglobals, _charset',    correct: false}
     -
         question: 'There is a lesser known templating component with which you can build your own templating system not php and not twig.'
         answers:
