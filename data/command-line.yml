@@ -130,11 +130,11 @@ questions:
             - {value: OutputInterface::VERBOSITY_NORMAL,          correct: true}
             - {value: OutputInterface::VERBOSITY_VERBOSE,         correct: true}
             - {value: OutputInterface::VERBOSITY_VERY_VERBOSE,    correct: true}
-            - {value: OutputInterface::DEBUG,                     correct: true}
+            - {value: OutputInterface::DEBUG,                     correct: false}
     -
         question: 'Symfony Console: InputArgument::REQUIRED, InputArgument::OPTIONAL and ... ?'
         answers:
             - {value: InputArgument::DEFAULT,    correct: false}
-            - {value: OutputInterface::ARRAY,    correct: true}
-            - {value: OutputInterface::LIST,     correct: false}
-            - {value: OutputInterface::ENUM,     correct: false}
+            - {value: InputArgument::ARRAY,      correct: true}
+            - {value: InputArgument::LIST,       correct: false}
+            - {value: InputArgument::ENUM,       correct: false}

@@ -64,7 +64,7 @@ questions:
             - {value: "$container->getParameter('bundles')",              correct: false}
             - {value: "$container->getParameter('application.bundles')",  correct: false}
     -
-        question: 'True or False ? the entry point of a Bundle MUST extends `Symfony\HttpKernel\Bundle\Bundle` class.'
+        question: 'True or False ? the entry point of a Bundle MUST implement `Symfony\Component\HttpKernel\Bundle\BundleInterface` interface.'
         answers:
             - {value: "True",    correct: true}
             - {value: "False",   correct: false}
