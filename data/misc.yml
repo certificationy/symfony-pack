@@ -40,7 +40,7 @@ questions:
         answers:
             - {value: 'hinclude: enabled',             correct: false}
             - {value: 'fragments: {path:/_fragment}',  correct: false}
-            - {value: 'none of the above',             correct: false}
+            - {value: 'none of the above',             correct: true}
     -
         question: 'What is the correct CssSelector class namespace?'
         answers:
