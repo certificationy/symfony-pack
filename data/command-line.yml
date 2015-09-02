@@ -135,6 +135,6 @@ questions:
         question: 'Symfony Console: InputArgument::REQUIRED, InputArgument::OPTIONAL and ... ?'
         answers:
             - {value: InputArgument::DEFAULT,    correct: false}
-            - {value: InputArgument::ARRAY,      correct: true}
+            - {value: InputArgument::IS_ARRAY,   correct: true}
             - {value: InputArgument::LIST,       correct: false}
             - {value: InputArgument::ENUM,       correct: false}
