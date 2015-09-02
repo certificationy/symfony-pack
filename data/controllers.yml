@@ -50,7 +50,7 @@ questions:
             - {value: FrameworkBundle:Template:render,     correct: false}
             - {value: FrameworkBundle:Template:template,   correct: true}
     -
-        question: 'Theses variables are available in Controllers: true or false ?'
+        question: 'Which of these variables are available in Controllers?'
         answers:
             - {value: $_controller,  correct: true}
             - {value: $_route,       correct: true}
