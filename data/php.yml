@@ -73,7 +73,7 @@ questions:
             - {value: "PSR-3", correct: false}
             - {value: "PSR-4", correct: false}
     -
-        question: 'Since PHP 5.4, which functionnality allow  horizontal composition of behavior ?'
+        question: 'Since PHP 5.4, which functionality allows horizontal composition of behavior ?'
         answers:
             - {value: "Traits",           correct: true}
             - {value: "Object Cloning",   correct: false}
