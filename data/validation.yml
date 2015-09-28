@@ -19,3 +19,15 @@ questions:
         answers:
             - {value: "True",    correct: true}
             - {value: "False",   correct: false}
+    -
+        question: 'True or False ? We can also apply constraints on class getters with ``addPropertyConstrait()``'
+        answers:
+            - {value: "True",    correct: false}
+            - {value: "False",   correct: true}
+    -
+        question: 'True or False ? In Symfony:'
+        answers:
+            - {value: "Annotations mapping are enabled by default",                correct: false}
+            - {value: "UniqueEntity is provided by Doctrine Bundle",               correct: false}
+            - {value: "We can validate partial object with @Assert\GroupSequence", correct: true}
+            - {value: "All assertions above are valid",                            correct: false}
