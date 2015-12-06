@@ -45,10 +45,10 @@ questions:
     -
         question: 'Using Dependency Injection, what is the correct way to override a service class using ContainerBuilder class?'
         answers:
-            - {value: "$container->getDefinition('my.service')->setClass('My\Service\Class')",   correct: true}
-            - {value: "$container->getService('my.service')->setDefinition('My\Service\Class')", correct: false}
-            - {value: "$container->getDefinition('my.service')->setService('My\Service\Class')", correct: false}
-            - {value: "$container->getService('my.service')->setClass('My\Service\Class')",      correct: false}
+            - {value: "$container->getDefinition('my.service')->setClass('My\\Service\\Class')",   correct: true}
+            - {value: "$container->getService('my.service')->setDefinition('My\\Service\\Class')", correct: false}
+            - {value: "$container->getDefinition('my.service')->setService('My\\Service\\Class')", correct: false}
+            - {value: "$container->getService('my.service')->setClass('My\\Service\\Class')",      correct: false}
     -
         question: 'Using a compiler pass, how do you retrieve a definition of service ?'
         answers:

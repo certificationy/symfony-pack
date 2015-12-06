@@ -24,10 +24,10 @@ questions:
     -
         question: 'Which of these annotations can be used in a controller?'
         answers:
-            - {value: @Cache,          correct: true}
-            - {value: @ParamConverter, correct: true}
-            - {value: @Security,       correct: true}
-            - {value: @Post,           correct: false}
+            - {value: '@Cache',          correct: true}
+            - {value: '@ParamConverter', correct: true}
+            - {value: '@Security',       correct: true}
+            - {value: '@Post',           correct: false}
     -
         question: 'Which of these response objects does not exists?'
         answers:
