@@ -108,3 +108,15 @@ questions:
             - {value: "$this->createFormBuilder(null, $defaults)",          correct: false}
             - {value: "$this->createFormBuilder()->setDefaults($defaults)", correct: false}
             - {value: "$this->createFormBuilder()->addDefaults($defaults)", correct: false}
+    -
+        question: 'Your Form class must extends ____ '
+        answers:
+            - {value: Symfony\Component\Form\FormType,                      correct: false}
+            - {value: Symfony\Component\Form\AbstractType,                  correct: true}
+            - {value: Symfony\Component\Form\AbstractFormType,              correct: false}
+    -
+        question: 'How to add an extra field `extra` with the form ?'
+        answers:
+            - {value: "$builder->add('extra', null, ['mapped' => false])",    correct: true}
+            - {value: "$builder->add('extra', hidden, ['mapped' => false])",  correct: true}
+            - {value: "$builder->add('extra', null, ['validation' => false]", correct: false}
