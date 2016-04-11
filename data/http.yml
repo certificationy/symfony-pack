@@ -29,7 +29,7 @@ questions:
             - {value: "$request->query->get('foo');",     correct: true}
             - {value: "$request->request->get('foo');",   correct: false}
             - {value: "{$request->query->all()}['foo'];", correct: true}
-            - {value: "$request->get('foo');",            correct: false}
+            - {value: "$request->get('foo');",            correct: true}
     -
         question: 'How to access the `bar` POST parameter from Request object $request ?'
         answers:
