@@ -130,8 +130,7 @@ questions:
             - {value: 'setArguments, getArguments', correct: false}
             - {value: 'isValid()', correct: false}
             - {value: 'setPriority(), getPriority()', correct: false}
-            - {value: 'a combination of a and c', correct: false}
-            - {value: 'none of the above', correct: true}
+            - {value: 'none of these options', correct: true}
     -
         question: 'In Twig this statement is valid:'
         answers:
