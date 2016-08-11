@@ -15,12 +15,18 @@ questions:
             - {value: "<",   correct: true}
             - {value: "and", correct: false}
     -
-        question: 'If function foo() is defined in the namespace myapp\utils\bar and your code is in namespace myapp, what is the correct way to import the bar namespace so you can use the foo() function?'
+        question: 'Since PHP 5.6+, if function foo() is defined in the namespace Myapp\Utils\Bar and your code is in namespace Myapp, what is the correct way to import the foo() function?'
         answers:
-            - {value: "use bar",                 correct: false}
-            - {value: "use myapp\utils\\bar",     correct: true}
-            - {value: "use utils\\bar",           correct: false}
-            - {value: "use myapp\utils\\bar\\foo", correct: false}
+            - {value: "use function foo;",                    correct: false}
+            - {value: "use Myapp\\Utils\\Bar\\foo;",          correct: false}
+            - {value: "use function Myapp\\Utils\\Bar\\foo;", correct: true}
+            - {value: "use Utils\\Bar\\Foo;",                 correct: false}
+            - {value: "use Myapp\\Utils\\Bar\\foo;",          correct: false}
+    -
+        question: 'True or False? It is possible to import all classes from a namespace in PHP.'
+        answers:
+            - {value: "True",  correct: false}
+            - {value: "False", correct: true}
     -
         question: 'Which web services are supported natively in PHP?'
         answers:
