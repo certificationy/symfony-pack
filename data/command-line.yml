@@ -1,13 +1,6 @@
 category: The Command Line
 questions:
     -
-        question: 'Which helper is not available in the Console component?'
-        answers:
-            - {value: QuestionHelper, correct: true}
-            - {value: TableHelper,    correct: false}
-            - {value: FileHelper,     correct: true}
-            - {value: DialogHelper,   correct: false}
-    -
         question: 'Which event is not available in the Console Component?'
         answers:
             - {value: ConsoleEvents::COMMAND,   correct: false}
