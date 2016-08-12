@@ -7,3 +7,11 @@ questions:
             - {value: 'SIGKILL',        correct: true}
             - {value: 'Process::STOP',  correct: false}
             - {value: '9',              correct: true}
+    -
+        question: 'Which helper is not available in the Console component?'
+        answers:
+            - {value: QuestionHelper, correct: false}
+            - {value: TableHelper,    correct: false}
+            - {value: FileHelper,     correct: true}
+            - {value: DialogHelper,   correct: true}
+
