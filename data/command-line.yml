@@ -90,7 +90,7 @@ questions:
         answers:
             - {value: "php app/console dump:config acme",                   correct: false}
             - {value: "php app/console config:dump-reference acme",         correct: true}
-            - {value: "php app/console config:dump AcmeBundle",             correct: false}
+            - {value: "php app/console config:dump AcmeBundle",             correct: true}
             - {value: "php app/console config:dump-reference AcmeBundle",   correct: true}
     -
         question: 'Descriptors are objects to render documentation on Symfony Console Apps?'
