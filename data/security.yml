@@ -26,7 +26,7 @@ questions:
         answers:
             - {value: 'SecureRandom class at the heart of security component has only one public nextBytes method', correct: true}
             - {value: 'RoleHierarchy also at the heart of security component implements RoleHierarchyInterface which obliges this class to implement buildRoleMap', correct: false}
-            - {value: 'There are only two classes named ResponseListener in the whole of Symofony and they implement EventSubscriberInterface', correct: true}
+            - {value: 'There are only two classes named ResponseListener in the whole of Symfony and they implement EventSubscriberInterface', correct: true}
             - {value: 'There is a ResponseListener under RememberMe feature and this acts by setting a cookie on every response the app sends back to the user', correct: false}
             - {value: 'About the other ResponseListener found under HttpKernel complaint with RFC 2616 means most importantly that it ensures certain dimensions on header length are kept', correct: false}
             - {value: 'in Symfony Symfony\Component\Security\Core\Encoder\EncoderFactory getEncoder does create an encoder everytime for security reasons', correct: false}
