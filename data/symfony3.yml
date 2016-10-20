@@ -7,3 +7,14 @@ questions:
             - {value: 'SIGKILL',        correct: true}
             - {value: 'Process::STOP',  correct: false}
             - {value: '9',              correct: true}
+    -
+        question: |
+            [SF3] What can be placed in ????? to be valid?
+
+              use Symfony\Component\Yaml\Yaml;
+            
+              $value = Yaml::parse(?????);
+        answers:
+            - {value: '"/path/to/file.yml"',                    correct: false}
+            - {value: 'file_get_contents("/path/to/file.yml")', correct: true}
+            - {value: 'Both are valid',                         correct: false}
