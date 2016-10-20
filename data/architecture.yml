@@ -118,3 +118,8 @@ questions:
             - {value: "In Twig Bundle",                                         correct: false}
             - {value: "In Twig Bridge",                                         correct: true}
             - {value: "In FrameworkExtraBundle",                                correct: false}
+    -
+        question: 'If you pass 0 (zero) as third parameter (int $indent) in \Symfony\Component\Yaml\Yaml::dump, the generated YAML string will be indented with tabs'
+        answers:
+            - {value: "True", correct: false}
+            - {value: "False", correct: true}

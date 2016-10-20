@@ -138,3 +138,10 @@ questions:
             - {value: InputArgument::IS_ARRAY,   correct: true}
             - {value: InputArgument::LIST,       correct: false}
             - {value: InputArgument::ENUM,       correct: false}
+    -
+        question: 'Symfony Console: which of the following sentences are true?'
+        answers:
+            - {value: 'initialize() and configure() are invoked before the ConsoleEvents::COMMAND', correct: false}
+            - {value: 'ConsoleEvents::TERMINATE is dispatched even when an exception is thrown' ,   correct: true}
+            - {value: 'initialize has InputInterface, OutputInterface parameters',                  correct: true}
+            - {value: 'ConsoleEvents can be disabled',                                              correct: true}            
