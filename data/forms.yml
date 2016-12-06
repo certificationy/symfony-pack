@@ -118,5 +118,5 @@ questions:
         question: 'How to add an extra field `extra` with the form ?'
         answers:
             - {value: "$builder->add('extra', null, ['mapped' => false])",    correct: true}
-            - {value: "$builder->add('extra', hidden, ['mapped' => false])",  correct: true}
+            - {value: "$builder->add('extra', 'hidden', ['mapped' => false])",  correct: true}
             - {value: "$builder->add('extra', null, ['validation' => false]", correct: false}
