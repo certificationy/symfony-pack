@@ -24,7 +24,7 @@ questions:
     -
         question: 'Is user authenticated in all of security firewalls after a successful login:'
         answers:
-            - {value: 'Yes, it happens autmatically', correct: false}
+            - {value: 'Yes, it happens automatically', correct: false}
             - {value: 'Yes, if firewalls have the same value of the `context` option', correct: true}
             - {value: 'Yes, if option `shared` is set to true', correct: false}
             - {value: 'No, it is not possible, firewalls are independent from each other', correct: false}
@@ -36,7 +36,7 @@ questions:
             - {value: 'access_control: { path: ^/secure, always_use_https: true }', correct: false}
             - {value: 'access_control: { path: ^/secure, schemes: [https] }', correct: false}
     -
-        question: 'What is a purpose of security encoders in security.yml?'
+        question: 'What is the purpose of security encoders in security.yml?'
         answers:
             - {value: 'Encode user passwords using given algorithm', correct: true}
             - {value: 'Encrypt a HTTP response', correct: false}
