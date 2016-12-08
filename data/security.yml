@@ -41,3 +41,22 @@ questions:
             - {value: 'Encode user passwords using given algorithm', correct: true}
             - {value: 'Encrypt a HTTP response', correct: false}
             - {value: 'Encode all data in the application database', correct: false}
+
+    -
+        question: 'Which authentication events exist in the Security component?'
+        answers:
+            - {value: 'security.authentication.success', correct: true}
+            - {value: 'security.authentication.failure', correct: true}
+            - {value: 'security.interactive_login', correct: true}
+            - {value: 'security.login', correct: false}
+            - {value: 'security.switch_user', correct: true}
+            - {value: 'security.authentication.start', correct: false}
+            - {value: 'security.remember_me_login', correct: false}
+    -
+        question: 'What does the default strategy `affirmative` of the access decision manager mean?'
+        answers:
+            - {value: 'Access is granted as soon as there is one voter granting access', correct: true}
+            - {value: 'Access is granted if there are more voters granting access than denying', correct: false}
+            - {value: 'Access is granted if all voters grant acces', correct: false}
+            - {value: 'Access is granted if no voters throw an exception', correct: false}
+
