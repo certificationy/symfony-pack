@@ -31,10 +31,10 @@ questions:
     -
         question: 'Using Symfony\Component\Debug\Debug static class, what is the only method available?'
         answers:
-            - {value: public static function enable($errorReportingLevel = null, $displayErrors = true), correct: true}
-            - {value: public static function create($errorReportingLevel = null, $displayErrors = true), correct: false}
-            - {value: public static function load($errorReportingLevel = null, $displayErrors = true),   correct: false}
-            - {value: public static function start($errorReportingLevel = null, $displayErrors = true),  correct: false}
+            - {value: "public static function enable($errorReportingLevel = null, $displayErrors = true)", correct: true}
+            - {value: "public static function create($errorReportingLevel = null, $displayErrors = true)", correct: false}
+            - {value: "public static function load($errorReportingLevel = null, $displayErrors = true)",   correct: false}
+            - {value: "public static function start($errorReportingLevel = null, $displayErrors = true)",  correct: false}
     -
         question: 'In order to be able to use render_hinclude(url(...)), we need to add this configuration in ``framework` section:'
         answers:
