@@ -3,17 +3,17 @@ questions:
     -
         question: 'Which controller/action allows to render a template without a specific controller?'
         answers:
-            - {value: FrameworkBundle:Controller:template, correct: false}
-            - {value: FrameworkBundle:Template:action,     correct: false}
-            - {value: FrameworkBundle:Template:render,     correct: false}
-            - {value: FrameworkBundle:Template:template,   correct: true}
+            - {value: "FrameworkBundle:Controller:template", correct: false}
+            - {value: "FrameworkBundle:Template:action",     correct: false}
+            - {value: "FrameworkBundle:Template:render",     correct: false}
+            - {value: "FrameworkBundle:Template:template",   correct: true}
     -
         question: 'What is the LoggerInterface correct namespace?'
         answers:
-            - {value: Psr\LoggerInterface,                        correct: false}
-            - {value: Psr\Log\LoggerInterface,                    correct: true}
-            - {value: Symfony\Bridge\Monolog\LoggerInterface,     correct: false}
-            - {value: Symfony\Bridge\Monolog\Log\LoggerInterface, correct: false}
+            - {value: "Psr\LoggerInterface",                        correct: false}
+            - {value: "Psr\Log\LoggerInterface",                    correct: true}
+            - {value: "Symfony\Bridge\Monolog\LoggerInterface",     correct: false}
+            - {value: "Symfony\Bridge\Monolog\Log\LoggerInterface", correct: false}
     -
         question: 'Using a dev environment, what is the correct cached file name of the dependency injection container?'
         answers:
@@ -31,20 +31,20 @@ questions:
     -
         question: 'Using Symfony\Component\Debug\Debug static class, what is the only method available?'
         answers:
-            - {value: public static function enable($errorReportingLevel = null, $displayErrors = true), correct: true}
-            - {value: public static function create($errorReportingLevel = null, $displayErrors = true), correct: false}
-            - {value: public static function load($errorReportingLevel = null, $displayErrors = true),   correct: false}
-            - {value: public static function start($errorReportingLevel = null, $displayErrors = true),  correct: false}
+            - {value: "public static function enable($errorReportingLevel = null, $displayErrors = true)", correct: true}
+            - {value: "public static function create($errorReportingLevel = null, $displayErrors = true)", correct: false}
+            - {value: "public static function load($errorReportingLevel = null, $displayErrors = true)",   correct: false}
+            - {value: "public static function start($errorReportingLevel = null, $displayErrors = true)",  correct: false}
     -
         question: 'In order to be able to use render_hinclude(url(...)), we need to add this configuration in ``framework` section:'
         answers:
-            - {value: 'hinclude: enabled',             correct: false}
-            - {value: 'fragments: {path:/_fragment}',  correct: false}
-            - {value: 'none of the above',             correct: true}
+            - {value: "hinclude: enabled",             correct: false}
+            - {value: "fragments: {path:/_fragment}",  correct: false}
+            - {value: "none of the above",             correct: true}
     -
         question: 'What is the correct CssSelector class namespace?'
         answers:
-            - {value: Symfony\Component\CssSelector\CssSelector,  correct: true}
-            - {value: Symfony\Component\BrowserKit\CssSelector,   correct: false}
-            - {value: Symfony\Component\DomCrawler\CssSelector,   correct: false}
-            - {value: Symfony\Bundle\FrameworkBundle\CssSelector, correct: false}
+            - {value: "Symfony\Component\CssSelector\CssSelector",  correct: true}
+            - {value: "Symfony\Component\BrowserKit\CssSelector",   correct: false}
+            - {value: "Symfony\Component\DomCrawler\CssSelector",   correct: false}
+            - {value: "Symfony\Bundle\FrameworkBundle\CssSelector", correct: false}
