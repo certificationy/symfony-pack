@@ -11,23 +11,23 @@ questions:
         question: 'What is the LoggerInterface correct namespace?'
         answers:
             - {value: Psr\LoggerInterface,                        correct: false}
-            - {value: Psr\Log\LoggerInterface,                    correct: true}
+            - {value: Psr\Log\LoggerInterface",                    correct: true}
             - {value: Symfony\Bridge\Monolog\LoggerInterface,     correct: false}
-            - {value: Symfony\Bridge\Monolog\Log\LoggerInterface, correct: false}
+            - {value: "Symfony\Bridge\Monolog\Log\LoggerInterface, correct: false}
     -
         question: 'Using a dev environment, what is the correct cached file name of the dependency injection container?'
         answers:
-            - {value: "app/cache/dev/appDevDebugProjectContainer.php", correct: true}
-            - {value: "app/cache/dev/appDebugProjectContainer.php",    correct: false}
-            - {value: "app/cache/dev/appDevProjectDebugContainer.php", correct: false}
-            - {value: "app/cache/dev/appProjectContainer.php",         correct: false}
+            - {value: app/cache/dev/appDevDebugProjectContainer.php, correct: true}
+            - {value: app/cache/dev/appDebugProjectContainer.php,    correct: false}
+            - {value: app/cache/dev/appDevProjectDebugContainer.php, correct: false}
+            - {value: app/cache/dev/appProjectContainer.php,         correct: false}
     -
         question: 'Using a dev environment, what is the correct cached file name of the generated configuration routes?'
         answers:
-            - {value: "app/cache/dev/appDevUrlGenerator.php", correct: true}
-            - {value: "app/cache/dev/appDevGeneratorUrl.php", correct: false}
-            - {value: "app/cache/dev/appDevUrlDump.php",      correct: false}
-            - {value: "app/cache/dev/appDevDumpedUrl.php",    correct: false}
+            - {value: app/cache/dev/appDevUrlGenerator.php, correct: true}
+            - {value: app/cache/dev/appDevGeneratorUrl.php, correct: false}
+            - {value: app/cache/dev/appDevUrlDump.php,      correct: false}
+            - {value: app/cache/dev/appDevDumpedUrl.php,    correct: false}
     -
         question: 'Using Symfony\Component\Debug\Debug static class, what is the only method available?'
         answers:
@@ -38,9 +38,9 @@ questions:
     -
         question: 'In order to be able to use render_hinclude(url(...)), we need to add this configuration in ``framework` section:'
         answers:
-            - {value: 'hinclude: enabled',             correct: false}
-            - {value: 'fragments: {path:/_fragment}',  correct: false}
-            - {value: 'none of the above',             correct: true}
+            - {value: "hinclude: enabled",             correct: false}
+            - {value: "fragments: {path:/_fragment}",  correct: false}
+            - {value: "none of the above",             correct: true}
     -
         question: 'What is the correct CssSelector class namespace?'
         answers:
