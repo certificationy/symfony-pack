@@ -1,0 +1,59 @@
+category: PHP Standards Recommendations
+questions:
+    -
+        question: 'Psr-3 LoggerInterface exposes eight methods to write logs to the eight RFC 5424 levels, which level does not exist ?'
+        answers:
+            - {value: debug,   correct: false}
+            - {value: alert,   correct: false}
+            - {value: severe,  correct: true}
+            - {value: warning, correct: false}
+    -
+        question: "Which methods is not in Psr-3"
+        answers:
+            - {value: log,   correct: false}
+            - {value: set,   correct: true}
+            - {value: dump,  correct: true}
+            - {value: print, correct: true}
+    -
+        question: 'In Psr-3 what delimiter is used for placeholder names ?'
+        answers:
+            - {value: '( name )',   correct: false}
+            - {value: '[ name ]',   correct: false}
+            - {value: '{{ name }}', correct: false}
+            - {value: '{ name }',   correct: true}            
+    -
+        question: 'Which Psr is about autoloading ?'
+        answers:
+            - {value: Psr-0,   correct: true}
+            - {value: Psr-11,  correct: false}
+            - {value: Psr-4,   correct: true}
+            - {value: Psr-6,   correct: false}                
+    -
+        question: 'According to Psr-2, Whish code is correct ?'
+        answers:
+            - {value: '$foo->bar($arg1);',  correct: true}
+            - {value: '$Foo->bar($arg1);',  correct: false}
+            - {value: 'class Foo extends Bar implements FooInterface',   correct: true}
+            - {value: 'class foo extends Bar implements FooInterface',   correct: false}                           
+    -
+        question: 'According to Psr-1 methods have to be declared like ?'
+        answers:
+            - {value: 'myMethod();',   correct: true}
+            - {value: 'MyMethod();',   correct: false}
+            - {value: 'my_method();',  correct: false}
+            - {value: 'My_Method();',  correct: false}                
+    -
+        question: 'Which Psr is about caching ?'
+        answers:
+            - {value: 'Psr-0',   correct: false}
+            - {value: 'Psr-6',   correct: true}
+            - {value: 'Psr-16',  correct: true}
+            - {value: 'Psr-1',   correct: false}               
+            - {value: 'Psr-2',   correct: false}       
+    -
+        question: 'Which Psr is deprected now ?'
+        answers:
+            - {value: 'Psr-1 (Basic Coding Standard)', correct: false}
+            - {value: 'Psr-6 (Caching Interface)',     correct: false}
+            - {value: 'Psr-0 (Autoloading Standard)',  correct: true}
+            - {value: 'Psr-11 (Container Interface)',  correct: false}                                    
