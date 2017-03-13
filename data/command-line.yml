@@ -3,10 +3,10 @@ questions:
     -
         question: 'Which helper is not available in the Console component?'
         answers:
-            - {value: QuestionHelper, correct: true}
+            - {value: QuestionHelper, correct: false}
             - {value: TableHelper,    correct: false}
             - {value: FileHelper,     correct: true}
-            - {value: DialogHelper,   correct: false}
+            - {value: DialogHelper,   correct: true}
     -
         question: 'Which event is not available in the Console Component?'
         answers:
