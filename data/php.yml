@@ -21,7 +21,6 @@ questions:
             - {value: "use Myapp\\Utils\\Bar\\foo;",          correct: false}
             - {value: "use function Myapp\\Utils\\Bar\\foo;", correct: true}
             - {value: "use Utils\\Bar\\Foo;",                 correct: false}
-            - {value: "use Myapp\\Utils\\Bar\\foo;",          correct: false}
     -
         question: 'True or False? It is possible to import all classes from a namespace in PHP.'
         answers:
