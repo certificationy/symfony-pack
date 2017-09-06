@@ -43,3 +43,20 @@ questions:
         answers:
             - {value: "True",     correct: true}
             - {value: "False",    correct: false}
+    -
+        question: 'According to HTTP/1.1 what is the max value for Expires ?'
+        answers:
+            - {value: "one year", correct: true}
+            - {value: "one month", correct: false}
+            - {value: "one week", correct: false}
+            - {value: "There is not limit", correct: false}
+    -
+        question: 'True or False ? You can use both validation and expiration within the same Response.'
+        answers:
+            - {value: "True",     correct: true}
+            - {value: "False",    correct: false}
+    -
+        question: 'True or False ? Using ETag saves CPU cycles.'
+        answers:
+            - {value: "True",     correct: false}
+            - {value: "False",    correct: true}

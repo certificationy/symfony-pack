@@ -59,4 +59,72 @@ questions:
             - {value: 'Access is granted if there are more voters granting access than denying', correct: false}
             - {value: 'Access is granted if all voters grant acces', correct: false}
             - {value: 'Access is granted if no voters throw an exception', correct: false}
-
+    -
+        question: 'What does the strategy `consensus` of the access decision manager mean?'
+        answers:
+            - {value: 'Access is granted as soon as there is one voter granting access', correct: false}
+            - {value: 'Access is granted if there are more voters granting access than denying', correct: true}
+            - {value: 'Access is granted if all voters grant acces', correct: false}
+            - {value: 'Access is granted if no voters throw an exception', correct: false}
+    -
+        question: 'What does the strategy `unanimous` of the access decision manager mean?'
+        answers:
+            - {value: 'Access is granted as soon as there is one voter granting access', correct: false}
+            - {value: 'Access is granted if there are more voters granting access than denying', correct: false}
+            - {value: 'Access is granted if all voters grant acces', correct: true}
+            - {value: 'Access is granted if no voters throw an exception', correct: false}
+    -
+        question: 'What decision strategy exist ?'
+        answers:
+            - {value: 'affirmative', correct: true}
+            - {value: 'consensus', correct: true}
+            - {value: 'unanimous', correct: true}
+            - {value: 'positive', correct: false}
+            - {value: 'negative', correct: false}
+    -
+        question: 'How to Restrict Firewalls to a Specific Request Pattern ?'
+        answers:
+            - {value: 'pattern: ^/(myurl)/', correct: true}
+            - {value: 'route: ^/(myurl)/', correct: false}
+            - {value: 'url: ^/(myurl)/', correct: false}
+            - {value: 'path: ^/(myurl)/', correct: false}
+    -
+        question: 'Which annotation is valid to check role ?'
+        answers:
+            - {value: '@Security("has_role("ROLE_ADMIN")")', correct: true}
+            - {value: '@Security("is_granted("ROLE_ADMIN")")', correct: false}
+            - {value: '@Security("restrict_for("ROLE_ADMIN")")', correct: false}
+            - {value: '@Security("role("ROLE_ADMIN")")', correct: false}
+    -
+        question: 'Which default role exist ?'
+        answers:
+            - {value: 'IS_AUTHENTICATED_REMEMBERED', correct: true}
+            - {value: 'IS_AUTHENTICATED_FULLY', correct: true}
+            - {value: 'IS_AUTHENTICATED_ANONYMOUSLY', correct: true}
+            - {value: 'IS_NOT_AUTHENTICATED', correct: false}
+    -
+        question: 'How can you deny acces to user in your controller ?'
+        answers:
+            - {value: "$this->denyAccessUnlessGranted('ROLE_ADMIN')", correct: true}
+            - {value: '@Security("has_role("ROLE_ADMIN")")', correct: true}
+            - {value: "if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) { throw $this->createAccessDeniedException(); }", correct: true}
+            - {value: "$this->user->denyAccessUnlessGranted('ROLE_ADMIN')", correct: false}
+    -
+        question: 'For implements Symfony\Component\Security\Core\User\UserInterface which method you have to define ?'
+        answers:
+            - {value: "getRoles()", correct: true}
+            - {value: "getPassword()", correct: true}
+            - {value: "getSalt()", correct: true}
+            - {value: "getUsername()", correct: true}
+            - {value: "eraseCredentials()", correct: true}
+            - {value: "getCredentials()", correct: false}
+            - {value: "getHash()", correct: false}
+            - {value: "getId()", correct: false}
+    -
+        question: 'For implements Symfony\Component\Security\Core\User\UserProviderInterface which method you have to define ?'
+        answers:
+            - {value: "loadUserByUsername($username)", correct: true}
+            - {value: "loadUser($username)", correct: false}
+            - {value: "refreshUser(UserInterface $user)", correct: true}
+            - {value: "getUser($username)", correct: false}
+            - {value: "supportsClass($class)", correct: true}

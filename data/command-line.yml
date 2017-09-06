@@ -145,3 +145,25 @@ questions:
             - {value: 'ConsoleEvents::TERMINATE is dispatched even when an exception is thrown' ,   correct: true}
             - {value: 'initialize has InputInterface, OutputInterface parameters',                  correct: true}
             - {value: 'ConsoleEvents can be disabled',                                              correct: true}            
+    -
+        question: 'Which function are mandatory to your command class ?'
+        answers:
+            - {value: "configure()", correct: true}
+            - {value: "execute(InputInterface $input, OutputInterface $output)", correct: true}
+            - {value: "interact()", correct: false}
+            - {value: "initialize()", correct: false}
+    -
+        question: 'Which Question class are available ?'
+        answers:
+            - {value: "Symfony\\Component\\Console\\Question\\Question", correct: true}
+            - {value: "Symfony\\Component\\Console\\Question\\ChoiceQuestion", correct: true}
+            - {value: "Symfony\\Component\\Console\\Question\\ConfirmationQuestion", correct: true}
+            - {value: "Symfony\\Component\\Console\\Question\\SelectQuestion", correct: false}
+            - {value: "Symfony\\Component\\Console\\Question\\ValidQuestion", correct: false}
+    -
+        question: 'How to Call Other Commands in a command ?'
+        answers:
+            - {value: "$command->execute($input, $output);", correct: false}
+            - {value: "$command->run($input, $output);", correct: true}
+            - {value: "$command->call($input, $output);", correct: false}
+            - {value: "$command->forward($input, $output);", correct: false}

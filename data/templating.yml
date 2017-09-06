@@ -179,3 +179,17 @@ questions:
         answers:
             - {value: 'True',    correct: false}
             - {value: 'False',   correct: true}
+    -
+        question: 'Using Twig, what syntax used to print the content of a variable ?'
+        answers:
+            - {value: "{% %}",  correct: false}
+            - {value: "{{ }}",  correct: true}
+            - {value: "{# #}",  correct: false}
+            - {value: "{ }",    correct: false}
+    -
+        question: 'Using Twig, what syntax used to add comments ?'
+        answers:
+            - {value: "{% %}",  correct: false}
+            - {value: "{{ }}",  correct: false}
+            - {value: "{# #}",  correct: true}
+            - {value: "{ }",    correct: false}
