@@ -69,7 +69,7 @@ questions:
             - {value: "True",    correct: true}
             - {value: "False",   correct: false}
     -
-        question: 'According to Symfony best practices, which files files are mandatory in your bundle AcmeBlogBundle directory Structure ?'
+        question: 'According to Symfony best practices, which files files are mandatory in your bundle AcmeNameBundle directory Structure ?'
         answers:
             - {value: "AcmeNameBundle.php", correct: true}
             - {value: "README.md", correct: true}
