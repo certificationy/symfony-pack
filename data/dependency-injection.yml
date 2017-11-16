@@ -71,3 +71,32 @@ questions:
             - {value: "appDevProjectContainer.php",         correct: false}
             - {value: "appDevDebugProjectServiceContainer", correct: false}
             - {value: "appDevDebugContainer",               correct: false}
+    -
+        question: "True or false, parameters can also contain array values ?"
+        answers:
+            - {value: "true", correct: true}
+            - {value: "false", correct: false}
+    -
+        question: "What is the correct syntax to inject a service app.mailer ?"
+        answers:
+            - {value: "arguments: ['@app.mailer']", correct: true}
+            - {value: "arguments: ['%app.mailer%']", correct: false}
+            - {value: "arguments: ['app.mailer']", correct: false}
+    -
+        question: "What is the correct syntax to inject a parameter mailer.transport ?"
+        answers:
+            - {value: "arguments: ['@mailer.transport']", correct: false}
+            - {value: "arguments: ['%mailer.transport%']", correct: true}
+            - {value: "arguments: ['mailer.transport']", correct: false}
+    -
+        question: "How to define a service as private ?"
+        answers:
+            - {value: "type: private", correct: false}
+            - {value: "scope: private", correct: false}
+            - {value: "public: false", correct: true}
+            - {value: "private: true", correct: false}
+    -
+        question: "True or False, With defaut configuration each time you retrieve the service, you'll get the same instance ?"
+        answers:
+            - {value: "true", correct: true}
+            - {value: "false", correct: false}

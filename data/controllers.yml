@@ -57,3 +57,24 @@ questions:
             - {value: $request,      correct: true}
             - {value: $_locale,      correct: true}
             - {value: $_format,      correct: true}
+    -
+        question: |
+            According to this action :
+
+            /**
+             * @Route("/comment/{postSlug}/new", name = "comment_new")
+             *
+             */
+            public function newAction(Request $request, Post $post)
+            {
+                // ...
+            }
+
+
+            How my ParamConverter should be configured to match "postSlug" params with "slug" in Post ?
+        answers:
+            - {value: '@ParamConverter("post", options={"mapping": {"postSlug": "slug"}})', correct: true}
+            - {value: '@ParamConverter("post", options={"mapping": {"slug": "postSlug"}})', correct: false}
+            - {value: '@ParamConverter("post", options={"mapping": {"field": "slug"}})', correct: false}
+            - {value: '@ParamConverter("post", options={"mapping": {"Post": "slug"}})', correct: false}
+            - {value: 'It is not possible, params and fields must match', correct: false}

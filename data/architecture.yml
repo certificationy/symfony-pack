@@ -123,3 +123,36 @@ questions:
         answers:
             - {value: "True", correct: false}
             - {value: "False", correct: true}
+    -
+        question: 'Symfony is released under which license ?'
+        answers:
+            - {value: "GNU General Public License (GPL)", correct: false}
+            - {value: "ISC License", correct: false}
+            - {value: "BSD license", correct: false}
+            - {value: "MIT license", correct: true}
+    -
+        question: 'Which kernel event exist ?'
+        answers:
+            - {value: "kernel.request", correct: true}
+            - {value: "kernel.controller", correct: true}
+            - {value: "kernel.template", correct: false}
+            - {value: "kernel.view", correct: true}
+            - {value: "kernel.response", correct: true}
+            - {value: "kernel.answer", correct: false}
+            - {value: "kernel.finish_request", correct: true}
+            - {value: "kernel.start_request", correct: false}
+            - {value: "kernel.terminate", correct: true}
+            - {value: "kernel.start", correct: false}
+            - {value: "kernel.exception", correct: true}
+    -
+        question: 'Arguments are resolve before to Call Controller ?'
+        answers:
+            - {value: "yes", correct: true}
+            - {value: "no", correct: false}
+    -
+        question: 'How to you detect if an Event was stopped during runtime?'
+        answers:
+            - {value: "$event->isPropagationStopped()", correct: true}
+            - {value: "$event->isStopped()", correct: false}
+            - {value: "$event->isPropagationStop()", correct: false}
+            - {value: "$event->isStop()", correct: false}

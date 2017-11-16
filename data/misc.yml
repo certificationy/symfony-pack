@@ -48,3 +48,9 @@ questions:
             - {value: Symfony\Component\BrowserKit\CssSelector,   correct: false}
             - {value: Symfony\Component\DomCrawler\CssSelector,   correct: false}
             - {value: Symfony\Bundle\FrameworkBundle\CssSelector, correct: false}
+    -
+        question: 'Event Listeners is use to Regrouping multiple listeners inside a single class ?'
+        answers:
+            - {value: false,  correct: true}
+            - {value: true,   correct: false}
+

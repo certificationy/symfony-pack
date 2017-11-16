@@ -120,3 +120,70 @@ questions:
             - {value: "$builder->add('extra', null, ['mapped' => false])",    correct: true}
             - {value: "$builder->add('extra', 'hidden', ['mapped' => false])",  correct: true}
             - {value: "$builder->add('extra', null, ['validation' => false]", correct: false}
+    -
+        question: 'How do you render all the form fields in twig ?'
+        answers:
+            - {value: "form_widget(form)", correct: true}
+            - {value: "form_render(form)", correct: false}
+            - {value: "form_fields(form)", correct: false}
+            - {value: "render_form(form)", correct: false}
+            - {value: "form_row(form)", correct: false}
+    -
+        question: 'If you use form_widget() on a single fields, which parts are render ?'
+        answers:
+            - {value: "label", correct: false}
+            - {value: "input", correct: true}
+            - {value: "error", correct: false}
+            - {value: "label and input", correct: false}
+            - {value: "error, label and input", correct: false}
+    -
+        question: 'According to Symfony best practices, where you should add buttons ?'
+        answers:
+            - {value: "Template", correct: true}
+            - {value: "Form", correct: false}
+            - {value: "Controller", correct: false}
+    -
+        question: 'Which Field type exist?'
+        answers:
+            - {value: "HiddenType", correct: true}
+            - {value: "SearchType", correct: true}
+            - {value: "BirthdayType", correct: true}
+            - {value: "PasswordType", correct: true}
+            - {value: "SelectType",  correct: false}
+            - {value: "FloatType",  correct: false}
+            - {value: "BooleanType",  correct: false}
+    -
+        question: 'How to Disable the Validation of Submitted Data'
+        answers:
+            - {value: "set the validation_groups option to false", correct: true}
+            - {value: "set the validation_enable option to false", correct: false}
+            - {value: "set the enable_validation option to false", correct: false}
+            - {value: "$this->createFormBuilder()->isValidated(false)", correct: false}
+            - {value: "By using false as third parameter for createFormBuilder", correct: false}
+    -
+        question: 'What data is inside FormEvent object at FormEvents::POST_SET_DATA?'
+        answers:
+            - {value: "Model data",      correct: false}
+            - {value: "Normalized data", correct: true}
+            - {value: "Request data",    correct: false}
+            - {value: "View data",       correct: false}
+    -
+        question: 'Which form event dont exist?'
+        answers:
+            - {value: "FormEvents::PRE_SET_DATA", correct: false}
+            - {value: "FormEvents::SUBMIT", correct: false}
+            - {value: "FormEvents::POST_SUBMIT", correct: false}
+            - {value: "FormEvents::SET_DATA", correct: true}
+    -
+        question: 'How do you upload a UploadedFile ?'
+        answers:
+            - {value: "$file->move(string $directory, string $name = null)", correct: true}
+            - {value: "$file->upload(string $directory, string $name = null)", correct: false}
+            - {value: "$file->uploadFile(string $directory, string $name = null)", correct: false}
+            - {value: "$file->save(string $directory, string $name = null)",  correct: false}
+    -
+        question: 'How to Use Data Transformers ?'
+        answers:
+            - {value: "$builder->get('tags')->addModelTransformer());", correct: true}
+            - {value: "$builder->add($builder->create('tags', TextType::class)->addModelTransformer(...));", correct: true}
+            - {value: "$builder->add('tags', TextType::class)->addModelTransformer(...);", correct: false}

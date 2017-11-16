@@ -28,3 +28,9 @@ questions:
             - {value: "_route, _controller, _action",        correct: false}
             - {value: "_controller, _locale, _format",       correct: true}
             - {value: "_locale, _format and another one.",   correct: false}
+    -
+        question: 'How to generate absolute URL for a given route in controller ?'
+        answers:
+            - {value: "By using UrlGeneratorInterface::ABSOLUTE_URL as third parameter for generateUrl", correct: true}
+            - {value: "generateUrl generate absolute URL by default", correct: false}
+            - {value: "$this->generateAbsoluteUrl()", correct: false}

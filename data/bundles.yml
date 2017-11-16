@@ -68,3 +68,12 @@ questions:
         answers:
             - {value: "True",    correct: true}
             - {value: "False",   correct: false}
+    -
+        question: 'According to Symfony best practices, which files files are mandatory in your bundle AcmeNameBundle directory Structure ?'
+        answers:
+            - {value: "AcmeNameBundle.php", correct: true}
+            - {value: "README.md", correct: true}
+            - {value: "LICENSE", correct: true}
+            - {value: "Resources/doc/index.rst",   correct: true}
+            - {value: "Resources/config/routing.yml",   correct: false}
+            - {value: "Resources/config/services.yml",   correct: false}
