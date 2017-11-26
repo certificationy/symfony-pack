@@ -130,7 +130,7 @@ questions:
             - {value: OutputInterface::VERBOSITY_NORMAL,          correct: true}
             - {value: OutputInterface::VERBOSITY_VERBOSE,         correct: true}
             - {value: OutputInterface::VERBOSITY_VERY_VERBOSE,    correct: true}
-            - {value: OutputInterface::DEBUG,                     correct: false}
+            - {value: OutputInterface::DEBUG,                     correct: true}
     -
         question: 'Symfony Console: InputArgument::REQUIRED, InputArgument::OPTIONAL and ... ?'
         answers:
