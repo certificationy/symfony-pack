@@ -51,6 +51,6 @@ questions:
     -
         question: 'Event Listeners is use to Regrouping multiple listeners inside a single class ?'
         answers:
-            - {value: false,  correct: true}
-            - {value: true,   correct: false}
+            - {value: "False",  correct: true}
+            - {value: "True",   correct: false}
 
