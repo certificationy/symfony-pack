@@ -150,7 +150,7 @@ questions:
             - {value: "yes", correct: true}
             - {value: "no", correct: false}
     -
-        question: 'How to you detect if an Event was stopped during runtime?'
+        question: 'How do you detect if an Event was stopped during runtime?'
         answers:
             - {value: "$event->isPropagationStopped()", correct: true}
             - {value: "$event->isStopped()", correct: false}
