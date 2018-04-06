@@ -58,7 +58,7 @@ questions:
             - {value: $request->isAJAX();,                                             correct: false}
             - {value: "$this->headers->get('X-Requested-With') === 'XMLHttpRequest';", correct: true}
     -
-        question: 'Theses Response subclasses are available: true or false ?'
+        question: 'Theses Response subclasses are available?'
         answers:
             - {value: JsonResponse,       correct: true}
             - {value: StreamResponse,     correct: false}
