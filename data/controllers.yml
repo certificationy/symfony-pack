@@ -109,7 +109,7 @@ questions:
             - {value: "Yes",     correct: false}
             - {value: "No",    correct: true}
     -
-        question: "Is the class Symfony\Component\HttpFoundationesponseRedirect exist ?"
+        question: "Is the ResponseRedirect class exist ?"
         answers:
             - {value: "Yes", correct: false}
             - {value: "No", correct: true}
