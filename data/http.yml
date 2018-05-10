@@ -88,7 +88,7 @@ questions:
     -
         question: 'How can you set status code of Symfony\Component\HttpFoundation\Response'
         answers:
-            - {value: "By you pass the vaklue as second parameter of new Response()",    correct: true}
+            - {value: "By you pass the value as second parameter of new Response()",    correct: true}
             - {value: "By using setStatusCode()",   correct: true}
             - {value: "By using setCodeStatus()",   correct: false}
             - {value: "By using setHttpCode()",   correct: false}
