@@ -103,7 +103,7 @@ questions:
             - {value: 'IS_AUTHENTICATED_ANONYMOUSLY', correct: true}
             - {value: 'IS_NOT_AUTHENTICATED', correct: false}
     -
-        question: 'How can you deny acces to user in your controller ?'
+        question: 'How can you deny access to user in your controller ?'
         answers:
             - {value: "$this->denyAccessUnlessGranted('ROLE_ADMIN')", correct: true}
             - {value: '@Security("has_role("ROLE_ADMIN")")', correct: true}
