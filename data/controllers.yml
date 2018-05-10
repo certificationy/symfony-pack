@@ -78,3 +78,39 @@ questions:
             - {value: '@ParamConverter("post", options={"mapping": {"field": "slug"}})', correct: false}
             - {value: '@ParamConverter("post", options={"mapping": {"Post": "slug"}})', correct: false}
             - {value: 'It is not possible, params and fields must match', correct: false}
+    -
+        question: |
+            According to this action :
+
+            /**
+             * @Route("/article/{id}", name="article", requirements={"id":"\d+"})
+             */
+            public function showAction($id)
+            {
+                // ..
+            return $this->render('index.html.twig');
+            }
+
+            Does the code will throw an Exception ?
+
+        answers:
+            - {value: "Yes",     correct: false}
+            - {value: "No",    correct: true}
+    -
+        question: "According to documentation a controller is a PHP function you create that reads information from the Request object and creates and returns a __ ?"
+        answers:
+            - {value: "Response object", correct: true}
+            - {value: "A view object", correct: false}
+            - {value: "Twig object", correct: false}
+            - {value: "an object", correct: false}
+    -
+        question: "Does any Controller must extends the BaseController to work ?"
+        answers:
+            - {value: "Yes",     correct: false}
+            - {value: "No",    correct: true}
+    -
+        question: "Is the class Symfony\Component\HttpFoundation\ResponseRedirect exist ?"
+        answers:
+            - {value: "Yes", correct: false}
+            - {value: "No", correct: true}
+    -

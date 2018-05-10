@@ -167,3 +167,24 @@ questions:
             - {value: "$command->run($input, $output);", correct: true}
             - {value: "$command->call($input, $output);", correct: false}
             - {value: "$command->forward($input, $output);", correct: false}
+    -
+        question: 'Which class should you extends to create a Command ?'
+        answers:
+            - {value: 'Symfony\Component\Console\Command\Command', correct: true}
+            - {value: 'Symfony\Component\Console\Command\Console', correct: false}
+            - {value: 'Symfony\Component\Console\Console\Command', correct: false}
+            - {value: 'Symfony\Component\Command\Console\Command', correct: false}
+    -
+        question: 'What should be the suffix to create a Command ?'
+        answers:
+            - {value: 'None of above', correct: false}
+            - {value: 'Console', correct: false}
+            - {value: 'Command', correct: true}
+            - {value: 'Component', correct: false}
+    -
+        question: 'Can you access to the service container from a Command class'
+        answers:
+            - {value: 'Yes, extending Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand', correct: true}
+            - {value: 'Yes, extending Symfony\Bundle\FrameworkBundle\Console\ContainerAwareCommand', correct: false}
+            - {value: 'Yes, Symfony\Component\Console\Command\Command', correct: false}
+            - {value: 'No, There is a PR in progress', correct: false}

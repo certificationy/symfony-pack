@@ -60,3 +60,12 @@ questions:
         answers:
             - {value: "True",     correct: false}
             - {value: "False",    correct: true}
+    -
+        question: 'Which Cache-Control directives can be used by the server in an HTTP response ?'
+        answers:
+            - {value: "must-revalidate", correct: true}
+            - {value: "no-cache",  correct: true}
+            - {value: "store",  correct: false}
+            - {value: "transform", correct: false}
+            - {value: "public",  correct: true}
+

@@ -156,3 +156,8 @@ questions:
             - {value: "$event->isStopped()", correct: false}
             - {value: "$event->isPropagationStop()", correct: false}
             - {value: "$event->isStop()", correct: false}
+    -
+        question: 'Is kernel.terminate event dispatched after the response has been sent'
+        answers:
+             - {value: "yes", correct: true}
+             - {value: "no", correct: false}
