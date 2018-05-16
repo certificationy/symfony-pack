@@ -96,7 +96,7 @@ questions:
             - {value: "public: false", correct: true}
             - {value: "private: true", correct: false}
     -
-        question: "True or False, With defaut configuration each time you retrieve the service, you'll get the same instance ?"
+        question: "True or False, With default configuration each time you retrieve the service, you'll get the same instance ?"
         answers:
             - {value: "true", correct: true}
             - {value: "false", correct: false}
