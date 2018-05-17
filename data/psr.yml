@@ -29,7 +29,7 @@ questions:
             - {value: Psr-4,   correct: true}
             - {value: Psr-6,   correct: false}                
     -
-        question: 'According to Psr-2, Whish code is correct ?'
+        question: 'According to Psr-2, Which code is correct ?'
         answers:
             - {value: '$foo->bar($arg1);',  correct: true}
             - {value: '$Foo->bar($arg1);',  correct: false}
@@ -51,7 +51,7 @@ questions:
             - {value: 'Psr-1',   correct: false}               
             - {value: 'Psr-2',   correct: false}       
     -
-        question: 'Which Psr is deprected now ?'
+        question: 'Which Psr is deprecated now ?'
         answers:
             - {value: 'Psr-1 (Basic Coding Standard)', correct: false}
             - {value: 'Psr-6 (Caching Interface)',     correct: false}
