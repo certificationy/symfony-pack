@@ -184,6 +184,6 @@ questions:
     -
         question: 'How to Use Data Transformers ?'
         answers:
-            - {value: "$builder->get('tags')->addModelTransformer());", correct: true}
+            - {value: "$builder->get('tags')->addModelTransformer(...);", correct: true}
             - {value: "$builder->add($builder->create('tags', TextType::class)->addModelTransformer(...));", correct: true}
             - {value: "$builder->add('tags', TextType::class)->addModelTransformer(...);", correct: false}
