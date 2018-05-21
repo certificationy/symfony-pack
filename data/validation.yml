@@ -20,7 +20,7 @@ questions:
             - {value: "True",    correct: true}
             - {value: "False",   correct: false}
     -
-        question: 'True or False ? We can also apply constraints on class getters with ``addPropertyConstrait()``'
+        question: 'True or False ? We can also apply constraints on class getters with ``addPropertyConstraint()``'
         answers:
             - {value: "True",    correct: false}
             - {value: "False",   correct: true}
