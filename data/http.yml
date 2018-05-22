@@ -52,7 +52,7 @@ questions:
             - {value: "$request->headers->get('Content-Type');", correct: true}
             - {value: "$request->getContentType();",             correct: true}
     -
-        question: 'How to check if a request have been sent using AJAX ?'
+        question: 'How to check if a request has been sent using AJAX ?'
         answers:
             - {value: $request->isXmlHttpRequest();,                                   correct: true}
             - {value: $request->isAJAX();,                                             correct: false}
