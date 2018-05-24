@@ -10,8 +10,8 @@ questions:
     -
         question: 'Using Validator component, which method is used to validate a value against a constraint?'
         answers:
-            - {value: "$validator->validate($object, $constraint)",      correct: false}
-            - {value: "$validator->validateValue($object, $constraint)", correct: true}
+            - {value: "$validator->validate($object, $constraint)",      correct: true}
+            - {value: "$validator->validateValue($object, $constraint)", correct: false}
             - {value: "$validator->isValid($object, $constraint)",       correct: false}
             - {value: "$validator->validation($object, $constraint)",    correct: false}
     -
