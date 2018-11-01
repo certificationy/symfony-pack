@@ -98,3 +98,12 @@ questions:
             - {value: "error404.html.twig",    correct: true}
             - {value: "404.html.twig",   correct: false}
             - {value: "twig.404.html.twig",   correct: false}
+    -
+        question: 'Which of the following HTTP headers can be used by the server to the client about cookies ?'
+        answers:
+            - {value: 'Cookie', correct: false}
+            - {value: 'Set-Cookie', correct: true}
+            - {value: 'Delete-Cookie', correct: false}
+        help: |
+            https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
+            https://developer.mozilla.org/fr/docs/Web/HTTP/Cookies
