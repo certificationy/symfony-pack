@@ -107,3 +107,23 @@ questions:
         help: |
             https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
             https://developer.mozilla.org/fr/docs/Web/HTTP/Cookies
+    -
+        question: 'Which of the following HTTP headers can be used by the server to the client about content negocitation ?'
+        answers:
+            - {value: 'Accept-Charset', correct: false}
+            - {value: 'Content-Encoding', correct: true}
+            - {value: 'Content-Language', correct: true}
+            - {value: 'Accept', correct: false}
+            - {value: 'Content-Type', correct: true}
+        help: |
+            https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation
+    -
+        question: 'Which of the following HTTP headers can be used by the client to the server about content negocitation ?'
+        answers:
+            - {value: 'Accept-Charset', correct: true}
+            - {value: 'Content-Encoding', correct: false}
+            - {value: 'Content-Language', correct: false}
+            - {value: 'Accept', correct: true}
+            - {value: 'Content-Type', correct: false}
+        help: |
+            https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation
