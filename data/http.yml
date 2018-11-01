@@ -72,6 +72,15 @@ questions:
             - {value: 201, correct: false}
             - {value: 204, correct: false}
     -
+        question: 'Which HTTP status code should for a resource that moved permanently ?'
+        answers:
+            - {value: 301, correct: true}
+            - {value: 302, correct: false}
+            - {value: 201, correct: false}
+            - {value: 204, correct: false}
+        help: |
+            https://tools.ietf.org/html/rfc2616#section-10.3.2
+    -
         question: 'True or False ? Server returns an 403 HTTP status code when you are not allowed to access a resource'
         answers:
             - {value: "True",    correct: true}
@@ -141,6 +150,20 @@ questions:
         help: |
             https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
             https://tools.ietf.org/html/rfc7231#section-4.2.1
+    -
+        question: 'Which of the following HTTP methods are idempotent ?'
+        answers:
+            - {value: 'HEAD', correct: true}
+            - {value: 'POST', correct: false}
+            - {value: 'GET', correct: true}
+            - {value: 'PUT', correct: true}
+            - {value: 'DELETE', correct: true}
+            - {value: 'OPTIONS', correct: true}
+            - {value: 'PATCH', correct: false}
+            - {value: 'TRACE', correct: true}
+        help: |
+            https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
+            https://tools.ietf.org/html/rfc7231#section-4.2.2
     -
         question: 'Which of the following HTTP methods are idempotent ?'
         answers:
