@@ -95,7 +95,7 @@ questions:
             - {value: "True",    correct: false}
             - {value: "False",   correct: true}
     -
-        question: 'True or False ? An object is always use by reference ?'
+        question: 'True or False ? An object is always used by reference ?'
         answers:
             - {value: "True",    correct: true}
             - {value: "False",   correct: false}
