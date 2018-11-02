@@ -94,3 +94,51 @@ questions:
         answers:
             - {value: "True",    correct: false}
             - {value: "False",   correct: true}
+    -
+        question: 'True or False ? An object is always use by reference ?'
+        answers:
+            - {value: "True",    correct: true}
+            - {value: "False",   correct: false}
+        help: |
+            http://php.net/manual/en/oop5.intro.php
+    -
+        question: '
+        $instance = new SimpleClass();
+        $assigned   =  $instance;
+        $instance = null;
+        var_dump($assigned);
+        True or false ? The code above display "null" ?'
+        answers:
+            - {value: "True",    correct: false}
+            - {value: "False",   correct: true}
+        help: |
+            http://php.net/manual/en/language.oop5.basic.php#example-173
+    -
+        question: 'In a class, "public $var4 = self::myStaticMethod();" is a valid property decalration ?'
+        answers:
+            - {value: "True",    correct: false}
+            - {value: "False",   correct: true}
+        help: |
+            http://php.net/manual/en/language.oop5.properties.php#example-180
+    -
+        question: 'True or False ? It's possible to declare constant in an interface ?'
+        answers:
+            - {value: "True",    correct: true}
+            - {value: "False",   correct: false}
+        help: |
+            http://php.net/manual/en/language.oop5.interfaces.php#language.oop5.interfaces.constants
+    -
+        question: 'True or False ? Declaring class properties or methods as static makes them accessible without needing an instantiation of the class ?'
+        answers:
+            - {value: "True",    correct: true}
+            - {value: "False",   correct: false}
+        help: |
+            http://php.net/manual/en/language.oop5.static.php
+    -
+        question: 'Wich keyword permit tu use the late static binding ?'
+        answers:
+            - {value: "self",    correct: false}
+            - {value: "static",   correct: true}
+            - {value: "parent",   correct: false}
+        help: |
+            http://php.net/manual/en/language.oop5.late-static-bindings.php
