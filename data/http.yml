@@ -65,12 +65,21 @@ questions:
             - {value: BinaryFileResponse, correct: true}
             - {value: XmlResponse,        correct: false}
     -
-        question: 'Which HTTP status code should for a resource that moved temporarily ?'
+        question: 'Which HTTP status code should be used for a resource that moved temporarily ?'
         answers:
             - {value: 301, correct: false}
             - {value: 302, correct: true}
             - {value: 201, correct: false}
             - {value: 204, correct: false}
+    -
+        question: 'Which HTTP status code should be used for a resource that moved permanently ?'
+        answers:
+            - {value: 301, correct: true}
+            - {value: 302, correct: false}
+            - {value: 201, correct: false}
+            - {value: 204, correct: false}
+        help: |
+            https://tools.ietf.org/html/rfc2616#section-10.3.2
     -
         question: 'True or False ? Server returns an 403 HTTP status code when you are not allowed to access a resource'
         answers:
@@ -98,3 +107,60 @@ questions:
             - {value: "error404.html.twig",    correct: true}
             - {value: "404.html.twig",   correct: false}
             - {value: "twig.404.html.twig",   correct: false}
+    -
+        question: 'Which of the following HTTP headers can be used by the server to the client to exchange informations about cookies ?'
+        answers:
+            - {value: 'Cookie', correct: false}
+            - {value: 'Set-Cookie', correct: true}
+            - {value: 'Delete-Cookie', correct: false}
+        help: |
+            https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
+            https://developer.mozilla.org/fr/docs/Web/HTTP/Cookies
+    -
+        question: 'Which of the following HTTP headers can be used by the server to the client to exchange informations about content negotiation ?'
+        answers:
+            - {value: 'Accept-Charset', correct: false}
+            - {value: 'Content-Encoding', correct: true}
+            - {value: 'Content-Language', correct: true}
+            - {value: 'Accept', correct: false}
+            - {value: 'Content-Type', correct: true}
+        help: |
+            https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation
+    -
+        question: 'Which of the following HTTP headers can be used by the client to the server to exchange informations about about content negotiation ?'
+        answers:
+            - {value: 'Accept-Charset', correct: true}
+            - {value: 'Content-Encoding', correct: false}
+            - {value: 'Content-Language', correct: false}
+            - {value: 'Accept', correct: true}
+            - {value: 'Content-Type', correct: false}
+        help: |
+            https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation
+    -
+        question: 'Which of the following HTTP methods are safe ?'
+        answers:
+            - {value: 'HEAD', correct: true}
+            - {value: 'POST', correct: false}
+            - {value: 'GET', correct: true}
+            - {value: 'PUT', correct: false}
+            - {value: 'DELETE', correct: false}
+            - {value: 'TRACE', correct: true}
+            - {value: 'OPTIONS', correct: true}
+            - {value: 'PATCH', correct: false}
+        help: |
+            https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
+            https://tools.ietf.org/html/rfc7231#section-4.2.1
+    -
+        question: 'Which of the following HTTP methods are idempotent ?'
+        answers:
+            - {value: 'HEAD', correct: true}
+            - {value: 'POST', correct: false}
+            - {value: 'GET', correct: true}
+            - {value: 'PUT', correct: true}
+            - {value: 'DELETE', correct: true}
+            - {value: 'OPTIONS', correct: true}
+            - {value: 'PATCH', correct: false}
+            - {value: 'TRACE', correct: true}
+        help: |
+            https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
+            https://tools.ietf.org/html/rfc7231#section-4.2.2
