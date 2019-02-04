@@ -135,7 +135,7 @@ questions:
         question: 'In Twig this statement is valid:'
         answers:
             - {value: 'first and last functions work in the same way as the random filter', correct: false}
-            - {value: 'first and last functions are great to extract the first and the last element of an array', correct: false}
+            - {value: 'first and last functions are great to extract the first and the last element of an array', correct: true}
             - {value: 'random filter when used without arguments is like mt_rand', correct: false}
             - {value: 'random function when passed a string splits the string and outputs a single character', correct: true}
             - {value: 'when random function receives a number it treats it as the top value of the random series it outputs', correct: true}
