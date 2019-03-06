@@ -30,12 +30,13 @@ The official SensioLabs Symfony Certification contains 75 randomly chosen questi
 * Automated testing
 * Miscellaneous (error handling, code debugging)
 
-from [Official Symfony certification](https://sensiolabs.com/en/symfony/certification.html).
+from [Official Symfony certification](https://certification.symfony.com/).
 
-You can add questions to each category. There is three types of questions according to [pearson website](http://www.pearsonvue.com/sensiolabs/):
-* True/false questions,
-* Single answer questions,
-* Multiple answers questions.
+You can add questions to each category. There are three types of questions:
+
+* True/false questions
+* Single answer questions
+* Multiple answers questions
 
 *There are no open questions or any lines of code to write.*
 
