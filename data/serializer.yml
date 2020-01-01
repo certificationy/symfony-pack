@@ -1,0 +1,175 @@
+category: Serializer
+questions:
+    -
+        question: 'Serialization is an object to text transformation using the following steps'
+        answers:
+            - {value: "normalization and encoding", correct: true}
+            - {value: "decoding and denormalization", correct: false}
+            - {value: "encoding and normalization", correct: false}
+            - {value: "denormalization and decoding", correct: false}
+    -
+        question: 'What is the signature of the method deserialize from the Serializer service?'
+        answers:
+            - {value: "$data, $format, array $context = array()", correct: false}
+            - {value: "$data, $type, $format, array $context = array()", correct: true}
+            - {value: "$data, $format, $type, array $context = array()", correct: false}
+            - {value: "$data, array $context = array()", correct: false}
+    -
+        question: 'What is the signature of the method denormalize from the DenormalizerInterface?'
+        answers:
+            - {value: "$data, $format, array $context = array()", correct: false}
+            - {value: "$data, $class, $format = null, array $context = array()", correct: true}
+            - {value: "$data, $format = null, $class, array $context = array()", correct: false}
+            - {value: "$data, array $context = array()", correct: false}
+    -
+        question: 'Which package is required to use the ObjectNormalizer?'
+        answers:
+            - {value: "symfony/property-access", correct: true}
+            - {value: "symfony/property-info", correct: false}
+            - {value: "symfony/serializer-pack", correct: false}
+            - {value: "symfony/serializer", correct: true}
+    -
+        question: 'The ObjectNormalizer uses metadata to perform normalization/denormalization operations. Which chain of dependency those metadata are produced from when using AnnotationMetadata?'
+        answers:
+            - {value: "Normalizer requires ClassMetadataFactory requires Loader requires Reader", correct: true}
+            - {value: "Normalizer requires ClassMetadataFactory requires Reader", correct: false}
+            - {value: "Normalizer requires ClassMetadataFactory requires Loader", correct: false}
+            - {value: "Normalizer requires ClassMetadataFactory requires Reader requires Loader", correct: false}
+    -
+        question: 'Which of those services is not part of symfony/serializer component?'
+        answers:
+            - {value: "DenormalizerAwareInterface", correct: false}
+            - {value: "DenormalizerAwareTrait", correct: false}
+            - {value: "DenormalizerInterface", correct: false}
+            - {value: "AbstractDenormalizer", correct: true}
+    -
+        question: 'Which of those normalizers are injected in the SerializerInterface with symfony/serializer-pack component basic configuration?'
+        answers:
+            - {value: "GetSetMethodNormalizer", correct: false}
+            - {value: "JsonSerializableNormalizer", correct: true}
+            - {value: "DataUriNormalizer", correct: true}
+            - {value: "DateTimeZoneNormalizer", correct: true}
+    -
+        question: 'What is the signature of the method supportsEncoding from the ChainEncoder service?'
+        answers:
+            - {value: "$data, $format, array $context = array()", correct: false}
+            - {value: "$format, array $context = array()", correct: true}
+            - {value: "$data, $format", correct: false}
+            - {value: "$format", correct: false}
+    -
+        question: 'During a deserialization process of a string containing additional data compared to destination object, which of the following statements is true?'
+        answers:
+            - {value: "By default, those data will be ignored", correct: true}
+            - {value: "By default, an exception will be thrown", correct: false}
+            - {value: "An exception is thrown if AbstractNormalizer::ALLOW_EXTRA_ATTRIBUTES context value is set to false", correct: true}
+            - {value: "None of the above", correct: false}
+    -
+        question: 'When passing an existing object via the AbstractNormalizer::OBJECT_TO_POPULATE context value, what is the resulting deserialized object?'
+        answers:
+            - {value: "Passed object with updated attributes", correct: true}
+            - {value: "Passed object with updated attributes of child objects", correct: false}
+            - {value: "Passed object with updated attributes of child objects within arrays", correct: false}
+            - {value: "Passed object with re-created child objects", correct: true}
+            - {value: "None of the above", correct: false}
+    -
+        question: 'When passing an existing object via the AbstractNormalizer::OBJECT_TO_POPULATE context value and setting AbstractObjectNormalizer::DEEP_OBJECT_TO_POPULATE to true, what is the resulting deserialized object?'
+        answers:
+            - {value: "Passed object with updated attributes", correct: true}
+            - {value: "Passed object with updated attributes of child objects", correct: true}
+            - {value: "Passed object with updated attributes of child objects within arrays", correct: false}
+            - {value: "Passed object with re-created child objects", correct: false}
+            - {value: "None of the above", correct: false}
+    -
+        question: 'Adding a prefix to serialized attributes of an object can be done using'
+        answers:
+            - {value: "NameConverterInterface", correct: true}
+            - {value: "AdvancedNameConverterInterface", correct: true}
+            - {value: "ContextAwareNameConverterInterface", correct: false}
+            - {value: "MetadataAwareNameConverterInterface", correct: false}
+    -
+        question: 'When normalizing, an additional AbstractNormalizer::CALLBACKS argument can be specified in the context array. The value of this argument is a hashmap of fieldName => callable where callable signature is'
+        answers:
+            - {value: "mixed $attributeValue, object $object, string $attributeName, string $format, array $context", correct: true}
+            - {value: "mixed $attributeValue, string $class, string $attributeName, string $format, array $context", correct: false}
+            - {value: "mixed $attributeValue, string $attributeName, string $format, array $context", correct: false}
+            - {value: "mixed $attributeValue, object $object, string $attributeName, array $context", correct: false}
+    -
+        question: 'In order to hydrate object attributes as part of denormalization operation, which of the following methods is used by the ObjectNormalizer?'
+        answers:
+            - {value: "Direct attribution of object private and protected properties", correct: false}
+            - {value: "Direct attribution of object public properties", correct: true}
+            - {value: "Using setters", correct: true}
+            - {value: "Using the object constructor", correct: true}
+            - {value: "Using adders and removers", correct: true}
+    -
+        question: 'In order to hydrate object attributes as part of denormalization operation, which of the following methods is used by the PropertyNormalizer?'
+        answers:
+            - {value: "Direct attribution of object public, private and protected properties", correct: true}
+            - {value: "Using setters", correct: false}
+            - {value: "Using the object constructor", correct: true}
+            - {value: "Using adders and removers", correct: false}
+    -
+        question: 'In order to hydrate object attributes as part of denormalization operation, which of the following methods is used by the GetSetMethodNormalizer?'
+        answers:
+            - {value: "Direct attribution of object public, private and protected properties", correct: false}
+            - {value: "Using setters", correct: true}
+            - {value: "Using the object constructor", correct: true}
+            - {value: "Using adders and removers", correct: false}
+    -
+        question: 'What is the purpose of the DataUriNormalizer?'
+        answers:
+            - {value: "This normalizer converts SplFileInfo objects into a data URI string such that files can be embedded into serialized data", correct: true}
+            - {value: "This normalizer converts File objects into a data URI string such that files can be embedded into serialized data", correct: false}
+            - {value: "This normalizer converts XML and YAML files into a data URI string such that files can be embedded into serialized data", correct: false}
+            - {value: "None of the above", correct: false}
+    -
+        question: 'Which of the following services are normalizers?'
+        answers:
+            - {value: "DateTimeNormalizer", correct: true}
+            - {value: "ConstraintViolationListNormalizer", correct: true}
+            - {value: "DateIntervalNormalizer", correct: true}
+            - {value: "JsonSerializableNormalizer", correct: true}
+    -
+        question: 'Which of the following services are encoders?'
+        answers:
+            - {value: "JsonEncoder", correct: true}
+            - {value: "XmlEncoder", correct: true}
+            - {value: "CsvEncoder", correct: true}
+            - {value: "YamlEncoder", correct: true}
+    -
+        question: |
+            Considering the following object, which context array can be used as final argument of serialize method to obtain the following result: ["foo" => "true"]?
+            $dummy = new class {
+                /** @groups("group") @serializedName("bar") **/
+                public $foo;
+                /** @serializedName("foo") **/
+                public $bar = true;
+            };
+        answers:
+            - {value: "[AbstractObjectNormalizer::SKIP_NULL_VALUES => true]", correct: true}
+            - {value: "[AbstractObjectNormalizer::GROUPS => ['group']]", correct: false}
+            - {value: "[AbstractObjectNormalizer::IGNORED_ATTRIBUTES => ['foo']]", correct: true}
+            - {value: "[AbstractNormalizer::ATTRIBUTES => ['bar']]", correct: true}
+
+    -
+        question: |
+            Considering this class :
+            class Person {
+                public string name;
+                public int age;
+                public bool sportsman;
+            }
+            What should you do in order to denormalize the following data ?
+            $data = [{"name":"foo","age":99,"sportsman":false},{"name":"bar","age":33,"sportsman":true}]
+        answers:
+            - {value: "Appending [] to the type parameter of the deserialize() method", correct: true}
+            - {value: "Configure the serializer to add the ArrayDenormalizer in the sets of normalizers", correct: true}
+            - {value: "Configure the serializer to add the ArrayNormalizer in the sets of normalizers", correct: false}
+            - {value: "None of the above", correct: false}
+
+    -
+        question: "ObjectNormalizer, GetSetNormalizer and PropertyNormalizer can all denormalize data using destination class constructor. How are constructor arguments populated ?"
+        answers:
+            - {value: "Searching for an existing key in received data matching converted constructor variadic parameter name. I.e. {\"foo\": [\"bar\", \"bar2\"]} will populate ...$foo constructor parameter.", correct: true}
+            - {value: "Searching for an existing key in received data matching converted constructor parameter name. I.e. {\"foo\": \"bar\"} will populate $foo constructor parameter.", correct: true}
+            - {value: "Using AbstractNormalizer::DEFAULT_CONSTRUCTOR_ARGUMENTS context key.", correct: true}
