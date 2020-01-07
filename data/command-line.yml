@@ -58,7 +58,7 @@ questions:
             - {value: php bin/console cache:clean,      correct: false}
             - {value: php bin/console cache:invalidate, correct: false}
     -
-        question: 'Which tag name you should use when you register command as service?'
+        question: 'Which tag name you should use when you manually register a command as a service?'
         answers:
             - {value: command.console,      correct: false}
             - {value: console.command,      correct: true}
