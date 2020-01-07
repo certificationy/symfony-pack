@@ -65,6 +65,11 @@ questions:
             - {value: console,              correct: false}
             - {value: command,              correct: false}
     -
+        question: 'New commands are registered as services by default'
+        answers:
+            - {value: 'Yes', correct: true}
+            - {value: 'No',  correct: false}
+    -
         question: 'What is the command line to list all known entities by doctrine 2 in your project ?'
         answers:
             - {value: 'php bin/console doctrine:mapping:info',         correct: true}
@@ -161,3 +166,55 @@ questions:
             - {value: "$command->run($input, $output);", correct: true}
             - {value: "$command->call($input, $output);", correct: false}
             - {value: "$command->forward($input, $output);", correct: false}
+    -
+        question: 'How to find a command in a command?'
+        answers:
+            - {value: "$this->getApplication()->find('my:command:name')", correct: true}
+            - {value: "$this->getApplication()->get('my:command:name')", correct: true}
+            - {value: "$this->getApplication()->findByName('my:command:name')", correct: false}
+            - {value: "$this->getApplication()->getCommand('my:command:name')", correct: false}
+    -
+        question: 'What is the signature of the method addOption from the Command class?'
+        answers:
+            - {value: "addOption($name, $mode = null, $description = '', $default = null)", correct: false}
+            - {value: "addOption($name, $shortcut = null, $mode = null, $description = '', $default = null)", correct: true}
+            - {value: "addOption($name, $default = null, $mode = null, $description = '', $shortcut = null)", correct: false}
+            - {value: "addOption($name, $mode = null, $description = '', $default = null, $shortcut = null)", correct: false}
+    -
+        question: 'What is a valid way to configure your command so that the "names" argument is a list of names with at least one entry?'
+        answers:
+            - {value: "addArgument('names', [InputArgument::IS_ARRAY, InputArgument::REQUIRED], 'List of names')", correct: false}
+            - {value: "addArgument('names', 'List of names', ['mode' => [InputArgument::IS_ARRAY, InputArgument::REQUIRED]])", correct: false}
+            - {value: "addArgument('names', InputArgument::IS_ARRAY | InputArgument::REQUIRED, 'List of names');", correct: true}
+            - {value: "You cannot do this from the configure method and need to check this in the execute one", correct: false}
+    -
+        question: 'Which class or classes can be used to test a command?'
+        answers:
+            - {value: "CommandTester", correct: true}
+            - {value: "CommandTestCase", correct: false}
+            - {value: "ApplicationTester", correct: true}
+            - {value: "ConsoleTestCase", correct: false}
+    -
+        question: 'Which tags can be used to style a command output?'
+        answers:
+            - {value: "info", correct: true}
+            - {value: "question", correct: true}
+            - {value: "error", correct: true}
+            - {value: "text", correct: false}
+    -
+        question: 'Is it possible to use a service in the configure method of a command?'
+        answers:
+            - {value: "Yes", correct: true}
+            - {value: "No", correct: false}
+    -
+        question: 'Is it possible to hide a command from the commands list?'
+        answers:
+            - {value: "Yes", correct: true}
+            - {value: "No", correct: false}
+    -
+        question: 'Which command allows to print the help of a given command'
+        answers:
+            - {value: "bin/console about my:command:name", correct: false}
+            - {value: "bin/console help my:command:name", correct: true}
+            - {value: "bin/console debug:command my:command:name", correct: false}
+            - {value: "There is no such command", correct: false}
