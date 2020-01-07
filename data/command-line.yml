@@ -15,12 +15,6 @@ questions:
             - {value: ConsoleEvents::EXCEPTION, correct: false}
             - {value: ConsoleEvents::LAUNCH,    correct: true}
     -
-        question: 'How to launch Console application in interactive mode?'
-        answers:
-            - {value: php bin/console -s,            correct: true}
-            - {value: php bin/console --interactive, correct: false}
-            - {value: no one,                        correct: false}
-    -
         question: 'Using Console component, which of these events are available in Symfony\Component\Console\ConsoleEvents?'
         answers:
             - {value: ConsoleEvents::COMMAND,   correct: true}
