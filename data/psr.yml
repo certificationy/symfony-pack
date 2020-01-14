@@ -56,4 +56,12 @@ questions:
             - {value: 'Psr-1 (Basic Coding Standard)', correct: false}
             - {value: 'Psr-6 (Caching Interface)',     correct: false}
             - {value: 'Psr-0 (Autoloading Standard)',  correct: true}
-            - {value: 'Psr-11 (Container Interface)',  correct: false}                                    
+            - {value: 'Psr-11 (Container Interface)',  correct: false}
+    -
+        question: 'According to the PHP Framework Interoperability Group, which PSRs concern best coding practices ?'
+        answers:
+            - {value: "PSR-0", correct: false}
+            - {value: "PSR-1", correct: true}
+            - {value: "PSR-2", correct: true}
+            - {value: "PSR-3", correct: false}
+            - {value: "PSR-4", correct: false}
