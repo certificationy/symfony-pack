@@ -95,12 +95,12 @@ questions:
         help: |
             http://php.net/manual/en/oop5.intro.php
     -
-        question: '
-        $instance = new SimpleClass();
-        $assigned   =  $instance;
-        $instance = null;
-        var_dump($assigned);
-        True or false ? The code above display "null" ?'
+        question: |
+            $instance = new SimpleClass();
+            $assigned = $instance;
+            $instance = null;
+            var_dump($assigned);
+            True or false ? The code above display "null" ?'
         answers:
             - {value: "True",    correct: false}
             - {value: "False",   correct: true}
@@ -136,32 +136,35 @@ questions:
         help: |
             http://php.net/manual/en/language.oop5.late-static-bindings.php
     -
-        question: '
-        What will the following code display?
-        <?php
-        $a = 2;
-        echo (
-            $a == 1 ? "one":
-            $a == 2 ? "two":
-            $a == 3 ? "three":
-            $a == 4 ? "four": "other");
-        echo "\n";'
+        question: |
+            What will the following code display?
+            <?php
+            $a = 2;
+            echo (
+                $a == 1 ? "one":
+                $a == 2 ? "two":
+                $a == 3 ? "three":
+                $a == 4 ? "four": "other");
+            echo "\n";
         answers:
             - {value: "one",   correct: false}
             - {value: "two",   correct: false}
             - {value: "three", correct: false}
             - {value: "four",  correct: true}
             - {value: "other", correct: false}
-        help: https://stackoverflow.com/questions/20559150/ternary-operator-left-associativity
+        help: |
+            https://stackoverflow.com/questions/20559150/ternary-operator-left-associativity
     -
-        question: '"&&" and "and" operators are exactly the same'
+        question: 'True or False? "&&" and "and" operators are exactly the same'
         answers:
-            - {value: "true", correct: false}
-            - {value: "two",  correct: true}
-        help: https://www.php.net/manual/en/language.operators.logical.php
+            - {value: "True", correct: false}
+            - {value: "False",  correct: true}
+        help: |
+            https://www.php.net/manual/en/language.operators.logical.php
     -
         question: 'Is it possible to import several classes from the same namespace with the following syntax: use some\namespace\{ClassA, ClassB, ClassC as C};'
         answers:
             - {value: "yes", correct: true}
             - {value: "no",  correct: false}
-        help: https://www.php.net/manual/en/language.namespaces.importing.php
+        help: |
+            https://www.php.net/manual/en/language.namespaces.importing.php
