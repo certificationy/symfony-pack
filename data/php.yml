@@ -135,3 +135,33 @@ questions:
             - {value: "parent",   correct: false}
         help: |
             http://php.net/manual/en/language.oop5.late-static-bindings.php
+    -
+        question: '
+        What will the following code display?
+        <?php
+        $a = 2;
+        echo (
+            $a == 1 ? "one":
+            $a == 2 ? "two":
+            $a == 3 ? "three":
+            $a == 4 ? "four": "other");
+        echo "\n";'
+        answers:
+            - {value: "one",   correct: false}
+            - {value: "two",   correct: false}
+            - {value: "three", correct: false}
+            - {value: "four",  correct: true}
+            - {value: "other", correct: false}
+        help: https://stackoverflow.com/questions/20559150/ternary-operator-left-associativity
+    -
+        question: '"&&" and "and" operators are exactly the same'
+        answers:
+            - {value: "true", correct: false}
+            - {value: "two",  correct: true}
+        help: https://www.php.net/manual/en/language.operators.logical.php
+    -
+        question: 'Is it possible to import several classes from the same namespace with the following syntax: use some\namespace\{ClassA, ClassB, ClassC as C};'
+        answers:
+            - {value: "yes", correct: true}
+            - {value: "no",  correct: false}
+        help: https://www.php.net/manual/en/language.namespaces.importing.php
