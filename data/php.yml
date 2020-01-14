@@ -105,7 +105,7 @@ questions:
             - {value: "True",    correct: false}
             - {value: "False",   correct: true}
         help: |
-            http://php.net/manual/en/language.oop5.basic.php#example-173
+            http://php.net/manual/en/language.oop5.basic.php#example-175
     -
         question: 'In a class, "public $var4 = self::myStaticMethod();" is a valid property declaration ?'
         answers:
