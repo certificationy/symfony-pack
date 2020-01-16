@@ -235,3 +235,41 @@ questions:
             - {value: "False",  correct: false}
         help: |
             https://www.php.net/manual/en/language.oop5.visibility.php#language.oop5.visibility-other-objects
+    -
+        question: 'Interfaces can declare:'
+        answers:
+            - {value: "contructors", correct: true}
+            - {value: "public methods",  correct: true}
+            - {value: "protected methods",  correct: false}
+            - {value: "private methods",  correct: false}
+        help: |
+            https://www.php.net/manual/en/language.oop5.interfaces.php
+    -
+        question: 'It is possible to use two traits inserting a method with the same name:'
+        answers:
+            - {value: "By using the `insteadof` keyword", correct: true}
+            - {value: "Never (it throws a Fatal Error)",  correct: false}
+            - {value: "And the last used Trait has precedence over the first one",  correct: false}
+            - {value: "By using the `as` keyword",  correct: false}
+        help: |
+            https://www.php.net/manual/en/language.oop5.traits.php
+    -
+        question: 'Which of the following are true?'
+        answers:
+            - {value: "Traits support the use of abstract methods", correct: true}
+            - {value: "Traits can use other traits",  correct: true}
+            - {value: "A Trait's method visibility can be changed when used in another class",  correct: true}
+            - {value: "Traits can define both static members and static methods",  correct: true}
+            - {value: "Traits can define properties",  correct: true}
+        help: |
+            https://www.php.net/manual/en/language.oop5.traits.php
+    -
+        question: 'Which of the following are true?'
+        answers:
+            - {value: "By default, when iterating through objects, only visible properties will be used", correct: true}
+            - {value: "By default, objects cannot be iterated through",  correct: false}
+            - {value: "The Iterator interface may be implemented to specify iteration behaviour",  correct: true}
+            - {value: "The Iterator abstract class may be extended to specify iteration behaviour",  correct: false}
+            - {value: "The Iterator Trait class may be used to specify iteration behaviour",  correct: false}
+        help: |
+            https://www.php.net/manual/en/language.oop5.iterations.php
