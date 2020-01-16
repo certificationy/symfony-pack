@@ -218,6 +218,7 @@ questions:
             - {value: "Always, with exactly two exceptions",  correct: false}
         help: |
             https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.extends
+            Contructors can have different signatures in child and parent classes (if parent constructor is not abstract)
     -
         question: 'As of PHP 7.2, what is the preferred way to autoload classes?'
         answers:
