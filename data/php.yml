@@ -238,7 +238,7 @@ questions:
     -
         question: 'Interfaces can declare:'
         answers:
-            - {value: "contructors", correct: true}
+            - {value: "constructors", correct: true}
             - {value: "public methods",  correct: true}
             - {value: "protected methods",  correct: false}
             - {value: "private methods",  correct: false}
