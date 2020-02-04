@@ -17,7 +17,7 @@ questions:
             - {value: return $this->container->get('service.name'),      correct: true}
         help: https://github.com/symfony/framework-bundle/blob/master/Controller/AbstractController.php#L121
     -
-        question: 'Which class may be extended by your controllers?'
+        question: 'Which classes exist and may be extended by your controllers?'
         answers:
             - {value: Symfony\Bundle\FrameworkBundle\Controller\AbstractController, correct: true}
             - {value: Symfony\Bundle\FrameworkBundle\Controller\Controller,         correct: false}
