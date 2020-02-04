@@ -30,13 +30,6 @@ questions:
             - {value: Symfony\Component\Console\OutputStyle,          correct: false}
             - {value: Symfony\Component\Console\OutputFormatter,      correct: false}
     -
-        question: 'What is the console command to create a new bundle?'
-        answers:
-            - {value: php bin/console bundle:generate, correct: false}
-            - {value: php bin/console generate:bundle, correct: true}
-            - {value: php bin/console create:bundle,   correct: false}
-            - {value: php bin/console bundle:create,   correct: false}
-    -
         question: 'Which argument can be passed to the router:debug command?'
         answers:
             - {value: No argument can be passed, correct: false}
