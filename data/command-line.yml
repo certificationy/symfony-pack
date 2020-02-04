@@ -39,10 +39,10 @@ questions:
     -
         question: 'What is the command to check the syntax of a Twig template?'
         answers:
-            - {value: php bin/console twig:lint,     correct: true}
-            - {value: php bin/console twig:check,    correct: false}
-            - {value: php bin/console twig:validate, correct: false}
-            - {value: php bin/console twig:syntax,   correct: false}
+            - {value: php bin/console lint:twig,     correct: true}
+            - {value: php bin/console check:twig,    correct: false}
+            - {value: php bin/console validate:twig, correct: false}
+            - {value: php bin/console syntax:twig,   correct: false}
     -
         question: 'What is the console command to clear cache?'
         answers:
@@ -97,10 +97,10 @@ questions:
     -
         question: 'What is the console command to create a new entity?'
         answers:
-            - {value: php bin/console doctrine:generate:entity, correct: true}
-            - {value: php bin/console generate:entity,          correct: false}
-            - {value: php bin/console database:create:entity,   correct: false}
-            - {value: php bin/console doctrine:create:entity,   correct: false}
+            - {value: php bin/console doctrine:generate:entities, correct: false}
+            - {value: php bin/console make:entity,                correct: true}
+            - {value: php bin/console database:create:entity,     correct: false}
+            - {value: php bin/console doctrine:create:entity,     correct: false}
     -
         question: 'What is the command to update the database from entities?'
         answers:
