@@ -7,6 +7,7 @@ questions:
             - {value: TableHelper,    correct: false}
             - {value: FileHelper,     correct: true}
             - {value: DialogHelper,   correct: true}
+        help: https://symfony.com/doc/current/console.html#learn-more
     -
         question: 'Which event is not available in the Console Component?'
         answers:
@@ -14,6 +15,7 @@ questions:
             - {value: ConsoleEvents::TERMINATE, correct: false}
             - {value: ConsoleEvents::EXCEPTION, correct: false}
             - {value: ConsoleEvents::LAUNCH,    correct: true}
+        help: https://github.com/symfony/console/blob/master/Application.php#L916
     -
         question: 'Using Console component, which of these events are available in Symfony\Component\Console\ConsoleEvents?'
         answers:
@@ -22,6 +24,7 @@ questions:
             - {value: ConsoleEvents::EXCEPTION, correct: true}
             - {value: ConsoleEvents::BEFORE,    correct: false}
             - {value: ConsoleEvents::AFTER,     correct: false}
+        help: https://github.com/symfony/console/blob/master/Application.php#L916
     -
         question: 'Using Console component, which of these class allows to create custom output styles?'
         answers:
@@ -29,6 +32,7 @@ questions:
             - {value: Symfony\Component\Console\OutputStyleFormatter, correct: false}
             - {value: Symfony\Component\Console\OutputStyle,          correct: false}
             - {value: Symfony\Component\Console\OutputFormatter,      correct: false}
+        help: https://symfony.com/doc/current/console/coloring.html#using-color-styles
     -
         question: 'Which argument can be passed to the router:debug command?'
         answers:
@@ -36,6 +40,7 @@ questions:
             - {value: A regexp search filter,    correct: false}
             - {value: A route limit,             correct: false}
             - {value: A route name,              correct: true}
+        help: https://symfony.com/doc/master/routing.html#debugging-routes
     -
         question: 'What is the command to check the syntax of a Twig template?'
         answers:
@@ -43,6 +48,7 @@ questions:
             - {value: php bin/console check:twig,    correct: false}
             - {value: php bin/console validate:twig, correct: false}
             - {value: php bin/console syntax:twig,   correct: false}
+        help: https://symfony.com/doc/master/templates.html#linting-twig-templates
     -
         question: 'What is the console command to clear cache?'
         answers:
@@ -57,11 +63,13 @@ questions:
             - {value: console.command,      correct: true}
             - {value: console,              correct: false}
             - {value: command,              correct: false}
+        help: https://symfony.com/doc/current/console.html#registering-the-command
     -
         question: 'New commands are registered as services by default'
         answers:
             - {value: 'Yes', correct: true}
             - {value: 'No',  correct: false}
+        help: https://symfony.com/doc/current/console.html#registering-the-command
     -
         question: 'What is the command line to list all known entities by doctrine 2 in your project ?'
         answers:
@@ -84,11 +92,13 @@ questions:
             - {value: "php bin/console config:dump-reference acme",         correct: true}
             - {value: "php bin/console config:dump AcmeBundle",             correct: true}
             - {value: "php bin/console config:dump-reference AcmeBundle",   correct: true}
+        help: https://symfony.com/doc/master/configuration.html#configuration-files
     -
         question: 'Descriptors are objects to render documentation on Symfony Console Apps?'
         answers:
             - {value: 'Yes', correct: true}
             - {value: 'No',  correct: false}
+        help: https://github.com/symfony/console/tree/master/Descriptor
     -
         question: 'Does the Symfony Console component needs PHP globals internals variables to work?'
         answers:
@@ -123,6 +133,7 @@ questions:
             - {value: OutputInterface::VERBOSITY_VERBOSE,         correct: true}
             - {value: OutputInterface::VERBOSITY_VERY_VERBOSE,    correct: true}
             - {value: OutputInterface::DEBUG,                     correct: false}
+        help: https://github.com/symfony/console/blob/master/Output/OutputInterface.php#L23
     -
         question: 'Symfony Console: InputArgument::REQUIRED, InputArgument::OPTIONAL and ... ?'
         answers:
@@ -130,13 +141,19 @@ questions:
             - {value: InputArgument::IS_ARRAY,   correct: true}
             - {value: InputArgument::LIST,       correct: false}
             - {value: InputArgument::ENUM,       correct: false}
+        help: https://github.com/symfony/console/blob/master/Input/InputArgument.php#L24
     -
         question: 'Symfony Console: which of the following sentences are true?'
         answers:
             - {value: 'initialize() and configure() are invoked before the ConsoleEvents::COMMAND', correct: false}
             - {value: 'ConsoleEvents::TERMINATE is dispatched even when an exception is thrown' ,   correct: true}
             - {value: 'initialize has InputInterface, OutputInterface parameters',                  correct: true}
-            - {value: 'ConsoleEvents can be disabled',                                              correct: true}            
+            - {value: 'ConsoleEvents can be disabled',                                              correct: true}
+        help: |
+            https://github.com/symfony/console/blob/master/Command/Command.php#L224
+            https://github.com/symfony/console/blob/master/Application.php#L958
+            https://github.com/symfony/console/blob/master/Command/Command.php#L188
+            https://symfony.com/doc/current/console.html#testing-commands
     -
         question: 'Which function are mandatory to your command class ?'
         answers:
@@ -144,6 +161,7 @@ questions:
             - {value: "execute(InputInterface $input, OutputInterface $output)", correct: true}
             - {value: "interact()", correct: false}
             - {value: "initialize()", correct: false}
+        help: https://symfony.com/doc/current/console.html#creating-a-command
     -
         question: 'Which Question class are available ?'
         answers:
@@ -152,6 +170,7 @@ questions:
             - {value: "Symfony\\Component\\Console\\Question\\ConfirmationQuestion", correct: true}
             - {value: "Symfony\\Component\\Console\\Question\\SelectQuestion", correct: false}
             - {value: "Symfony\\Component\\Console\\Question\\ValidQuestion", correct: false}
+        help: https://github.com/symfony/console/tree/master/Question
     -
         question: 'How to Call Other Commands in a command ?'
         answers:
@@ -159,6 +178,7 @@ questions:
             - {value: "$command->run($input, $output);", correct: true}
             - {value: "$command->call($input, $output);", correct: false}
             - {value: "$command->forward($input, $output);", correct: false}
+        help: https://symfony.com/doc/current/console/calling_commands.html
     -
         question: 'How to find a command in a command?'
         answers:
@@ -166,6 +186,9 @@ questions:
             - {value: "$this->getApplication()->get('my:command:name')", correct: true}
             - {value: "$this->getApplication()->findByName('my:command:name')", correct: false}
             - {value: "$this->getApplication()->getCommand('my:command:name')", correct: false}
+        help: |
+            https://github.com/symfony/console/blob/master/Application.php#L596
+            https://github.com/symfony/console/blob/master/Application.php#L490
     -
         question: 'What is the signature of the method addOption from the Command class?'
         answers:
@@ -173,6 +196,7 @@ questions:
             - {value: "addOption($name, $shortcut = null, $mode = null, $description = '', $default = null)", correct: true}
             - {value: "addOption($name, $default = null, $mode = null, $description = '', $shortcut = null)", correct: false}
             - {value: "addOption($name, $mode = null, $description = '', $default = null, $shortcut = null)", correct: false}
+        help: https://github.com/symfony/console/blob/master/Command/Command.php#L399
     -
         question: 'What is a valid way to configure your command so that the "names" argument is a list of names with at least one entry?'
         answers:
@@ -180,6 +204,7 @@ questions:
             - {value: "addArgument('names', 'List of names', ['mode' => [InputArgument::IS_ARRAY, InputArgument::REQUIRED]])", correct: false}
             - {value: "addArgument('names', InputArgument::IS_ARRAY | InputArgument::REQUIRED, 'List of names');", correct: true}
             - {value: "You cannot do this from the configure method and need to check this in the execute one", correct: false}
+        help: https://symfony.com/doc/current/console/input.html#using-command-arguments
     -
         question: 'Which class or classes can be used to test a command?'
         answers:
@@ -187,6 +212,7 @@ questions:
             - {value: "CommandTestCase", correct: false}
             - {value: "ApplicationTester", correct: true}
             - {value: "ConsoleTestCase", correct: false}
+        help: https://symfony.com/doc/current/console.html#testing-commands
     -
         question: 'Which tags can be used to style a command output?'
         answers:
@@ -194,16 +220,19 @@ questions:
             - {value: "question", correct: true}
             - {value: "error", correct: true}
             - {value: "text", correct: false}
+        help: https://symfony.com/doc/current/console/coloring.html#using-color-styles
     -
         question: 'Is it possible to use a service in the configure method of a command?'
         answers:
             - {value: "Yes", correct: true}
             - {value: "No", correct: false}
+        help: https://symfony.com/doc/current/console/commands_as_services.html
     -
         question: 'Is it possible to hide a command from the commands list?'
         answers:
             - {value: "Yes", correct: true}
             - {value: "No", correct: false}
+        help: https://symfony.com/doc/current/console/hide_commands.html
     -
         question: 'Which command allows to print the help of a given command'
         answers:
