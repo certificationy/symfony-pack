@@ -69,7 +69,7 @@ questions:
             - {value: $request,      correct: true}
             - {value: $_locale,      correct: true}
             - {value: $_format,      correct: true}
-        help: Check ResolveControllerEventSubscriber, RouterListener, ControllerListener
+        help: Check ResolveControllerEventSubscriber, RouterListener, ControllerListener and RequestAttributeValueResolver
     -
         question: |
             According to this action :
@@ -92,3 +92,79 @@ questions:
             - {value: '@ParamConverter("post", options={"mapping": {"Post": "slug"}})', correct: false}
             - {value: 'It is not possible, params and fields must match', correct: false}
         help: https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html#doctrineconverter-options
+    -
+        question: 'Which command(s) tell if a service can be type-hinted in a controller?'
+        answers:
+            - {value: 'bin/console debug:autowiring service_class',  correct: true}
+            - {value: 'bin/console debug:container service_class',  correct: true}
+            - {value: 'bin/console debug:autowiring',  correct: true}
+            - {value: 'bin/console debug:container',  correct: false}
+        help: https://symfony.com/doc/current/controller.html#fetching-services, the output of debug:container with a service name
+    -
+        question: 'Which of these properties are public attributes of the Request object?'
+        answers:
+            - {value: 'query',  correct: true}
+            - {value: 'request',  correct: true}
+            - {value: 'files',  correct: true}
+            - {value: 'session',  correct: false}
+            - {value: 'cookies',  correct: true}
+            - {value: 'attributes',  correct: true}
+            - {value: 'server',  correct: true}
+            - {value: 'locale',  correct: false}
+            - {value: 'headers',  correct: true}
+        help: https://github.com/symfony/http-foundation/blob/master/Request.php
+    -
+        question: 'Which of these properties are public attributes of the Response object?'
+        answers:
+            - {value: 'maxAge',  correct: false}
+            - {value: 'ttl',  correct: false}
+            - {value: 'content',  correct: false}
+            - {value: 'statusCode',  correct: false}
+            - {value: 'headers',  correct: true}
+        help: https://github.com/symfony/http-foundation/blob/master/Response.php
+    -
+        question: 'What are theTo add a flash notice indicating that everything is OK?'
+        answers:
+            - {value: "$this->addFlash('notice', 'Your changes were saved!');",  correct: true}
+            - {value: "$this->addFlash('Your changes were saved!', 'notice');",  correct: false}
+            - {value: "$request->getSession()->getFlashBag()->add('notice', 'Your changes were saved!');",  correct: true}
+            - {value: "$request->session->getFlashBag()->add('Your changes were saved!', 'notice');",  correct: false}
+            - {value: "$request->getFlashBag()->add('notice', 'Your changes were saved!');",  correct: false}
+        help: https://symfony.com/doc/current/controller.html#flash-messages
+    -
+        question: 'How to send a JSON response in a controller extending AbstractController?'
+        answers:
+            - {value: "return new JsonResponse($response)",  correct: true}
+            - {value: "return $this->json($response);",  correct: true}
+            - {value: "return new JsonResponse(json_encode($response))",  correct: true}
+            - {value: "return new JsonResponse($this->container->get('serializer')->serialize($data, 'json'))",  correct: true}
+        help: |
+            https://symfony.com/doc/current/controller.html#returning-json-response
+            https://github.com/symfony/framework-bundle/blob/master/Controller/AbstractController.php#L169
+            https://github.com/symfony/http-foundation/blob/master/JsonResponse.php
+    -
+        question: 'How to stream a file as a response in a controller extending AbstractController?'
+        answers:
+            - {value: "return new BinaryFileResponse($file);",  correct: true}
+            - {value: "return $this->file($file);",  correct: true}
+            - {value: "return new StreamedResponse($file)",  correct: false}
+        help: |
+            https://symfony.com/doc/current/controller.html#streaming-file-responses
+            https://github.com/symfony/framework-bundle/blob/master/Controller/AbstractController.php#L187
+            https://stackoverflow.com/a/32845069
+            https://github.com/symfony/http-foundation/blob/master/StreamedResponse.php
+    -
+        question: 'If SensioFrameworkExtraBundle is not installed and you do not have ParamConverterInterface, which interface do you implement if you want to add a new way to resolve controller arguments?'
+        answers:
+            - {value: "ArgumentValueResolverInterface",  correct: true}
+            - {value: "ControllerArgumentResolverInterface",  correct: false}
+            - {value: "It is impossible without SensioFrameworkExtraBundle",  correct: false}
+            - {value: "ActionArgumentResolverInterface",  correct: false}
+        help: https://symfony.com/doc/current/controller/argument_value_resolver.html
+    -
+        question: 'What are valid ways to override the way Symfony displays errors'
+        answers:
+            - {value: "If Symfony serves HTML files, override the templates used for errors in the /templates folder",  correct: true}
+            - {value: "If Symfony is an API, define a custom normalizer handling exceptions",  correct: true}
+            - {value: "Define an event subscriber on the KernelEvents::EXCEPTION event",  correct: true}
+        help: https://symfony.com/doc/current/controller/error_pages.html
