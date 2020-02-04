@@ -8,7 +8,7 @@ questions:
             - {value: return $this->redirect('http://www.example.org'),                     correct: true}
             - {value: return $this->generateUrl('http://www.example.org'),                  correct: false}
     -
-        question: 'Which method(s) can be used to retrieve a service in a controller?'
+        question: 'Which method(s) can be used to retrieve a service in a controller extending AbstractController?'
         answers:
             - {value: return $this->get('service.name'),                 correct: true}
             - {value: return $this->getContainer('service.name'),        correct: false}
@@ -17,10 +17,12 @@ questions:
     -
         question: 'Which class may be extended by your controllers?'
         answers:
-            - {value: Symfony\Bundle\FrameworkBundle\Controller\Controller,    correct: true}
-            - {value: Symfony\Component\FrameworkBundle\Controller\Controller, correct: false}
-            - {value: Symfony\Bundle\HttpBundle\Controller\Controller,         correct: false}
-            - {value: Symfony\Component\MvcBundle\Controller\Controller,       correct: false}
+            - {value: Symfony\Bundle\FrameworkBundle\Controller\AbstractController, correct: true}
+            - {value: Symfony\Bundle\FrameworkBundle\Controller\Controller,         correct: false}
+            - {value: Symfony\Bundle\FrameworkBundle\Controller\RedirectController, correct: true}
+            - {value: Symfony\Component\FrameworkBundle\Controller\Controller,      correct: false}
+            - {value: Symfony\Bundle\HttpBundle\Controller\Controller,              correct: false}
+            - {value: Symfony\Bundle\HttpBundle\Controller\AbstractController,      correct: false}
     -
         question: 'Which of these annotations can be used in a controller?'
         answers:
