@@ -7,6 +7,7 @@ questions:
             - {value: return $this->redirectUrl('http://www.example.org'),                  correct: false}
             - {value: return $this->redirect('http://www.example.org'),                     correct: true}
             - {value: return $this->generateUrl('http://www.example.org'),                  correct: false}
+        help: https://symfony.com/doc/current/controller.html#redirecting
     -
         question: 'Which method(s) can be used to retrieve a service in a controller extending AbstractController?'
         answers:
@@ -14,6 +15,7 @@ questions:
             - {value: return $this->getContainer('service.name'),        correct: false}
             - {value: return $this->getContainer()->get('service.name'), correct: false}
             - {value: return $this->container->get('service.name'),      correct: true}
+        help: https://github.com/symfony/framework-bundle/blob/master/Controller/AbstractController.php#L121
     -
         question: 'Which class may be extended by your controllers?'
         answers:
@@ -23,6 +25,7 @@ questions:
             - {value: Symfony\Component\FrameworkBundle\Controller\Controller,      correct: false}
             - {value: Symfony\Bundle\HttpBundle\Controller\Controller,              correct: false}
             - {value: Symfony\Bundle\HttpBundle\Controller\AbstractController,      correct: false}
+        help: https://github.com/symfony/framework-bundle/blob/master/Controller
     -
         question: 'Which of these annotations can be used in a controller?'
         answers:
@@ -30,6 +33,10 @@ questions:
             - {value: '@ParamConverter', correct: true}
             - {value: '@Security',       correct: true}
             - {value: '@Post',           correct: false}
+        help: |
+            https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/cache.html
+            https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html
+            https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/security.html
     -
         question: 'Which of these response objects does not exists?'
         answers:
@@ -37,6 +44,7 @@ questions:
             - {value: JsonResponse,       correct: false}
             - {value: BinaryFileResponse, correct: false}
             - {value: RedirectResponse,   correct: false}
+        help: https://github.com/symfony/http-foundation
     -
         question: 'Which class will you use to convert an action parameter?'
         answers:
@@ -44,6 +52,7 @@ questions:
             - {value: ParameterConverter, correct: false}
             - {value: Converter,          correct: false}
             - {value: ObjectConverter,    correct: false}
+        help: https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html
     -
         question: 'Which controller/action allows to render a template without a specific controller?'
         answers:
@@ -51,6 +60,7 @@ questions:
             - {value: FrameworkBundle:Template:action,     correct: false}
             - {value: FrameworkBundle:Template:render,     correct: false}
             - {value: FrameworkBundle:Template:template,   correct: true}
+        help: https://github.com/symfony/framework-bundle/blob/master/Controller/TemplateController.php
     -
         question: 'Which of these variables are available in Controllers?'
         answers:
@@ -59,6 +69,7 @@ questions:
             - {value: $request,      correct: true}
             - {value: $_locale,      correct: true}
             - {value: $_format,      correct: true}
+        help: Check ResolveControllerEventSubscriber, RouterListener, ControllerListener
     -
         question: |
             According to this action :
@@ -80,3 +91,4 @@ questions:
             - {value: '@ParamConverter("post", options={"mapping": {"field": "slug"}})', correct: false}
             - {value: '@ParamConverter("post", options={"mapping": {"Post": "slug"}})', correct: false}
             - {value: 'It is not possible, params and fields must match', correct: false}
+        help: https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html#doctrineconverter-options
