@@ -38,7 +38,7 @@ questions:
             https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html
             https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/security.html
     -
-        question: 'Which of these response objects does not exists?'
+        question: 'Which of these response objects does not exist?'
         answers:
             - {value: XmlResponse,        correct: true}
             - {value: JsonResponse,       correct: false}
@@ -123,7 +123,7 @@ questions:
             - {value: 'headers',  correct: true}
         help: https://github.com/symfony/http-foundation/blob/master/Response.php
     -
-        question: 'What are theTo add a flash notice indicating that everything is OK?'
+        question: 'What are valid ways to add a flash notice indicating that everything is OK?'
         answers:
             - {value: "$this->addFlash('notice', 'Your changes were saved!');",  correct: true}
             - {value: "$this->addFlash('Your changes were saved!', 'notice');",  correct: false}
@@ -136,8 +136,8 @@ questions:
         answers:
             - {value: "return new JsonResponse($response)",  correct: true}
             - {value: "return $this->json($response);",  correct: true}
-            - {value: "return new JsonResponse(json_encode($response))",  correct: true}
-            - {value: "return new JsonResponse($this->container->get('serializer')->serialize($data, 'json'))",  correct: true}
+            - {value: "return new JsonResponse(json_encode($response), Response::HTTP_OK, [], true)",  correct: true}
+            - {value: "return new JsonResponse($this->container->get('serializer')->serialize($data, 'json'), Response::HTTP_OK, [], true)",  correct: true}
         help: |
             https://symfony.com/doc/current/controller.html#returning-json-response
             https://github.com/symfony/framework-bundle/blob/master/Controller/AbstractController.php#L169
