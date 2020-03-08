@@ -61,6 +61,7 @@ questions:
             - {value: "FormEvents::SUBMIT",         correct: true}
             - {value: "FormEvents::POST_SET_DATA",  correct: true}
             - {value: "FormEvents::POST_REQUEST",   correct: false}
+        helper: https://symfony.com/doc/current/form/events.html#the-form-workflow
     -
         question: 'What data is inside FormEvent object at FormEvents::PRE_SET_DATA?'
         answers:
@@ -68,6 +69,7 @@ questions:
             - {value: "Normalized data", correct: false}
             - {value: "Request data",    correct: false}
             - {value: "View data",       correct: false}
+        helper: https://symfony.com/doc/current/form/events.html#the-form-workflow
     -
         question: 'What data is inside FormEvent object at FormEvents::PRE_SUBMIT?'
         answers:
@@ -75,6 +77,7 @@ questions:
             - {value: "Normalized data", correct: false}
             - {value: "Request data",    correct: true}
             - {value: "View data",       correct: false}
+        helper: https://symfony.com/doc/current/form/events.html#the-form-workflow
     -
         question: 'Which one of these types extends from text?'
         answers:
@@ -82,6 +85,7 @@ questions:
             - {value: "currency", correct: false}
             - {value: "textarea", correct: true}
             - {value: "surname",  correct: false}
+        helper: https://symfony.com/doc/current/reference/forms/types.html#text-fields
     -
         question: 'Which date type exist?'
         answers:
@@ -89,6 +93,7 @@ questions:
             - {value: "datetime",   correct: true}
             - {value: "time",       correct: true}
             - {value: "timestamp",  correct: false}
+        helper: https://symfony.com/doc/current/reference/forms/types.html#date-and-time-fields
     -
         question: 'How do you bind a constraint to a form field?'
         answers:
@@ -96,18 +101,21 @@ questions:
             - {value: "Passing constraint instance in $this->createFormBuilder()",  correct: false}
             - {value: "Invoke $formBuilder->setConstraints() method",               correct: false}
             - {value: "Add an annotation in model",                                 correct: true}
+        helper: https://symfony.com/doc/current/form/without_class.html#adding-validation
     -
         question: 'Using form component, option "error_bubbling" will include error in current field.'
         answers:
             - {value: "True",  correct: false}
             - {value: "False", correct: true}
+        helper: https://symfony.com/doc/current/reference/forms/types/text.html#error-bubbling
     -
-        question: 'How do you set default value?'
+        question: 'How do you set the default values in a controller extending the AbstractController?'
         answers:
             - {value: "$this->createFormBuilder($defaults)",                correct: true}
             - {value: "$this->createFormBuilder(null, $defaults)",          correct: false}
             - {value: "$this->createFormBuilder()->setDefaults($defaults)", correct: false}
             - {value: "$this->createFormBuilder()->addDefaults($defaults)", correct: false}
+        helper: https://github.com/symfony/framework-bundle/blob/master/Controller/AbstractController.php#L333
     -
         question: 'Your Form class must extends ____ '
         answers:
@@ -124,24 +132,27 @@ questions:
         question: 'How do you render all the form fields in twig ?'
         answers:
             - {value: "form_widget(form)", correct: true}
+            - {value: "form(form)", correct: true}
             - {value: "form_render(form)", correct: false}
             - {value: "form_fields(form)", correct: false}
             - {value: "render_form(form)", correct: false}
             - {value: "form_row(form)", correct: false}
     -
-        question: 'If you use form_widget() on a single fields, which parts are render ?'
+        question: 'If you use form_widget() on a single field, which parts are rendered?'
         answers:
             - {value: "label", correct: false}
             - {value: "input", correct: true}
             - {value: "error", correct: false}
             - {value: "label and input", correct: false}
             - {value: "error, label and input", correct: false}
+        helper: https://symfony.com/doc/current/form/form_customization.html#form-rendering-functions
     -
         question: 'According to Symfony best practices, where you should add buttons ?'
         answers:
             - {value: "Template", correct: true}
             - {value: "Form", correct: false}
             - {value: "Controller", correct: false}
+        helper: https://symfony.com/doc/current/best_practices.html#add-form-buttons-in-templates
     -
         question: 'Which Field type exist?'
         answers:
@@ -152,6 +163,7 @@ questions:
             - {value: "SelectType",  correct: false}
             - {value: "FloatType",  correct: false}
             - {value: "BooleanType",  correct: false}
+        helper: https://symfony.com/doc/current/reference/forms/types.html#supported-field-types
     -
         question: 'How to Disable the Validation of Submitted Data'
         answers:
@@ -160,6 +172,7 @@ questions:
             - {value: "set the enable_validation option to false", correct: false}
             - {value: "$this->createFormBuilder()->isValidated(false)", correct: false}
             - {value: "By using false as third parameter for createFormBuilder", correct: false}
+        helper: https://symfony.com/doc/current/form/disabling_validation.html
     -
         question: 'What data is inside FormEvent object at FormEvents::POST_SET_DATA?'
         answers:
@@ -167,6 +180,7 @@ questions:
             - {value: "Normalized data", correct: true}
             - {value: "Request data",    correct: false}
             - {value: "View data",       correct: false}
+        helper: https://symfony.com/doc/current/form/events.html#the-form-workflow
     -
         question: 'Which form event dont exist?'
         answers:
@@ -174,6 +188,7 @@ questions:
             - {value: "FormEvents::SUBMIT", correct: false}
             - {value: "FormEvents::POST_SUBMIT", correct: false}
             - {value: "FormEvents::SET_DATA", correct: true}
+        helper: https://symfony.com/doc/current/form/events.html#the-form-workflow
     -
         question: 'How do you upload a UploadedFile ?'
         answers:
@@ -181,6 +196,7 @@ questions:
             - {value: "$file->upload(string $directory, string $name = null)", correct: false}
             - {value: "$file->uploadFile(string $directory, string $name = null)", correct: false}
             - {value: "$file->save(string $directory, string $name = null)",  correct: false}
+        helper: https://symfony.com/doc/current/controller/upload_file.html
     -
         question: 'How to Use Data Transformers ?'
         answers:
