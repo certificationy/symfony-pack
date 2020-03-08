@@ -203,3 +203,65 @@ questions:
             - {value: "$builder->get('tags')->addModelTransformer(...);", correct: true}
             - {value: "$builder->add($builder->create('tags', TextType::class)->addModelTransformer(...));", correct: true}
             - {value: "$builder->add('tags', TextType::class)->addModelTransformer(...);", correct: false}
+        helper: https://symfony.com/doc/current/form/data_transformers.html
+    -
+        question: 'What data is the argument of the transform method of a ModelTransformer?'
+        answers:
+            - {value: "Model data", correct: true}
+            - {value: "Normalized data", correct: true}
+            - {value: "View data", correct: false}
+        helper: https://symfony.com/doc/current/form/data_transformers.html#about-model-and-view-transformers
+    -
+        question: 'When you create a custom field type from scratch, which methods must be implemented?'
+        answers:
+            - {value: "buildForm", correct: true}
+            - {value: "buildView", correct: true}
+            - {value: "finishView", correct: true}
+            - {value: "configureOptions", correct: true}
+            - {value: "getBlockPrefix", correct: false}
+            - {value: "getParent", correct: false}
+        helper: https://symfony.com/doc/current/form/create_custom_field_type.html#creating-form-types-created-from-scratch
+    -
+        question: 'What is the configuration to define to use another form theme?'
+        answers:
+            - {value: "twig.form_theme", correct: false}
+            - {value: "twig.form_themes", correct: true}
+            - {value: "framework.templating.form_theme", correct: false}
+            - {value: "framework.twig.form_theme", correct: false}
+        helper: https://symfony.com/doc/current/forms.html#rendering-forms
+    -
+        question: 'Which functions exist to render forms in Twig?'
+        answers:
+            - {value: "form_widget(form)", correct: true}
+            - {value: "form(form)", correct: true}
+            - {value: "form_start(form)", correct: true}
+            - {value: "form_end(form)", correct: true}
+            - {value: "form_label(form)", correct: true}
+            - {value: "form_help(form)", correct: true}
+            - {value: "form_row(form)", correct: true}
+            - {value: "form_errors(form)", correct: true}
+            - {value: "form_rest(form)", correct: true}
+            - {value: "form_parent(form)", correct: true}
+        helper: https://symfony.com/doc/current/form/form_customization.html#form-functions-and-variables-reference
+    -
+        question: 'To dynamically configure validation groups, you must set the validation_groups parameter with an invokable service'
+        answers:
+            - {value: "Yes", correct: false}
+            - {value: "No, you must do this with a callback function", correct: false}
+            - {value: "No, you can do this with a callback function", correct: true}
+            - {value: "No, neither this or a callback function work", correct: false}
+        helper: https://symfony.com/doc/current/form/validation_group_service_resolver.html
+    -
+        question: 'To configure the default value of a form class, you can:'
+        answers:
+            - {value: "Set the 'empty_data' parameter in the setDefaults method of the optionResolver with a new class", correct: true}
+            - {value: "Set the 'empty_data' parameter in the setDefaults method of the optionResolver with a closure", correct: true}
+            - {value: "Call the setDefaults method in configureOptions with a new class", correct: false}
+            - {value: "Call the setDefaults method in configureOptions with a closure", correct: false}
+        helper: https://symfony.com/doc/current/form/use_empty_data.html
+    -
+        question: 'You can define several submit buttons for a single form, and determine which one has been clicked on during form submission'
+        answers:
+            - {value: "Yes", correct: true}
+            - {value: "No", correct: false}
+        helper: https://symfony.com/doc/current/form/multiple_buttons.html
