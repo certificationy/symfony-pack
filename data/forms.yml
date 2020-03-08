@@ -29,12 +29,12 @@ questions:
             - {value: "{{ form_widget(form.field) }}", correct: true}
             - {value: "{{ form_view(form.field) }}",   correct: false}
     -
-        question: 'Using Form factory, how to define a CSRF provider?'
+        question: 'Using Form factory, how to define a CSRF token manager?'
         answers:
-            - {value: $formFactory->addExtension(new CsrfExtension($csrfProvider));,     correct: true}
-            - {value: $formFactory->setExtension(new CsrfExtension($csrfProvider));,     correct: false}
-            - {value: $formFactory->addCsrfExtension(new CsrfExtension($csrfProvider));, correct: false}
-            - {value: $formFactory->addExtension(new Csrf($csrfProvider));,              correct: false}
+            - {value: $formFactory->addExtension(new CsrfExtension($csrfTokenManager));,     correct: true}
+            - {value: $formFactory->setExtension(new CsrfExtension($csrfTokenManager));,     correct: false}
+            - {value: $formFactory->addCsrfExtension(new CsrfExtension($csrfTokenManager));, correct: false}
+            - {value: $formFactory->addExtension(new Csrf($csrfTokenManager));,              correct: false}
     -
         question: 'Using Form component, which option can you use into setDefaultOptions() method to define CSRF field name?'
         answers:
