@@ -61,7 +61,7 @@ questions:
             - {value: "FormEvents::SUBMIT",         correct: true}
             - {value: "FormEvents::POST_SET_DATA",  correct: true}
             - {value: "FormEvents::POST_REQUEST",   correct: false}
-        helper: https://symfony.com/doc/current/form/events.html#the-form-workflow
+        help: https://symfony.com/doc/current/form/events.html#the-form-workflow
     -
         question: 'What data is inside FormEvent object at FormEvents::PRE_SET_DATA?'
         answers:
@@ -69,7 +69,7 @@ questions:
             - {value: "Normalized data", correct: false}
             - {value: "Request data",    correct: false}
             - {value: "View data",       correct: false}
-        helper: https://symfony.com/doc/current/form/events.html#the-form-workflow
+        help: https://symfony.com/doc/current/form/events.html#the-form-workflow
     -
         question: 'What data is inside FormEvent object at FormEvents::PRE_SUBMIT?'
         answers:
@@ -77,15 +77,15 @@ questions:
             - {value: "Normalized data", correct: false}
             - {value: "Request data",    correct: true}
             - {value: "View data",       correct: false}
-        helper: https://symfony.com/doc/current/form/events.html#the-form-workflow
+        help: https://symfony.com/doc/current/form/events.html#the-form-workflow
     -
         question: 'Which one of these types extends from text?'
         answers:
-            - {value: "money",    correct: false}
+            - {value: "money",    correct: true}
             - {value: "currency", correct: false}
             - {value: "textarea", correct: true}
             - {value: "surname",  correct: false}
-        helper: https://symfony.com/doc/current/reference/forms/types.html#text-fields
+        help: https://symfony.com/doc/current/reference/forms/types.html#text-fields
     -
         question: 'Which date type exist?'
         answers:
@@ -93,7 +93,7 @@ questions:
             - {value: "datetime",   correct: true}
             - {value: "time",       correct: true}
             - {value: "timestamp",  correct: false}
-        helper: https://symfony.com/doc/current/reference/forms/types.html#date-and-time-fields
+        help: https://symfony.com/doc/current/reference/forms/types.html#date-and-time-fields
     -
         question: 'How do you bind a constraint to a form field?'
         answers:
@@ -101,13 +101,13 @@ questions:
             - {value: "Passing constraint instance in $this->createFormBuilder()",  correct: false}
             - {value: "Invoke $formBuilder->setConstraints() method",               correct: false}
             - {value: "Add an annotation in model",                                 correct: true}
-        helper: https://symfony.com/doc/current/form/without_class.html#adding-validation
+        help: https://symfony.com/doc/current/form/without_class.html#adding-validation
     -
         question: 'Using form component, option "error_bubbling" will include error in current field.'
         answers:
             - {value: "True",  correct: false}
             - {value: "False", correct: true}
-        helper: https://symfony.com/doc/current/reference/forms/types/text.html#error-bubbling
+        help: https://symfony.com/doc/current/reference/forms/types/text.html#error-bubbling
     -
         question: 'How do you set the default values in a controller extending the AbstractController?'
         answers:
@@ -115,7 +115,7 @@ questions:
             - {value: "$this->createFormBuilder(null, $defaults)",          correct: false}
             - {value: "$this->createFormBuilder()->setDefaults($defaults)", correct: false}
             - {value: "$this->createFormBuilder()->addDefaults($defaults)", correct: false}
-        helper: https://github.com/symfony/framework-bundle/blob/master/Controller/AbstractController.php#L333
+        help: https://github.com/symfony/framework-bundle/blob/master/Controller/AbstractController.php#L333
     -
         question: 'Your Form class must extends ____ '
         answers:
@@ -145,14 +145,14 @@ questions:
             - {value: "error", correct: false}
             - {value: "label and input", correct: false}
             - {value: "error, label and input", correct: false}
-        helper: https://symfony.com/doc/current/form/form_customization.html#form-rendering-functions
+        help: https://symfony.com/doc/current/form/form_customization.html#form-rendering-functions
     -
         question: 'According to Symfony best practices, where you should add buttons ?'
         answers:
             - {value: "Template", correct: true}
             - {value: "Form", correct: false}
             - {value: "Controller", correct: false}
-        helper: https://symfony.com/doc/current/best_practices.html#add-form-buttons-in-templates
+        help: https://symfony.com/doc/current/best_practices.html#add-form-buttons-in-templates
     -
         question: 'Which Field type exist?'
         answers:
@@ -163,7 +163,7 @@ questions:
             - {value: "SelectType",  correct: false}
             - {value: "FloatType",  correct: false}
             - {value: "BooleanType",  correct: false}
-        helper: https://symfony.com/doc/current/reference/forms/types.html#supported-field-types
+        help: https://symfony.com/doc/current/reference/forms/types.html#supported-field-types
     -
         question: 'How to Disable the Validation of Submitted Data'
         answers:
@@ -172,7 +172,7 @@ questions:
             - {value: "set the enable_validation option to false", correct: false}
             - {value: "$this->createFormBuilder()->isValidated(false)", correct: false}
             - {value: "By using false as third parameter for createFormBuilder", correct: false}
-        helper: https://symfony.com/doc/current/form/disabling_validation.html
+        help: https://symfony.com/doc/current/form/disabling_validation.html
     -
         question: 'What data is inside FormEvent object at FormEvents::POST_SET_DATA?'
         answers:
@@ -180,15 +180,15 @@ questions:
             - {value: "Normalized data", correct: true}
             - {value: "Request data",    correct: false}
             - {value: "View data",       correct: false}
-        helper: https://symfony.com/doc/current/form/events.html#the-form-workflow
+        help: https://symfony.com/doc/current/form/events.html#the-form-workflow
     -
-        question: 'Which form event dont exist?'
+        question: 'Which form event does not exist?'
         answers:
             - {value: "FormEvents::PRE_SET_DATA", correct: false}
             - {value: "FormEvents::SUBMIT", correct: false}
             - {value: "FormEvents::POST_SUBMIT", correct: false}
             - {value: "FormEvents::SET_DATA", correct: true}
-        helper: https://symfony.com/doc/current/form/events.html#the-form-workflow
+        help: https://symfony.com/doc/current/form/events.html#the-form-workflow
     -
         question: 'How do you upload a UploadedFile ?'
         answers:
@@ -196,21 +196,21 @@ questions:
             - {value: "$file->upload(string $directory, string $name = null)", correct: false}
             - {value: "$file->uploadFile(string $directory, string $name = null)", correct: false}
             - {value: "$file->save(string $directory, string $name = null)",  correct: false}
-        helper: https://symfony.com/doc/current/controller/upload_file.html
+        help: https://symfony.com/doc/current/controller/upload_file.html
     -
         question: 'How to Use Data Transformers ?'
         answers:
             - {value: "$builder->get('tags')->addModelTransformer(...);", correct: true}
             - {value: "$builder->add($builder->create('tags', TextType::class)->addModelTransformer(...));", correct: true}
             - {value: "$builder->add('tags', TextType::class)->addModelTransformer(...);", correct: false}
-        helper: https://symfony.com/doc/current/form/data_transformers.html
+        help: https://symfony.com/doc/current/form/data_transformers.html
     -
-        question: 'What data is the argument of the transform method of a ModelTransformer?'
+        question: 'What data is the argument of the reverseTransform method of a ModelTransformer?'
         answers:
-            - {value: "Model data", correct: true}
+            - {value: "Model data", correct: false}
             - {value: "Normalized data", correct: true}
             - {value: "View data", correct: false}
-        helper: https://symfony.com/doc/current/form/data_transformers.html#about-model-and-view-transformers
+        help: https://symfony.com/doc/current/form/data_transformers.html#about-model-and-view-transformers
     -
         question: 'When you create a custom field type from scratch, which methods must be implemented?'
         answers:
@@ -220,7 +220,7 @@ questions:
             - {value: "configureOptions", correct: true}
             - {value: "getBlockPrefix", correct: false}
             - {value: "getParent", correct: false}
-        helper: https://symfony.com/doc/current/form/create_custom_field_type.html#creating-form-types-created-from-scratch
+        help: https://symfony.com/doc/current/form/create_custom_field_type.html#creating-form-types-created-from-scratch
     -
         question: 'What is the configuration to define to use another form theme?'
         answers:
@@ -228,7 +228,7 @@ questions:
             - {value: "twig.form_themes", correct: true}
             - {value: "framework.templating.form_theme", correct: false}
             - {value: "framework.twig.form_theme", correct: false}
-        helper: https://symfony.com/doc/current/forms.html#rendering-forms
+        help: https://symfony.com/doc/current/forms.html#rendering-forms
     -
         question: 'Which functions exist to render forms in Twig?'
         answers:
@@ -242,7 +242,7 @@ questions:
             - {value: "form_errors(form)", correct: true}
             - {value: "form_rest(form)", correct: true}
             - {value: "form_parent(form)", correct: true}
-        helper: https://symfony.com/doc/current/form/form_customization.html#form-functions-and-variables-reference
+        help: https://symfony.com/doc/current/form/form_customization.html#form-functions-and-variables-reference
     -
         question: 'To dynamically configure validation groups, you must set the validation_groups parameter with an invokable service'
         answers:
@@ -250,7 +250,7 @@ questions:
             - {value: "No, you must do this with a callback function", correct: false}
             - {value: "No, you can do this with a callback function", correct: true}
             - {value: "No, neither this or a callback function work", correct: false}
-        helper: https://symfony.com/doc/current/form/validation_group_service_resolver.html
+        help: https://symfony.com/doc/current/form/validation_group_service_resolver.html
     -
         question: 'To configure the default value of a form class, you can:'
         answers:
@@ -258,10 +258,10 @@ questions:
             - {value: "Set the 'empty_data' parameter in the setDefaults method of the optionResolver with a closure", correct: true}
             - {value: "Call the setDefaults method in configureOptions with a new class", correct: false}
             - {value: "Call the setDefaults method in configureOptions with a closure", correct: false}
-        helper: https://symfony.com/doc/current/form/use_empty_data.html
+        help: https://symfony.com/doc/current/form/use_empty_data.html
     -
         question: 'You can define several submit buttons for a single form, and determine which one has been clicked on during form submission'
         answers:
             - {value: "Yes", correct: true}
             - {value: "No", correct: false}
-        helper: https://symfony.com/doc/current/form/multiple_buttons.html
+        help: https://symfony.com/doc/current/form/multiple_buttons.html
