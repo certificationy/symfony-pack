@@ -1,0 +1,125 @@
+category: Configuration
+questions:
+  -
+    question: 'How to load a .env file with DotEnv component ?'
+    answers:
+      - {value: "DotEnv::load()", correct: false}
+      - {value: "$dotEnv->load()",     correct: true}
+      - {value: "DotEnv::loadEnv()",     correct: false}
+      - {value: "$dotEnv->loadEnv()",   correct: false}
+    help: |
+      https://github.com/symfony/dotenv/blob/master/Dotenv.php
+  -
+    question: 'The load() method overwrites existing environment variables'
+    answers:
+      - {value: No, correct: true}
+      - {value: Yes, correct: false}
+  -
+    question: 'How to overload existing env variables'
+    answers:
+      - {value: "$dotEnv->overload()", correct: true}
+      - {value: "$dotEnv->loadAndReplace()",    correct: false}
+      - {value: "It is not possible", correct: false}
+  -
+    question: 'What is the behaviour of the loadEnv function ?'
+    answers:
+      - {value: "Load .env or .env.dist if it does not exist", correct: true}
+      - {value: "Populate APP_ENV variable", correct: true}
+      - {value: "Loads .env.local",      correct: true}
+      - {value: "Loads .env.test.local if it exists",    correct: true}
+  -
+    question: 'Expresion Language syntax is based on twig expression'
+    answers:
+      - {value: "Yes", correct: true}
+      - {value: "No", correct: true}
+  -
+    question: 'How to escape a backslash in Expression language'
+    answers:
+      - {value: "With 1 backslash", correct: false}
+      - {value: "With 2 backslash", correct: false}
+      - {value: "With 4 backslash", correct: true}
+      - {value: "With 8 backslash", correct: true}
+  -
+    question: 'In expression language a . can be used to access method of an object'
+    answers:
+      - {value: "Yes", correct: true}
+      - {value: "No", correct: false}
+  -
+    question: 'How to evaluate an expression with expression language ?'
+    answers:
+      - {value: "$expressionLanguage->evaluate($expression, $values) where values is an array", correct: true}
+      - {value: "$expressionLanguage->compute($expression, $values) where values is an array", correct: false}
+      - {value: "$expressionLanguage->evaluate($expression, $values, $context) where context and values are arrays", correct: false}
+      - {value: "$expressionLanguage->evaluate($expression, ...$values)", correct: false}
+  -
+    question: 'What are valid node type in Config component ?'
+    answers:
+      - {value: "scalar", correct: true}
+      - {value: "boolean", correct: true}
+      - {value: "integer", correct: true}
+      - {value: "float", correct: true}
+      - {value: "enum", correct: true}
+      - {value: "array", correct: true}
+      - {value: "variable", correct: true}
+  -
+    question: 'Which numeric node constraint exists ?'
+    answers:
+      - {value: "min", correct: true}
+      - {value: "max", correct: true}
+      - {value: "greaterThanEqual", correct: false}
+      - {value: "lesserThanEqual", correct: false}
+      - {value: "greaterThan", correct: false}
+      - {value: "lesserThan", correct: false}
+  -
+    question: 'An array node can have a predefined set of variable nodes ?'
+    answers:
+      - {value: "Yes", correct: true}
+      - {value: "No", correct: false}
+  -
+    question: 'Which constraint for config node exists ?'
+    answers:
+      - {value: "defaultValue()", correct: true}
+      - {value: "default()", correct: false}
+      - {value: "isRequired()", correct: true}
+      - {value: "cannotBeEmpty()", correct: true}
+      - {value: "default*() (true, false, null)", correct: true}
+      - {value: "treat*Like, (true, false, null)", correct: true}
+  -
+    question: 'Valid merging options ?'
+    answers:
+      - {value: "performNoDeepMerging()", correct: true}
+      - {value: "alwaysOverwrite()", correct: false}
+      - {value: "cannotBeOverwritten()", correct: true}
+  -
+    question: 'What is the default node path separator ?'
+    answers:
+      - {value: ".", correct: true}
+      - {value: "/", correct: false}
+      - {value: "_", correct: false}
+  -
+    question: 'Valid validation rules always contain a if and a then part ?'
+    answers:
+      - {value: "Yes", correct: true}
+      - {value: "No", correct: false}
+  -
+    question: 'Valid validation rules ?'
+    answers:
+      - {value: "ifTrue()", correct: true}
+      - {value: "ifFalse()", correct: false}
+      - {value: "ifString()", correct: true}
+      - {value: "ifNotString()", correct: false}
+      - {value: "ifNull()", correct: true}
+      - {value: "ifEmpty()", correct: true}
+      - {value: "ifArray()", correct: true}
+      - {value: "ifInArray()", correct: true}
+      - {value: "ifNotInArray()", correct: true}
+      - {value: "always()", correct: true}
+  -
+    question: 'Valid then part in validation rules ?'
+    answers:
+      - {value: "then()", correct: true}
+      - {value: "thenEmptyArray()", correct: true}
+      - {value: "thenInvalid()", correct: true}
+      - {value: "thenUnset()", correct: true}
+      - {value: "thenDoNothing()", correct: false}
+      - {value: "thenReplaceWithDefault()", correct: false}
