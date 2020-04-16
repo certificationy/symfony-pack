@@ -51,3 +51,93 @@ questions:
             - {value: 'pass one or more group names as the third argument of $validator->validate()', correct: true}
             - {value: 'pass one or more group names as the second argument of $validator->validate()', correct: false}
             - {value: 'use $validator->setValidationGroups(array)', correct: false}
+    -
+        question: 'What will be returned by the ValidatorInterface validate method ?'
+        answers:
+            - {value: 'ConstraintViolationList', correct: true}
+            - {value: 'ConstraintErrorList', correct: true}
+            - {value: 'ConstraintViolationInterface[]', correct: false}
+            - {value: 'ConstraintErrorInterface[]', correct: false}
+    -
+        question: 'Which method of the ConstraintViolationList is not defined by ConstraintViolationListInterface'
+        answers:
+            - {value: 'findByCodes', correct: true}
+            - {value: 'offsetUnset', correct: false}
+            - {value: 'offsetSet', correct: false}
+            - {value: 'offsetGet', correct: false}
+            - {value: 'offsetExists', correct: false}
+    -
+        question: 'How to enable annotation for validation'
+        answers:
+            - {value: 'framework: validation: { enable_annotations: true } in framework.yaml', correct: true}
+            - {value: 'framework: validation: { annotations: true } in framework.yaml', correct: false}
+            - {value: 'framework: validation: { enabled: true } in framework.yaml', correct: false}
+            - {value: 'It is enabled by default', correct: false}
+    -
+        question: 'Which of the following constraints exists ?'
+        answers:
+            - {value: 'Type', correct: true}
+            - {value: 'Ip', correct: true}
+            - {value: 'Uuid', correct: true}
+            - {value: 'NotCompromisedPassword', correct: true}
+            - {value: 'DivisibleBy', correct: true}
+            - {value: 'Traverse', correct: true}
+            - {value: 'Collection', correct: true}
+    -
+        question: 'On Which type of object can we apply constraint'
+        answers:
+            - {value: 'property', correct: true}
+            - {value: 'class', correct: true}
+            - {value: 'getters', correct: true}
+            - {value: 'setters', correct: false}
+    -
+        question: 'What is the default validation group ?'
+        answers:
+            - {value: 'All the constraints in the current class and all the referenced class that does not belong to any other group', correct: true}
+            - {value: 'All the constraints in the current class class that does not belong to any other group', correct: false}
+            - {value: 'Constraints belonging to the default group', correct: true}
+            - {value: 'Constraints belonging to the ClassName group', correct: true}
+    -
+        question: 'If you validate the User class extends BaseUser class with the User group :'
+        answers:
+            - {value: 'The fields declared only in BaseUser will be validated', correct: true}
+            - {value: 'The fields in the User class will be validated', correct: true}
+            - {value: 'Constraints of objects embedded in the user class will be validated', correct: false}
+    -
+        question: 'How to sequentially apply validation groups ?'
+        answers:
+            - {value: '* @Assert\GroupSequence({\"User\", \"Strict\"}) on the class', correct: true}
+            - {value: 'implement GroupSequenceInterface and the getGroupSequence method', correct: false}
+    -
+        question: 'When using group sequence, if there is no embedded object the default group and the ClassName group are the same'
+        answers:
+            - {value: 'Yes', correct: false}
+            - {value: 'No', correct: true}
+        help: |
+            https://symfony.com/doc/current/validation/sequence_provider.html
+    -
+        question: 'You can use GroupSequenceProvider to dynamically chose which group to validate against'
+        answers:
+            - {value: 'Yes by implementing the GroupSequenceProviderInterface', correct: true}
+            - {value: 'No', correct: false}
+            - {value: 'Yes by adding the fourth argument of the validator function', correct: false}
+        help: |
+            https://symfony.com/doc/current/validation/sequence_provider.html
+    -
+        question: 'When creating a Toto constraint, must the Validator class be called TotoValidator'
+        answers:
+            - {value: 'Yes always', correct: false}
+            - {value: 'No if you implement the correct method', correct: true}
+    -
+        question: 'What is the signature of the validate method ?'
+        answers:
+            - {value: 'validate($value, Constraint $constraint): void', correct: true}
+            - {value: 'validate($value, Constraint $constraint): ConstraintViolation|null', correct: false}
+            - {value: 'validate($value, Constraint $constraint): ConstraintViolation', correct: false}
+            - {value: 'validate($value, Constraint $constraint, $context): ConstraintViolation', correct: false}
+            - {value: 'validate($value, Constraint $constraint, $context): void', correct: false}
+    -
+        question: 'How to create a class validator ?'
+        answers:
+            - {value: 'return self::ClassConstraint in the getTargets method of the validator class', correct: false}
+            - {value: 'return self::ClassConstraint in the getTargets method of the constraint class', correct: true}
