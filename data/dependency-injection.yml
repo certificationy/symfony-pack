@@ -1,7 +1,8 @@
 category: Dependency Injection
 questions:
     -
-        question: 'Which line allows to inject the my.custom.service?'
+        question: 'When setting up the container with configuratio XML files and Config component, how to inject my.custome.service ?'
+        help: https://symfony.com/doc/current/service_container/injection_types.html#constructor-injection
         answers:
             - {value: <argument id="my.custom.service" />,                 correct: false}
             - {value: <argument type="argument" id="my.custom.service" />, correct: false}
@@ -9,39 +10,79 @@ questions:
             - {value: <service id="my.custom.service" />,                  correct: false}
     -
         question: 'Which types of injection are available in the component?'
+        help: https://symfony.com/doc/current/service_container/injection_types.html
         answers:
             - {value: constructor, correct: true}
             - {value: property,    correct: true}
-            - {value: method,      correct: true}
+            - {value: immutable-property, correct: false}
+            - {value: setter,      correct: true}
+            - {value: immutable-setter, correct: true}
             - {value: constant,    correct: false}
     -
         question: 'Using XML, which of these lines are correct to inject a service?'
+        help: https://symfony.com/doc/current/service_container/injection_types.html
         answers:
             - {value: <service id="my.service" />,                                                      correct: false}
             - {value: <argument type="service" id="my.service" />,                                      correct: true}
+            - {value: <call method="withMyService" returns-clone="true"><argument type="service" id="my.service"/></call>, correct: true}
             - {value: <method setter="setService"><argument type="service" id="my.service" /></method>, correct: false}
             - {value: <call method="setService"><argument type="service" id="my.service" /></call>,     correct: true}
+            - {value: <property name="myService" type="service" id="my.service"/>,     correct: true}
     -
-        question: 'Which of these methods are available in ContainerInterface?'
-        answers:
-            - {value: setScope($name),   correct: false}
-            - {value: getScope($name),   correct: false}
-            - {value: addScope($name),   correct: true}
-            - {value: enterScope($name), correct: true}
-    -
-        question: 'Using YML, which line allows to inject proxy of the service?'
+        question: 'Using YML, which line allows to inject proxy of exceptionnaly large services when working with symfony/proxy-manager-bridge ?'
+        help: https://symfony.com/doc/current/service_container/lazy_services.html
         answers:
             - {value: "proxy_service: true", correct: false}
             - {value: "lazy: true",          correct: true}
             - {value: "proxy: enabled",      correct: false}
             - {value: "proxy: true",         correct: false}
     -
-        question: 'Which method from CompilerPassInterface can modify the container here before it is dumped to PHP code?'
+        question: 'When implementing Command pattern, the use of Service Subscriber is another lazy loading implementation. Which of the following statement is true ?'
+        help: https://symfony.com/doc/current/service_container/service_subscribers_locators.html#defining-a-service-subscriber
         answers:
-            - {value: modify(),             correct: false}
-            - {value: processContainer(),   correct: false}
-            - {value: process(),            correct: true}
-            - {value: modifyContainer(),    correct: false}
+            - {value: "Your implementation must implement ServiceSubscriberInterface", correct: true}
+            - {value: "Static method getSubscribedServices shall be implemented and listed services can be indexed with your own keys", correct: true}
+            - {value: "Static method getSubscribedServices shall be implemented and listed services canot be indexed with your own keys", correct: false}
+            - {value: "ContainerInterface must be injected in your implementation", correct: true}
+            - {value: "Service locator is a subset of service container", correct: true}
+    -
+        question: 'Which of the following statements are true about autowiring ?'
+        help: https://symfony.com/doc/current/service_container/autowiring.html
+        answers:
+            - {value: "Symfony basic configuration comes with autowire set to true", correct: true}
+            - {value: "Type-hinting is used to map the correct services from the service container, using type-hinting as service id", correct: true}
+            - {value: "Autowiring can be used in the __construct() method as well as in all other methods of the service", correct: true}
+            - {value: "Autowiring can only be used in the __construct() method of the service", correct: false}
+    -
+        question: |
+            Using autowire, interfaces can be used instead of services implementation. In order to autowire implementation, you can setup an alias with the interface id.
+            App\MyInterface: '@App\MyServiceImplementation'
+            In case of multiple implementation of your interface, you can use the argument name to determine which service will be injected.
+            App\MyInterface $serviceA: '@App\MyServiceImplementationA'
+            App\MyInterface: '@App\MyServiceImplementationB'
+        help: https://symfony.com/doc/current/service_container/autowiring.html#dealing-with-multiple-implementations-of-the-same-type
+        answers: 
+            - {value: "true", correct: true}
+            - {value: "false", correct: false}
+    -
+        question: 'Which of the following factory design pattern are available for service container defintion ?'
+        help: https://symfony.com/doc/current/service_container/factories.html
+        answers:
+            - {value: 'Static factories', correct: true}
+            - {value: 'Non-Static factories', correct: true}
+            - {value: 'Dynamic factories', correct: false}
+            - {value: 'Invokable factories', correct: true}
+            - {value: 'Clonable factories', correct: false}
+    -
+        question: 'In order to create a App\Email\NewsletterManager using createNewsletterManager static method from NewsletterManagerStaticFactory or createNewsletterManager method from NewsletterManagerFactory, which of the following service YAML definition for App\Email\NewsletterManager can you use ?'
+        help: https://symfony.com/doc/current/service_container/factories.html#static-factories
+        answers:
+            - {value: 'factory: ["App\Email\NewsletterManagerStaticFactory", "createNewsletterManager"]', correct: true}
+            - {value: 'factory: ["@App\Email\NewsletterManagerFactory", "createNewsletterManager"]', correct: true}
+            - {value: 'factory: ["@App\Email\NewsletterManagerStaticFactory", "createNewsletterManager"]', correct: false}
+            - {value: 'factory: ["App\Email\NewsletterManagerFactory", "createNewsletterManager"]', correct: false}
+            - {value: 'call: ["App\Email\NewsletterManagerStaticFactory", "createNewsletterManager"]', correct: false}
+            - {value: 'service: ["App\Email\NewsletterManagerStaticFactory", "createNewsletterManager"]', correct: false}
     -
         question: 'Using Dependency Injection, what is the correct way to override a service class using ContainerBuilder class?'
         answers:
@@ -50,7 +91,16 @@ questions:
             - {value: "$container->getDefinition('my.service')->setService('My\\Service\\Class')", correct: false}
             - {value: "$container->getService('my.service')->setClass('My\\Service\\Class')",      correct: false}
     -
+        question: 'Using a compiler pass, how do you check the existence of service ?'
+        help: https://symfony.com/doc/current/service_container/definitions.html#getting-and-setting-service-definitions
+        answers:
+            - {value: "$container->hasDefinition('my.service')",        correct: true}
+            - {value: "$container->has('my.service')",        correct: true}
+            - {value: "$container->contains('my.service')",   correct: false}
+            - {value: "$container->getService('my.service')",           correct: false}
+    -
         question: 'Using a compiler pass, how do you retrieve a definition of service ?'
+        help: https://symfony.com/doc/current/service_container/definitions.html#getting-and-setting-service-definitions
         answers:
             - {value: "$container->getDefinition('my.service')",        correct: true}
             - {value: "$container->findDefinition('my.service')",       correct: true}
@@ -58,19 +108,14 @@ questions:
             - {value: "$container->getService('my.service')",           correct: false}
     -
         question: 'What are existing compiler pass order ?'
+        help: https://symfony.com/doc/current/components/dependency_injection/compilation.html#controlling-the-pass-ordering
         answers:
             - {value: "PassConfig::TYPE_BEFORE_OPTIMIZATION", correct: true}
             - {value: "PassConfig::TYPE_OPTIMIZE",            correct: true}
             - {value: "PassConfig::TYPE_BEFORE_REMOVING",     correct: true}
             - {value: "PassConfig::TYPE_REMOVE",              correct: true}
-            - {value: "PassConfig::TYPE_AFTER_COMPILING",     correct: false}
-    -
-        question: "As dev environment, what is the name of dumped container ?"
-        answers:
-            - {value: "appDevDebugProjectContainer.php",    correct: true}
-            - {value: "appDevProjectContainer.php",         correct: false}
-            - {value: "appDevDebugProjectServiceContainer", correct: false}
-            - {value: "appDevDebugContainer",               correct: false}
+            - {value: "PassConfig::TYPE_AFTER_OPTIMIZATION",  correct: false}
+            - {value: "PassConfig::TYPE_AFTER_REMOVING",  correct: true}
     -
         question: "True or false, parameters can also contain array values ?"
         answers:
@@ -97,6 +142,18 @@ questions:
             - {value: "private: true", correct: false}
     -
         question: "True or False, With default configuration each time you retrieve the service, you'll get the same instance ?"
+        answers:
+            - {value: "true", correct: true}
+            - {value: "false", correct: false}
+    -
+        question: "The lint:container command checks that the arguments injected into services match their type declarations"
+        help: https://symfony.com/doc/current/service_container.html#linting-service-definitions
+        answers:
+            - {value: "true", correct: true}
+            - {value: "false", correct: false}
+    -
+        question: "Decorating services can be done in YAML using the decorates key. This prevent original service override and autowire decorated class name with decorator instance"
+        help: https://symfony.com/doc/current/service_container/service_decoration.html
         answers:
             - {value: "true", correct: true}
             - {value: "false", correct: false}
