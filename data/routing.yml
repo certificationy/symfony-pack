@@ -34,3 +34,129 @@ questions:
             - {value: "By using UrlGeneratorInterface::ABSOLUTE_URL as third parameter for generateUrl", correct: true}
             - {value: "generateUrl generate absolute URL by default", correct: false}
             - {value: "$this->generateAbsoluteUrl()", correct: false}
+    -
+        question: 'What is the recommended way of creating routes'
+        answers:
+            - {value: "Annotations", correct: true}
+            - {value: "YAML", correct: false}
+            - {value: "XML", correct: false}
+            - {value: "PHP", correct: false}
+    -
+        question: 'By default, routes match only GET HTTP method ?'
+        answers:
+            - {value: "True", correct: false}
+            - {value: "False", correct: true}
+    -
+        question: 'When using php to create route, what method of the RoutingConfigurator should we use to add a route'
+        answers:
+            - {value: "addRoute($routeName, $path, $controllerClass, $controllerMethod)", correct: false}
+            - {value: "add($routeName, $path, $controllerClass, $controllerMethod)", correct: false}
+            - {value: "add($routeName, $path)->controller($controllerClass, $controllerMethod)", correct: true}
+    -
+        question: "If I want to match a route according to the value of the User-Agent header I can use the following code: @Route('/contact', name='contact', condition='context.getMethod() in ['GET', 'HEAD'] and request.headers.get('User-Agent') matches '/firefox/i')"
+        answers:
+            - {value: "true", correct: true}
+            - {value: "False", correct: false}
+    -
+        question: 'How to test if a route match a given URL ?'
+        answers:
+            - {value: "bin/console router:match", correct: true}
+            - {value: "bin/console router:routes:match", correct: false}
+            - {value: "bin/console router:routing:match", correct: false}
+            - {value: "bin/console routing:match", correct: false}
+    -
+        question: 'Can a parameter name be used multiple times to match several args /blogs/{id}/post/{id}'
+        answers:
+            - {value: "True", correct: true}
+            - {value: "False", correct: false}
+    -
+        question: 'Can I define the two following routes in my application : /blog/{slug} and /blog/{post}'
+        answers:
+            - {value: "Yes if I add a requirement requirements={\"post\"=\"\d+\"\}", correct: true}
+            - {value: "Yes if I add  requirements on both routes", correct: true}
+            - {value: "No", correct: false}
+    -
+        question: 'Which path will match the following route : "@Route("/blog/{page}", name="blog_list", requirements={"page"="\d+"})" public function list(int $page = 1)'
+        answers:
+            - {value: "/blog/", correct: true}
+            - {value: "/blog", correct: true}
+            - {value: "/blog/2", correct: true}
+            - {value: "/blog?page=2", correct: false}
+    -
+        question: 'In other format than annotation how are default parameter value set ?'
+        answers:
+            - {value: "default", correct: true}
+            - {value: "/blog", correct: true}
+            - {value: "/blog/2", correct: true}
+            - {value: "/blog?page=2", correct: false}
+    -
+        question: 'How to force the inclusion of default value in generated url ?'
+        answers:
+            - {value: "/{!page<\d+>?1}", correct: true}
+            - {value: "/{!!page<\d+>?1}", correct: false}
+            - {value: "/{:page<\d+>?1}", correct: false}
+            - {value: "/{?page<\d+>?1}", correct: false}
+    -
+        question: 'The following parameters are special routing parameters ?'
+        answers:
+            - {value: "_controller", correct: true}
+            - {value: "_fragment", correct: true}
+            - {value: "_format", correct: true}
+            - {value: "_locale", correct: true}
+            - {value: "_redirect", correct: false}
+    -
+        question: 'You can define optional param by defining default value like this @Route("/blog/{page}", name="blog_index", defaults={"page": 1, "title": "Hello world!"})'
+        answers:
+            - {value: "True", correct: true}
+            - {value: "False", correct: false}
+    -
+        question: 'A route parameter can contain a / character'
+        answers:
+            - {value: "True", correct: true}
+            - {value: "False", correct: false}
+    -
+        question: 'How to access the route name ?'
+        answers:
+            - {value: "$request->attributes->get('_route')", correct: true}
+            - {value: "$request->getAttributes()->get('_route')", correct: false}
+            - {value: "$request->getRouteName()", correct: false}
+    -
+        question: 'Redirect to another route'
+        answers:
+            - {value: "doc_shortcut:
+                           path: /doc
+                           controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+                           defaults:
+                               route: 'doc_page'", correct: true}
+            - {value: "doc_shortcut:
+                           path: /doc
+                           defaults:
+                               route: 'doc_page'", correct: false}
+            - {value: "doc_shortcut:
+                           path: /doc
+                           route: 'doc_page'", correct: false}
+    -
+        question: 'if the route path is /foo, a request on /foo/'
+        answers:
+            - {value: "is redirected to /foo with 301 if request is GET", correct: true}
+            - {value: "is redirected to /foo with 301 in any case", correct: false}
+            - {value: "is not redirected", correct: false}
+    -
+        question: 'Which of the following annotation is valid ?'
+        answers:
+            - {value: "@Route('/', name='toto', hostname='toto.com'", correct: false}
+            - {value: "@Route('/', name='toto', host='{subdomain}.toto.com'", correct: true}
+            - {value: "@Route('/', name='toto', host='{subdomain}.toto.com', defaults={'subdomain'='m'}'", correct: true}
+            - {value: "@Route('/', name='toto', host='{subdomain}.toto.com', requirements={'subdomain'='m|mobile'}'", correct: true}
+
+    -
+        question: 'Which of the following annotation is valid ?'
+        answers:
+            - {value: "@Route({\"en\": \"/about-us\", \"nl\": \"/over-ons\"}, name=\"about-us\")", correct: true}
+            - {value: "@Route({\"en\": \"/about-us\", \"nl\": \"/over-ons\"}, name=\"about-us\")", correct: true}
+
+    -
+        question: 'If you do not give a route name, Symfony will generate an error ?'
+        answers:
+            - {value: "False", correct: true}
+            - {value: "True", correct: false}
