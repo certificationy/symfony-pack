@@ -72,7 +72,7 @@ questions:
     -
         question: 'Can I define the two following routes in my application : /blog/{slug} and /blog/{post}'
         answers:
-            - {value: "Yes if I add a requirement requirements={\"post\"=\"\d+\"\}", correct: true}
+            - {value: 'Yes if I add a requirement requirements={"post"="\d+"\}', correct: true}
             - {value: "Yes if I add  requirements on both routes", correct: true}
             - {value: "No", correct: false}
     -
@@ -92,10 +92,10 @@ questions:
     -
         question: 'How to force the inclusion of default value in generated url ?'
         answers:
-            - {value: "/{!page<\d+>?1}", correct: true}
-            - {value: "/{!!page<\d+>?1}", correct: false}
-            - {value: "/{:page<\d+>?1}", correct: false}
-            - {value: "/{?page<\d+>?1}", correct: false}
+            - {value: "/{!page<\\d+>?1}", correct: true}
+            - {value: "/{!!page<\\d+>?1}", correct: false}
+            - {value: "/{:page<\\d+>?1}", correct: false}
+            - {value: "/{?page<\\d+>?1}", correct: false}
     -
         question: 'The following parameters are special routing parameters ?'
         answers:
@@ -123,18 +123,27 @@ questions:
     -
         question: 'Redirect to another route'
         answers:
-            - {value: "doc_shortcut:
-                           path: /doc
-                           controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
-                           defaults:
-                               route: 'doc_page'", correct: true}
-            - {value: "doc_shortcut:
-                           path: /doc
-                           defaults:
-                               route: 'doc_page'", correct: false}
-            - {value: "doc_shortcut:
-                           path: /doc
-                           route: 'doc_page'", correct: false}
+            -
+                value: |
+                    "doc_shortcut:
+                     path: /doc
+                     controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+                     defaults:
+                         route: 'doc_page'"
+                correct: true
+            -
+                value: |
+                    "doc_shortcut:
+                     path: /doc
+                     defaults:
+                         route: 'doc_page'"
+                correct: false
+            -
+                value: |
+                    "doc_shortcut:
+                     path: /doc
+                     route: 'doc_page'"
+                correct: false
     -
         question: 'if the route path is /foo, a request on /foo/'
         answers:
@@ -152,8 +161,8 @@ questions:
     -
         question: 'Which of the following annotation is valid ?'
         answers:
-            - {value: "@Route({\"en\": \"/about-us\", \"nl\": \"/over-ons\"}, name=\"about-us\")", correct: true}
-            - {value: "@Route({\"en\": \"/about-us\", \"nl\": \"/over-ons\"}, name=\"about-us\")", correct: true}
+            - {value: '@Route({"en": "/about-us", "nl": "/over-ons"}, name="about-us")', correct: true}
+            - {value: '@Route({"en": "/about-us", "nl": "/over-ons"}, name="about-us")', correct: true}
 
     -
         question: 'If you do not give a route name, Symfony will generate an error ?'

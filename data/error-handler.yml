@@ -13,11 +13,11 @@ questions:
   -
     question: 'Which method(s) should be called to catch PHP errors and turn them into PHP exceptions?'
     answers:
-      - {value: "Symfony\Component\ErrorHandler\Debug::enable()", correct: true}
-      - {value: "Symfony\Component\ErrorHandler\ErrorHandler::register()", correct: true}
-      - {value: "Symfony\Component\ErrorHandler\ErrorHandler::handle()", correct: false}
-      - {value: "Symfony\Component\ErrorHandler\Handler\ErrorHandler::register()", correct: false}
-      - {value: "Symfony\Component\ErrorHandler\Handler\ErrorHandler::handle()", correct: false}
+      - {value: 'Symfony\Component\ErrorHandler\Debug::enable()', correct: true}
+      - {value: 'Symfony\Component\ErrorHandler\ErrorHandler::register()', correct: true}
+      - {value: 'Symfony\Component\ErrorHandler\ErrorHandler::handle()', correct: false}
+      - {value: 'Symfony\Component\ErrorHandler\Handler\ErrorHandler::register()', correct: false}
+      - {value: 'Symfony\Component\ErrorHandler\Handler\ErrorHandler::handle()', correct: false}
     help: https://symfony.com/doc/current/components/error_handler.html#turning-php-errors-into-exceptions
   -
     question: 'How to wrap a PHP native method such as file_get_contents($filename) to trigger an exception instead of returning false in case of problem?'
@@ -30,9 +30,9 @@ questions:
   -
     question: 'Which method(s) should be called to debug class loading?'
     answers:
-      - {value: "Symfony\Component\ErrorHandler\Debug::enable()", correct: true}
-      - {value: "Symfony\Component\ErrorHandler\DebugClassLoader::enable()", correct: true}
-      - {value: "Symfony\Component\ErrorHandler\ClassLoader::debug()", correct: false}
-      - {value: "Symfony\Component\ErrorHandler\Loader\DebugClassLoader::enable()", correct: false}
-      - {value: "Symfony\Component\ErrorHandler\Loader\ClassLoader::debug()", correct: false}
+      - {value: 'Symfony\Component\ErrorHandler\Debug::enable()', correct: true}
+      - {value: 'Symfony\Component\ErrorHandler\DebugClassLoader::enable()', correct: true}
+      - {value: 'Symfony\Component\ErrorHandler\ClassLoader::debug()', correct: false}
+      - {value: 'Symfony\Component\ErrorHandler\Loader\DebugClassLoader::enable()', correct: false}
+      - {value: 'Symfony\Component\ErrorHandler\Loader\ClassLoader::debug()', correct: false}
     help: https://symfony.com/doc/current/components/error_handler.html#class-loading-debugger
