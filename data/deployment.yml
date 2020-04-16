@@ -1,0 +1,16 @@
+category: Deployment
+questions:
+  -
+    question: 'How to tell a Symfony application behind a reverse proxy accessible in the 192.0.0.1 IP to read the X-Forwarded-* headers to find the hostname, the client IP...'
+    answers:
+      - {value: "Request::setTrustedProxies(['127.0.0.1', '192.0.0.1'], 0b11110)", correct: true}
+      - {value: "Request::setTrustedProxies(['127.0.0.1', 'REMOTE_ADDR'], 'X-Forwarded')", correct: false}
+      - {value: "Request::setTrustedProxies(['127.0.0.1', '192.0.0.1'], Request::HEADER_X_FORWARDED_ALL)", correct: true}
+      - {value: "Request::setTrustedProxies(['127.0.0.1', '192.0.0.1']) and Request::setTrustedHeaderSet(Request::HEADER_X_FORWARDED_ALL)", correct: false}
+    help: https://symfony.com/doc/master/deployment/proxies.html#solution-settrustedproxies
+  -
+    question: 'How to read these information such as the hostname, the client IP when your application is behind a reverse proxy sending these data in a custom header Custom-Forwarded-*?'
+    answers:
+      - {value: "You need to set these custom headers manually in $_SERVER where Symfony would read them normally", correct: true}
+      - {value: "Request::setTrustedProxies(['xxx.xxx.xxx.xxx'], 'Custom-Forwarded')", correct: false}
+    help: https://symfony.com/doc/master/deployment/proxies.html#custom-headers-when-using-a-reverse-proxy
