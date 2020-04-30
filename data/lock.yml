@@ -1,0 +1,56 @@
+category: Lock
+questions:
+  -
+    question: 'What is the correct way to create a Lock'
+    answers:
+      - {value: "Calling createLock('resource') method of the LockFactory class", correct: true}
+      - {value: "new Lock('resource')",     correct: false}
+      - {value: "new Lock('resource', $store)",     correct: false}
+      - {value: "createLock('resource', $store)",   correct: false}
+    help: |
+      https://symfony.com/doc/current/components/lock.html
+
+  - question: 'What is the signature of the acquire function of Lock class ?'
+    answers:
+      - {value: "acquire(string lockname): bool", correct: false}
+      - {value: "acquire(string lockname): void", correct: false}
+      - {value: "acquire(): bool", correct: false}
+      - {value: "acquire(): void", correct: false}
+      - {value: "acquire(bool $blocking): bool", correct: true}
+
+  - question: 'If a lock has to be used by several services, should they share the same Lock instance'
+    answers:
+      - {value: "Yes", correct: true}
+      - {value: "No", correct: false}
+
+  - question: 'What is a blocking lock'
+    answers:
+      - {value: "A lock that blocks the execution of the application until it is acquired", correct: true}
+      - {value: "A lock that cannot be acquired anymore", correct: false}
+
+  - question: 'Every store supports blocking lock'
+    answers:
+      - {value: "Yes", correct: false}
+      - {value: "No", correct: true}
+
+  - question: 'If the chosen store does not support blocking lock you can decorate it with RetryTillSaveStore'
+    answers:
+      - {value: "Yes", correct: true}
+      - {value: "No", correct: false}
+
+  - question: 'How to release a lock ?'
+    answers:
+      - {value: "With $lock->release() method", correct: true}
+      - {value: "By passing a TTL when creating the lock", correct: true}
+      - {value: "With $lock->free() method", correct: false}
+
+  - question: 'Which lock store exists ?'
+    answers:
+      - {value: "FlockStore", correct: true}
+      - {value: "ZookeeperStore", correct: true}
+      - {value: "RedisStore", correct: true}
+      - {value: "SemaphoreStore", correct: true}
+      - {value: "PdoStore", correct: true}
+      - {value: "MemcachedStore", correct: true}
+      - {value: "MuseumkeeperStore", correct: false}
+      - {value: "MongoStore", correct: false}
