@@ -30,6 +30,9 @@ questions:
             - {value: "$request->request->get('foo');",   correct: false}
             - {value: "{$request->query->all()}['foo'];", correct: true}
             - {value: "$request->get('foo');",            correct: true}
+        help: |
+            https://symfony.com/doc/current/components/http_foundation.html#accessing-request-data
+            https://github.com/symfony/http-foundation/blob/7e1fc5dc6ef3b9fbe2390b0f49473f0243a5f78b/Request.php#L685
     -
         question: 'How to access the `bar` POST parameter from Request object $request ?'
         answers:
@@ -164,3 +167,74 @@ questions:
         help: |
             https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
             https://tools.ietf.org/html/rfc7231#section-4.2.2
+    -
+        question: 'When using the Request get method, what is the order of precedence in order to find a given parameter?'
+        answers:
+            - {value: 'This method does not exist', correct: false}
+            - {value: 'GET, BODY, PATH', correct: false}
+            - {value: 'PATH, GET, BODY', correct: true}
+            - {value: 'BODY, GET, PATH', correct: false}
+        help: |
+            https://github.com/symfony/symfony/blob/5.0/src/Symfony/Component/HttpFoundation/Request.php#L686
+    -
+        question: 'How can you access the request "Accept" header?'
+        answers:
+            - {value: "$request->getAcceptableContentTypes()", correct: true}
+            - {value: "$request->getAcceptedContentTypes()", correct: false}
+            - {value: "$request->contentTypes", correct: false}
+            - {value: "$request->getContentTypes", correct: false}
+    -
+        question: 'Which of the following features are new in HTTP1.1 version?'
+        answers:
+            - {value: "Hostname Identification", correct: true}
+            - {value: "Content Negotiation", correct: true}
+            - {value: "Persistent Connections", correct: true}
+            - {value: "Chunked Transfers", correct: true}
+            - {value: "Byte Ranges", correct: true}
+            - {value: "DELETE method", correct: true}
+        help: |
+            http://www.apacheweek.com/features/http11
+    -
+        question: 'How can you anonymize an IP address?'
+        answers:
+            - {value: "IPUtils::anonymize($ipAddress)", correct: true}
+            - {value: "$request->getClientIp()->anonymize", correct: false}
+            - {value: "Request::anonymize($request->server->get('REMOTE_ADDR'))", correct: false}
+            - {value: "Request::anonymize($request->getClientIp())", correct: false}
+        help: |
+            https://symfony.com/doc/current/components/http_foundation.html#anonymizing-ip-addresses
+    -
+        question: 'How can you send cookies to the client?'
+        answers:
+            - {value: "$response->headers->setCookie(Cookie::create('foo', 'bar'));", correct: true}
+            - {value: "$response->setCookie(Cookie::create('foo', 'bar'));", correct: false}
+            - {value: "$response->headers->setCookie('foo', 'bar');", correct: false}
+            - {value: "$response->setCookie('foo', 'bar');", correct: false}
+    -
+        question: 'Which of the following is a security flaw?'
+        answers:
+            - {value: '$response = new JsonResponse([$object1, $object2]);', correct: true}
+            - {value: '$response = new JsonResponse({"data": [$object1, $object2]});', correct: false}
+            - {value: '$response = new JsonResponse();', correct: false}
+            - {value: 'Paul, stop. (None of the above)', correct: false}
+    -
+        question: 'When using JSONP, how do you specify the function that the data should be passed to?'
+        answers:
+            - {value: "$response->setCallback('handleResponse');", correct: true}
+            - {value: "$response = new JsonpResponse($data, 'handleResponse');", correct: false}
+            - {value: '$response = new JsonResponse("handleResponse($data)");', correct: false}
+            - {value: 'Symfony does not support JSONP', correct: false}
+    -
+        question: 'Which of the following is not part of the HttpFoundation component?'
+        answers:
+            - {value: 'ResponseMatcher', correct: true}
+            - {value: 'ServerUtils', correct: true}
+            - {value: 'IpUtils', correct: false}
+            - {value: 'FileBag', correct: false}
+    -
+        question: 'Which of the following is not part of the HttpFoundation component?'
+        answers:
+            - {value: 'ResponseMatcher', correct: true}
+            - {value: 'ServerUtils', correct: true}
+            - {value: 'IpUtils', correct: false}
+            - {value: 'FileBag', correct: false}
