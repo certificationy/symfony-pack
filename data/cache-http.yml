@@ -2,6 +2,8 @@ category: HTTP Cache
 questions:
     -
         question: 'What is the correct way to render a ESI tag using HTML?'
+        help: |
+            https://symfony.com/doc/current/http_cache/esi.html
         answers:
             - {value: <include:esi src="http://..." />, correct: false}
             - {value: <esi:include src="http://..." />, correct: true}
@@ -9,6 +11,8 @@ questions:
             - {value: <esi src="http://..." />,         correct: false}
     -
         question: 'What is the Twig function to render an ESI?'
+        help: |
+            https://symfony.com/doc/current/http_cache/esi.html#using-esi-in-symfony
         answers:
             - {value: cache_esi(),  correct: false}
             - {value: esi_cache(),  correct: false}
@@ -16,6 +20,8 @@ questions:
             - {value: render_esi(), correct: true}
     -
         question: 'Which HTTP headers belongs to expiration cache model?'
+        help: |
+            https://symfony.com/doc/current/http_cache/expiration.html
         answers:
             - {value: Expires,       correct: true}
             - {value: Last-Modified, correct: false}
@@ -24,6 +30,8 @@ questions:
             - {value: Cookie,        correct: false}
     -
         question: 'Which HTTP headers belongs to validation cache model?'
+        help: |
+            https://symfony.com/doc/current/http_cache/validation.html
         answers:
             - {value: Expires,       correct: false}
             - {value: Last-Modified, correct: true}
@@ -32,6 +40,8 @@ questions:
             - {value: Cookie,        correct: false}
     -
         question: 'Which HTTP status code must be returned if the cache is still valid ?'
+        help: |
+            https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304
         answers:
             - {value: '304', correct: true}
             - {value: '200', correct: false}
@@ -40,23 +50,70 @@ questions:
             - {value: '305', correct: false}
     -
         question: 'True or False ? ESI need to be activated in configuration.'
+        help: |
+            https://symfony.com/doc/current/http_cache/esi.html#using-esi-in-symfony
         answers:
             - {value: "True",     correct: true}
             - {value: "False",    correct: false}
     -
-        question: 'According to HTTP/1.1 what is the max value for Expires ?'
-        answers:
-            - {value: "one year", correct: true}
-            - {value: "one month", correct: false}
-            - {value: "one week", correct: false}
-            - {value: "There is not limit", correct: false}
-    -
-        question: 'True or False ? You can use both validation and expiration within the same Response.'
+        question: 'True or False ? You can use both validation and expiration cache model headers within the same Response.'
+        help: |
+            https://symfony.com/doc/current/http_cache/validation.html
         answers:
             - {value: "True",     correct: true}
             - {value: "False",    correct: false}
     -
-        question: 'True or False ? Using ETag saves CPU cycles.'
+        question: 'Which of the following is an existing Gateway Cache solution'
+        help: |
+            https://symfony.com/doc/current/http_cache.html#caching-with-a-gateway-cache
         answers:
-            - {value: "True",     correct: false}
-            - {value: "False",    correct: true}
+            - {value: 'Varnish', correct: true}
+            - {value: 'Squid', correct: true}
+            - {value: 'Symfony Reverse Proxy', correct: true}
+            - {value: 'Symfony Cache', correct: false}
+    -
+        question: 'Which of the following class should you extend to declare a new CacheKernel'
+        help: |
+            https://symfony.com/doc/current/http_cache.html#symfony-reverse-proxy
+        answers:
+            - {value: 'Symfony\Bundle\FrameworkBundle\HttpCache\HttpCache', correct: true}
+            - {value: 'Symfony\Component\HttpClient\HttpCache', correct: false}
+            - {value: 'Symfony\Component\Cache\HttpCache', correct: false}
+            - {value: 'Symfony\Component\HttpKernel\Cache\HttpCache', correct: false}
+    -
+        question: 'What is the purpose of the Symfony Reverse Proxy cache solution'
+        help: |
+            https://symfony.com/doc/current/http_cache.html#symfony-reverse-proxy
+        answers:
+            - {value: 'evaluate a caching strategy in envrionements where you can only control PHP code base', correct: true}
+            - {value: 'debuging your cache strategy efficiency by providing a cache trace header in your response', correct: true}
+            - {value: 'increase your cache speed compared to 3rd party solutions', correct: false}
+            - {value: 'use Edge Side Includes cache features', correct: false}
+    -
+        question: 'Which of the following statement is true ?'
+        help: |
+            https://symfony.com/doc/current/http_cache/validation.html
+        answers:
+            - {value: 'When both expiration and validation cache model headers are used, expiration header is prioritized over validation header', correct: true}
+            - {value: 'When both expiration and validation cache model headers are used, validation header is prioritized over expiration header', correct: false}
+
+    -
+        question: 'ETag header stands for'
+        help: |
+            https://symfony.com/doc/current/http_cache/validation.html#validation-with-the-etag-header
+        answers:
+            - {value: 'Entity-tag', correct: true}
+            - {value: 'Edge-tag', correct: false}
+            - {value: 'Evaluate-tag', correct: false}
+            - {value: 'Expiration-tag', correct: false}
+    -
+        question: 'What are the available methods on the Response object related to caching ?'
+        answers:
+            - {value: 'expire', correct: true}
+            - {value: 'setNotModified', correct: true}
+            - {value: 'setCache', correct: true}
+            - {value: 'setSharedMaxAge', correct: true}
+            - {value: 'setEtag', correct: true}
+            - {value: 'setPublic', correct: true}
+            - {value: 'isNotModified', correct: true}
+            - {value: 'setLastModified', correct: true}
