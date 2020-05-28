@@ -1,0 +1,64 @@
+category: Filesystem
+questions:
+  -
+    question: 'How to use the Filesystem component in a service?'
+    answers:
+      - {value: "Instantiate it with $filesystem = new Filesystem();", correct: true}
+      - {value: "Use Dependency Injection", correct: false}
+    help: https://symfony.com/doc/current/components/filesystem.html#usage
+  -
+    question: 'What are valid ways to call the mkdir function?'
+    answers:
+      - {value: "$filesystem->mkdir('/tmp/random_directory')", correct: true}
+      - {value: "$filesystem->mkdir('/tmp/random_directory', 0700)", correct: true}
+      - {value: "$filesystem->mkdir(['/tmp/random_directory_1', '/tmp/random_directory_2'], 0700)", correct: true}
+      - {value: "$filesystem->mkdir(['/tmp/random_directory_1', '/tmp/random_directory_2'])", correct: true}
+      - {value: "$filesystem->mkdir(new ArrayCollection(['/tmp/random_directory_1', '/tmp/random_directory_2']), 777)", correct: false}
+      - {value: "$filesystem->mkdir(new ArrayCollection(['/tmp/random_directory_1', '/tmp/random_directory_2']))", correct: true}
+    help: https://symfony.com/doc/current/components/filesystem.html#mkdir
+  -
+    question: 'What are valid ways to call the touch function?'
+    answers:
+      - {value: "$filesystem->touch('/tmp/random_file')", correct: true}
+      - {value: "$filesystem->touch('/tmp/random_directory', time())", correct: true}
+      - {value: "$filesystem->touch('/tmp/random_directory', new DateTime())", correct: false}
+      - {value: "$filesystem->touch(['/tmp/random_directory_1', '/tmp/random_directory_2'])", correct: true}
+    help: https://symfony.com/doc/current/components/filesystem.html#touch
+  -
+    question: 'What are valid ways to call the symlink function?'
+    answers:
+      - {value: "$filesystem->symlink('/tmp/source_file', '/tmp/destination_file')", correct: true}
+      - {value: "$filesystem->symlink(['/tmp/source_file_1', '/tmp/source_file_2'], ['/tmp/destination_file_1', '/tmp/destination_file_2'])", correct: false}
+      - {value: "$filesystem->symlink('/tmp/source_file', '/tmp/destination_file', true)", correct: true}
+      - {value: "$filesystem->symlink('/tmp/source_file', '/tmp/destination_file', Filesystem::WINDOWS_OS)", correct: false}
+    help: https://symfony.com/doc/current/components/filesystem.html#symlink
+  -
+    question: 'What is the difference between the methods copy() and mirror()?'
+    answers:
+      - {value: "There is no difference, they are aliases", correct: false}
+      - {value: "One is used to copy files and the other directories", correct: true}
+      - {value: "Mirror is used for symbolic links", correct: false}
+    help: https://symfony.com/doc/current/components/filesystem.html#copy
+  -
+    question: 'Is it possible to remove symlinks with the remove() method?'
+    answers:
+      - {value: 'Yes', correct: true}
+      - {value: 'No', correct: false}
+  -
+    question: 'Is it possible to set file owners and permissions recursively?'
+    answers:
+      - {value: 'Yes', correct: true}
+      - {value: 'No', correct: false}
+    help: https://symfony.com/doc/current/components/filesystem.html#chown
+  -
+    question: 'What is the purpose of the readlink() method?'
+    answers:
+      - {value: 'Follow multiple symlinks recursively', correct: false}
+      - {value: 'Have a deterministic output whatever the OS hosting the application', correct: true}
+    help: https://symfony.com/doc/current/components/filesystem.html#readlink
+  -
+    question: 'Which interface do you use to catch every exception when calling a Filesystem method?'
+    answers:
+      - {value: 'Symfony\Component\Filesystem\Exception\ExceptionInterface', correct: true}
+      - {value: 'Symfony\Component\Filesystem\Exception\IOExceptionInterface', correct: false}
+    help: https://symfony.com/doc/current/components/filesystem.html#error-handling
