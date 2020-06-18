@@ -1,0 +1,152 @@
+category: Mailer
+questions:
+    -
+      question: 'Which of the following are supported transport within the symfony/mailer component ?'
+      help: https://symfony.com/doc/current/mailer.html#transport-setup
+      answers:
+          - {value: SMTP, correct: true}
+          - {value: Amazon SES, correct: false}
+          - {value: Gmail, correct: false}
+          - {value: MailChimp, correct: false}
+          - {value: Mailgun, correct: false}
+          - {value: Postmark, correct: false}
+          - {value: SendGrid, correct: false}
+    -
+      question: 'Which are valid transport protocols ?'
+      help: https://symfony.com/doc/current/components/mailer.html#mailer-dsn
+      answers:
+          - {value: SMTP, correct: true}
+          - {value: HTTP, correct: true}
+          - {value: API, correct: true}
+          - {value: POP3, correct: false}
+    -
+      question: 'Which of the following are valid DSN ?'
+      help: https://symfony.com/doc/current/components/mailer.html#mailer-dsn
+      answers:
+          - {value: MAILER_DSN=smtp://user:pass@smtp.example.com:port, correct: true}
+          - {value: MAILER_DSN=sendgrid://KEY@default, correct: true}
+          - {value: MAILER_DSN=sendgrid+smtp://$SENDGRID_KEY@default, correct: true}
+          - {value: MAILER_DSN=postmark+https://ID:ID@default, correct: false}
+          - {value: MAILER_DSN=gmail+smtp://USERNAME:PASSWORD@default, correct: false}
+    -
+      question: 'What is the correct way, when using symfony/mailer component, to send an email ?'
+      help: https://symfony.com/doc/current/mailer.html#creating-sending-messages
+      answers:
+          - {value: Autowire MailerInterface and use the send method, correct: true}
+          - {value: Autowire Mailer and use the send method, correct: false}
+          - {value: Autowire TransportInterface and use the send method, correct: false}
+    -
+      question: 'Which Symfony component simplifies Mail message API ?'
+      help: https://symfony.com/doc/current/components/mime.html#introduction
+      answers:
+          - {value: symfony/mime, correct: true}
+          - {value: symfony/email, correct: false}
+          - {value: symfony/messenger, correct: false}
+    -
+      question: 'Which are the available method on the Email class for construction ?'
+      help: https://github.com/symfony/mime/blob/master/Email.php
+      answers:
+          - {value: from, correct: true}
+          - {value: to, correct: true}
+          - {value: cc, correct: true}
+          - {value: bcc, correct: true}
+          - {value: replyTo, correct: true}
+          - {value: priority, correct: true}
+          - {value: subject, correct: true}
+          - {value: text, correct: true}
+          - {value: html, correct: true}
+          - {value: date, correct: true}
+          - {value: returnPath, correct: true}
+          - {value: sender, correct: true}
+          - {value: addFrom, correct: true}
+          - {value: addReplyTo, correct: true}
+          - {value: addTo, correct: true}
+          - {value: addCc, correct: true}
+          - {value: attach, correct: true}
+          - {value: attachFromPath, correct: true}
+          - {value: attachFile, correct: false}
+          - {value: embed, correct: true}
+          - {value: ensureValidity, correct: true}
+          - {value: validate, correct: false}
+    -
+      question: 'What is the purpose of the multipart/alternative MIME message part ?'
+      help: https://symfony.com/doc/current/components/mime.html#creating-raw-email-messages
+      answers:
+          - {value: used when two or more parts are representing the same content, correct: true}
+          - {value: used as a fallback when MIME client cannot interpret a specific type, correct: false}
+    -
+      question: 'What is the use case of the multipart/related MIME message part ?'
+      help: https://symfony.com/doc/current/components/mime.html#creating-raw-email-messages
+      answers:
+          - {value: embed an image within the content, correct: true}
+          - {value: attaching a document to an email, correct: false}
+    -
+      question: 'Twig is natively integrated with the symfony/mime component ?'
+      help: https://symfony.com/doc/current/components/mime.html#twig-integration
+      answers:
+          - {value: 'true', correct: true}
+          - {value: 'false', correct: false}
+    -
+      question: 'Which representations of an Email can be passed to the mailer component to be sent ?'
+      answers:
+          - {value: Symfony\Component\Mime\RawMessage, correct: true}
+          - {value: Symfony\Component\Mime\Message, correct: true}
+          - {value: Symfony\Component\Mime\Email, correct: true}
+    -
+      question: 'You can ensure symfony/mailer component transports high availability using failover technique ?'
+      help: https://symfony.com/doc/current/components/mailer.html#high-availability
+      answers:
+          - {value: 'true', correct: true}
+          - {value: 'false', correct: false}
+    -
+      question: 'You can implement load balancing on symfony/mailer component transports using round-robin technique ?'
+      help: https://symfony.com/doc/current/components/mailer.html#load-balancing
+      answers:
+          - {value: 'true', correct: true}
+          - {value: 'false', correct: false}
+    -
+      question: 'You can send email asynchronously using symfony/messenger component ?'
+      help: https://symfony.com/doc/current/components/mailer.html#sending-emails-asynchronously
+      answers:
+          - {value: 'true', correct: true}
+          - {value: 'false', correct: false}
+    -
+      question: 'Which event can you subscribe to in order to modify a message before it is sent ?'
+      help: https://github.com/symfony/mailer/blob/master/Event/MessageEvent.php
+      answers:
+          - {value: Symfony\Component\Mailer\Event\MessageEvent, correct: true}
+          - {value: Symfony\Component\Mailer\Event\BeforeSend, correct: false}
+          - {value: Symfony\Component\Mailer\Event\AfterSend, correct: false}
+    -
+      question: 'How can you debug the sending of an email ?'
+      help: https://symfony.com/doc/current/mailer.html#debugging-emails
+      answers:
+          - {value: Using Symfony\Component\Mailer\SentMessage object returned from Symfony\Component\Mailer\Transport\TransportInterface send method, correct: true}
+          - {value: Using the profiler, correct: true}
+          - {value: Setting debug attribute to true when instanciating Email object, correct: false}
+    -
+      question: 'How do you pass arguments for a twig template to be rendered for an email body ?'
+      help: https://symfony.com/doc/current/mailer.html#html-content
+      answers:
+          - {value: using context method of TemplatedEmail object, correct: true}
+          - {value: using context method of Email object, correct: false}
+          - {value: using second argument of the render method, correct: false}
+    -
+      question: 'Which templating language is recommended by Symfony in order to ensure email HTML body is well rendered on every email client ?'
+      help: https://symfony.com/doc/current/mailer.html#html-content
+      answers:
+          - {value: Inky, correct: true}
+          - {value: MJML, correct: false}
+          - {value: emailframe.work, correct: false}
+    -
+      question: 'Can you sign email sent using the symfony/mailer component ?'
+      help: https://symfony.com/doc/current/mailer.html#signing-messages
+      answers:
+          - {value: 'true', correct: true}
+          - {value: 'false', correct: false}
+    -
+      question: 'Can you encrypt email sent using the symfony/mailer component ?'
+      help: https://symfony.com/doc/current/mailer.html#encrypting-messages
+      answers:
+          - {value: 'true', correct: true}
+          - {value: 'false', correct: false}
