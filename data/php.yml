@@ -273,3 +273,113 @@ questions:
             - {value: "The Iterator Trait class may be used to specify iteration behaviour",  correct: false}
         help: |
             https://www.php.net/manual/en/language.oop5.iterations.php
+    -
+        question: 'In which variable is the current namespace stored?'
+        answers:
+            - {value: "__NAMESPACE__", correct: true}
+            - {value: "__NAMESPACE", correct: false}
+            - {value: "$_NAMESPACE", correct: false}
+            - {value: "\NAMESPACE", correct: false}
+        help: |
+            https://www.php.net/manual/en/language.namespaces.nsconstants.php
+    -
+        question: 'Which of the following are properties of the Exception class?'
+        answers:
+            - {value: "message", correct: true}
+            - {value: "code", correct: true}
+            - {value: "file", correct: true}
+            - {value: "line", correct: true}
+            - {value: "trace", correct: true}
+            - {value: "previous", correct: true}
+            - {value: "traceString", correct: false}
+            - {value: "severity", correct: false}
+        help: |
+            https://www.php.net/manual/en/class.exception.php
+            https://www.php.net/manual/en/class.errorexception.php
+            severity is an ErrorException property
+    -
+        question: 'Which of the following are core extensions?'
+        answers:
+            - {value: "Date/Time", correct: true}
+            - {value: "Error Handling", correct: true}
+            - {value: "Filesystem", correct: true}
+            - {value: "URLs", correct: true}
+            - {value: "Fileinfo", correct: false}
+            - {value: "FTP", correct: false}
+            - {value: "JSON", correct: false}
+            - {value: "SimpleXML", correct: false}
+        help: |
+            https://www.php.net/manual/en/extensions.membership.php
+    -
+        question: 'Which of the following are bundled extensions?'
+        answers:
+            - {value: "OPcache", correct: true}
+            - {value: "PDO", correct: true}
+            - {value: "XML-RPC", correct: true}
+            - {value: "intl", correct: true}
+            - {value: "Tokenizer", correct: false}
+            - {value: "Phar", correct: false}
+            - {value: "cURL", correct: false}
+            - {value: "LDAP", correct: false}
+        help: |
+            https://www.php.net/manual/en/extensions.membership.php
+    -
+        question: 'Which of the following are external extensions?'
+        answers:
+            - {value: "SOAP", correct: true}
+            - {value: "Sodium", correct: true}
+            - {value: "XML Parser", correct: true}
+            - {value: "SimpleXML", correct: true}
+            - {value: "Sockets", correct: false}
+            - {value: "Sessions", correct: false}
+            - {value: "Password Hashing", correct: false}
+            - {value: "Mail", correct: false}
+        help: |
+            https://www.php.net/manual/en/extensions.membership.php
+    -
+        question: 'When using SplDoublyLinkedList, what mode should you set to use LIFO while deleting iterated elements?'
+        answers:
+            - {value: "0", correct: false}
+            - {value: "1", correct: false}
+            - {value: "2", correct: false}
+            - {value: "3", correct: true}
+        help: |
+            https://www.php.net/manual/fr/class.spldoublylinkedlist.php
+    -
+        question: 'It is possible to use SplQueue as a stack'
+        answers:
+            - {value: "Yes, by setting iterator mode with a specific value", correct: false}
+            - {value: "Yes, by using push and pop methods", correct: true}
+            - {value: "No", correct: false}
+            - {value: "Yes, thanks to the second argument of queue and enqueue methods", correct: false}
+        help: |
+            https://www.php.net/manual/fr/class.splqueue.php
+    -
+        question: 'Which of the following are true?'
+        answers:
+            - {value: "SplFixedArray is of fixed length", correct: true}
+            - {value: "SplFixedArray allows only integers as indexes", correct: true}
+            - {value: "SplFixedArray uses less memory than a standard array", correct: true}
+            - {value: "You cannot replace SplFixedArray values", correct: false}
+        help: |
+            https://www.php.net/manual/fr/class.splfixedarray.php
+    -
+        question: 'Which of the following Exception classes are part of the SPL library?'
+        answers:
+            - {value: "InvalidArgumentException", correct: true}
+            - {value: "LengthException", correct: true}
+            - {value: "RangeException", correct: true}
+            - {value: "OverflowException", correct: true}
+            - {value: "ArgumentCountException", correct: false}
+            - {value: "DivisionByZeroException", correct: false}
+        help: |
+            https://www.php.net/book.spl
+    -
+        question: 'Which of the following are implemented by SplFileObject?'
+        answers:
+            - {value: "SeekableIterator", correct: true}
+            - {value: "RecursiveIterator", correct: true}
+            - {value: "FilesystemIterator", correct: false}
+            - {value: "FilterIterator", correct: false}
+        help: |
+            https://www.php.net/manual/fr/class.splfileobject.php
