@@ -1,5 +1,5 @@
 {
-    "name": "certificationy/symfony-pack",
+    "name": "calex92/symfony-pack",
     "type": "certificationy-pack",
     "description": "A series of questions to prepare for the certification Symfony2",
     "keywords": ["symfony", "certification", "test", "exam"],
