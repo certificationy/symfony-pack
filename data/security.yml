@@ -50,6 +50,7 @@ questions:
             - {value: 'security.interactive_login', correct: true}
             - {value: 'security.login', correct: false}
             - {value: 'security.switch_user', correct: true}
+            - {value: 'security.logout_on_change', correct: true}
             - {value: 'security.authentication.start', correct: false}
             - {value: 'security.remember_me_login', correct: false}
     -
@@ -92,7 +93,8 @@ questions:
         question: 'Which annotation is valid to check role ?'
         answers:
             - {value: '@Security("has_role("ROLE_ADMIN")")', correct: true}
-            - {value: '@Security("is_granted("ROLE_ADMIN")")', correct: false}
+            - {value: '@Security("is_granted("ROLE_ADMIN")")', correct: true}
+            - {value: '@IsGranted("ROLE_ADMIN")', correct: true}
             - {value: '@Security("restrict_for("ROLE_ADMIN")")', correct: false}
             - {value: '@Security("role("ROLE_ADMIN")")', correct: false}
     -
@@ -127,4 +129,5 @@ questions:
             - {value: "loadUser($username)", correct: false}
             - {value: "refreshUser(UserInterface $user)", correct: true}
             - {value: "getUser($username)", correct: false}
+            - {value: "supports($class)", correct: false}
             - {value: "supportsClass($class)", correct: true}

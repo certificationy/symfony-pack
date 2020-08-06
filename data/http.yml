@@ -81,7 +81,7 @@ questions:
         help: |
             https://tools.ietf.org/html/rfc2616#section-10.3.2
     -
-        question: 'True or False ? Server returns an 403 HTTP status code when you are not allowed to access a resource'
+        question: 'True or False ? Server returns an  status code when you are not allowed to access a resource'
         answers:
             - {value: "True",    correct: true}
             - {value: "False",   correct: false}
@@ -94,6 +94,7 @@ questions:
             - {value: "getHeaders",   correct: false}
             - {value: "getHttpHost",   correct: true}
             - {value: "getUrl",   correct: false}
+            - {value: "getUri",   correct: true}
     -
         question: 'How can you set status code of Symfony\Component\HttpFoundation\Response'
         answers:

@@ -22,12 +22,14 @@ questions:
             - {value: protocol="https", correct: false}
             - {value: ensure="https",   correct: false}
     -
-        question: 'Three special routing parameters are available in Symfony:'
+        question: 'Which special routing parameters are available in Symfony:'
         answers:
-            - {value: "_controller, _locale, _schemes",      correct: false}
-            - {value: "_route, _controller, _action",        correct: false}
-            - {value: "_controller, _locale, _format",       correct: true}
-            - {value: "_locale, _format and another one.",   correct: false}
+            - {value: "_controller",      correct: true}
+            - {value: "_format",      correct: true}
+            - {value: "_fragment",      correct: true}
+            - {value: "_locale",      correct: true}
+            - {value: "_fragment",      correct: false}
+            - {value: "_route",      correct: false}
     -
         question: 'How to generate absolute URL for a given route in controller ?'
         answers:

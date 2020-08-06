@@ -1,0 +1,9 @@
+category: Process
+questions:
+    -
+        question: 'What is the default signal sent by Process component to stop a process ?'
+        answers:
+            - {value: 'SIGINT',         correct: false}
+            - {value: 'SIGKILL',        correct: true}
+            - {value: 'Process::STOP',  correct: false}
+            - {value: '9',              correct: true}

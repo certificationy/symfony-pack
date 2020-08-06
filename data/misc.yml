@@ -3,10 +3,30 @@ questions:
     -
         question: 'Which controller/action allows to render a template without a specific controller?'
         answers:
-            - {value: FrameworkBundle:Controller:template, correct: false}
-            - {value: FrameworkBundle:Template:action,     correct: false}
-            - {value: FrameworkBundle:Template:render,     correct: false}
-            - {value: FrameworkBundle:Template:template,   correct: true}
+            -
+                value: |
+                    acme_privacy:
+                           path:         /privacy
+                           controller:   Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+                           defaults:
+                               action: static/privacy.html.twig
+                correct: false
+            -
+                value: |
+                    acme_privacy:
+                           path:         /privacy
+                           controller:   Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+                           defaults:
+                               render: static/privacy.html.twig
+                correct: false
+            -
+                value: |
+                   acme_privacy:
+                           path:         /privacy
+                           controller:   Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+                           defaults:
+                               template: static/privacy.html.twig
+                correct: true
     -
         question: 'What is the LoggerInterface correct namespace?'
         answers:
@@ -15,31 +35,37 @@ questions:
             - {value: Symfony\Bridge\Monolog\LoggerInterface,     correct: false}
             - {value: Symfony\Bridge\Monolog\Log\LoggerInterface, correct: false}
     -
-        question: 'Using a dev environment, what is the correct cached file name of the dependency injection container?'
-        answers:
-            - {value: "app/cache/dev/appDevDebugProjectContainer.php", correct: true}
-            - {value: "app/cache/dev/appDebugProjectContainer.php",    correct: false}
-            - {value: "app/cache/dev/appDevProjectDebugContainer.php", correct: false}
-            - {value: "app/cache/dev/appProjectContainer.php",         correct: false}
-    -
         question: 'Using a dev environment, what is the correct cached file name of the generated configuration routes?'
         answers:
-            - {value: "app/cache/dev/appDevUrlGenerator.php", correct: true}
-            - {value: "app/cache/dev/appDevGeneratorUrl.php", correct: false}
-            - {value: "app/cache/dev/appDevUrlDump.php",      correct: false}
-            - {value: "app/cache/dev/appDevDumpedUrl.php",    correct: false}
+            - {value: "appDevUrlGenerator.php", correct: false}
+            - {value: "appDevGeneratorUrl.php", correct: false}
+            - {value: "appDevUrlDump.php",      correct: false}
+            - {value: "UrlGenerator.php",    correct: true}
     -
         question: 'Using Symfony\Component\Debug\Debug static class, what is the only method available?'
         answers:
-            - {value: "public static function enable($errorReportingLevel = null, $displayErrors = true)", correct: true}
-            - {value: "public static function create($errorReportingLevel = null, $displayErrors = true)", correct: false}
-            - {value: "public static function load($errorReportingLevel = null, $displayErrors = true)",   correct: false}
-            - {value: "public static function start($errorReportingLevel = null, $displayErrors = true)",  correct: false}
+            - {value: "public static function enable()", correct: true}
+            - {value: "public static function create()", correct: false}
+            - {value: "public static function load()",   correct: false}
+            - {value: "public static function start()",  correct: false}
+            - {value: "public static function register()",  correct: false}
+    -
+        question: 'Using Symfony\Component\Debug\ErrorHandler static class, what is the only method available?'
+        answers:
+            - {value: "public static function enable(self $handler = null, bool $replace = true)", correct: false}
+            - {value: "public static function create(self $handler = null, bool $replace = true)", correct: false}
+            - {value: "public static function load(self $handler = null, bool $replace = true)",   correct: false}
+            - {value: "public static function start(self $handler = null, bool $replace = true)",  correct: false}
+            - {value: "public static function register(self $handler = null, bool $replace = true)",  correct: true}
     -
         question: 'In order to be able to use render_hinclude(url(...)), we need to add this configuration in ``framework` section:'
         answers:
             - {value: 'hinclude: enabled',             correct: false}
-            - {value: 'fragments: {path:/_fragment}',  correct: false}
+            -
+                value: |
+                    fragments:
+                        {path:/_fragment}
+                correct: false
             - {value: 'none of the above',             correct: true}
     -
         question: 'What is the correct CssSelector class namespace?'

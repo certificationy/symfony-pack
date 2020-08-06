@@ -102,24 +102,24 @@ questions:
         help: |
             http://php.net/manual/en/oop5.intro.php
     -
-        question: '
-        $instance = new SimpleClass();
-        $assigned   =  $instance;
-        $instance = null;
-        var_dump($assigned);
-        True or false ? The code above display "null" ?'
+        question: |
+            $instance = new SimpleClass();
+            $assigned   =  $instance;
+            $instance = null;
+            var_dump($assigned);
+            True or false ? The code above display "null" ?
         answers:
             - {value: "True",    correct: false}
             - {value: "False",   correct: true}
         help: |
-            http://php.net/manual/en/language.oop5.basic.php#example-173
+            http://php.net/manual/en/language.oop5.basic.php#example-179
     -
         question: 'In a class, "public $var4 = self::myStaticMethod();" is a valid property declaration ?'
         answers:
             - {value: "True",    correct: false}
             - {value: "False",   correct: true}
         help: |
-            http://php.net/manual/en/language.oop5.properties.php#example-180
+            http://php.net/manual/en/language.oop5.properties.php#example-186
     -
         question: 'True or False ? Is it possible to declare constant in an interface ?'
         answers:

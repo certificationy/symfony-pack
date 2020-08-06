@@ -4,30 +4,25 @@ questions:
         question: 'Which helper is not available in the Console component?'
         answers:
             - {value: QuestionHelper, correct: false}
-            - {value: TableHelper,    correct: false}
+            - {value: Table,    correct: false}
+            - {value: FormatterHelper,    correct: false}
+            - {value: ProcessHelper,    correct: false}
+            - {value: Progress Bar,    correct: false}
+            - {value: Debug formatter helper,    correct: false}
             - {value: FileHelper,     correct: true}
             - {value: DialogHelper,   correct: true}
+            - {value: InformationHelper,   correct: true}
     -
         question: 'Which event is not available in the Console Component?'
         answers:
             - {value: ConsoleEvents::COMMAND,   correct: false}
             - {value: ConsoleEvents::TERMINATE, correct: false}
-            - {value: ConsoleEvents::EXCEPTION, correct: false}
+            - {value: ConsoleEvents::ERROR, correct: false}
             - {value: ConsoleEvents::LAUNCH,    correct: true}
-    -
-        question: 'How to launch Console application in interactive mode?'
-        answers:
-            - {value: php app/console -s,            correct: true}
-            - {value: php app/console --interactive, correct: false}
-            - {value: no one,                        correct: false}
-    -
-        question: 'Using Console component, which of these events are available in Symfony\Component\Console\ConsoleEvents?'
-        answers:
-            - {value: ConsoleEvents::COMMAND,   correct: true}
-            - {value: ConsoleEvents::TERMINATE, correct: true}
-            - {value: ConsoleEvents::EXCEPTION, correct: true}
-            - {value: ConsoleEvents::BEFORE,    correct: false}
-            - {value: ConsoleEvents::AFTER,     correct: false}
+            - {value: ConsoleEvents::START,    correct: true}
+            - {value: ConsoleEvents::BEGIN,    correct: true}
+            - {value: ConsoleEvents::END,    correct: true}
+            - {value: ConsoleEvents::EXCEPTION,    correct: true}
     -
         question: 'Using Console component, which of these class allows to create custom output styles?'
         answers:
@@ -36,62 +31,69 @@ questions:
             - {value: Symfony\Component\Console\OutputStyle,          correct: false}
             - {value: Symfony\Component\Console\OutputFormatter,      correct: false}
     -
-        question: 'What is the console command to create a new bundle?'
-        answers:
-            - {value: php app/console bundle:generate, correct: false}
-            - {value: php app/console generate:bundle, correct: true}
-            - {value: php app/console create:bundle,   correct: false}
-            - {value: php app/console bundle:create,   correct: false}
-    -
-        question: 'Which argument can be passed to the router:debug command?'
+        question: 'Which argument can be passed to the debug:router command?'
         answers:
             - {value: No argument can be passed, correct: false}
             - {value: A regexp search filter,    correct: false}
             - {value: A route limit,             correct: false}
+            - {value: The route URL,             correct: false}
             - {value: A route name,              correct: true}
+    -
+        question: 'Which argument can be passed to the router:match command?'
+        answers:
+            - {value: No argument can be passed, correct: false}
+            - {value: A regexp search filter,    correct: false}
+            - {value: A route limit,             correct: false}
+            - {value: The route URL,             correct: true}
+            - {value: A route name,              correct: false}
     -
         question: 'What is the command to check the syntax of a Twig template?'
         answers:
-            - {value: php app/console twig:lint,     correct: true}
-            - {value: php app/console twig:check,    correct: false}
-            - {value: php app/console twig:validate, correct: false}
-            - {value: php app/console twig:syntax,   correct: false}
+            - {value: php bin/console lint:twig,     correct: true}
+            - {value: php bin/console twig:lint,     correct: false}
+            - {value: php bin/console twig:validate, correct: false}
+            - {value: php bin/console twig:syntax,   correct: false}
     -
         question: 'What is the console command to clear cache?'
         answers:
-            - {value: php app/console cache:clear,      correct: true}
-            - {value: php app/console clear:cache,      correct: false}
-            - {value: php app/console cache:clean,      correct: false}
-            - {value: php app/console cache:invalidate, correct: false}
+            - {value: php bin/console cache:clear,      correct: true}
+            - {value: php bin/console clear:cache,      correct: false}
+            - {value: php bin/console cache:clean,      correct: false}
+            - {value: php bin/console cache:invalidate, correct: false}
     -
         question: 'Which tag name you should use when you register command as service?'
         answers:
             - {value: command.console,      correct: false}
             - {value: console.command,      correct: true}
-            - {value: console,              correct: false}
+            - {value: console.console_command,              correct: false}
             - {value: command,              correct: false}
+            - {value: console,              correct: false}
     -
         question: 'What is the command line to list all known entities by doctrine 2 in your project ?'
         answers:
-            - {value: 'php app/console doctrine:mapping:info',         correct: true}
-            - {value: 'php app/console doctrine:mapping:import',       correct: false}
-            - {value: 'php app/console doctrine:mapping:info --all',   correct: false}
-            - {value: 'php app/console doctrine:mapping:import --all', correct: false}
+            - {value: 'php bin/console doctrine:mapping:info',         correct: true}
+            - {value: 'php bin/console doctrine:mapping:import',       correct: false}
+            - {value: 'php bin/console doctrine:mapping:info --all',   correct: false}
+            - {value: 'php bin/console doctrine:mapping:import --all', correct: false}
+        help:
+            'http://assets.andreiabohner.org/symfony/sf42-console-cheat-sheet.pdf'
     -
         question: 'What is the command line to validate the doctrine mapping files ?'
         answers:
-            - {value: 'php app/console doctrine:schema:validate',          correct: true}
-            - {value: 'php app/console doctrine:schema:update --dump-sql', correct: false}
-            - {value: 'php app/console doctrine:schema:update --force',    correct: false}
-            - {value: 'php app/console doctrine:mapping:convert',          correct: false}
-            - {value: 'php app/console doctrine:mapping:import',           correct: false}
+            - {value: 'php bin/console doctrine:schema:validate',          correct: true}
+            - {value: 'php bin/console doctrine:schema:validation',          correct: false}
+            - {value: 'php bin/console doctrine:schema:update --dump-sql', correct: false}
+            - {value: 'php bin/console doctrine:schema:update --force',    correct: false}
+            - {value: 'php bin/console doctrine:mapping:convert',          correct: false}
+            - {value: 'php bin/console doctrine:mapping:import',           correct: false}
     -
         question: "How do you display complete configuration of a bundle ?"
         answers:
-            - {value: "php app/console dump:config acme",                   correct: false}
-            - {value: "php app/console config:dump-reference acme",         correct: true}
-            - {value: "php app/console config:dump AcmeBundle",             correct: true}
-            - {value: "php app/console config:dump-reference AcmeBundle",   correct: true}
+            - {value: "php bin/console dump:config acme",                   correct: false}
+            - {value: "php bin/console config:dump-reference acme",         correct: true}
+            - {value: "php bin/console config:dump AcmeBundle",             correct: false}
+            - {value: "php bin/console config:dump-reference AcmeBundle",   correct: false}
+            - {value: "php bin/console debug:config",   correct: true}
     -
         question: 'Descriptors are objects to render documentation on Symfony Console Apps?'
         answers:
@@ -105,24 +107,27 @@ questions:
     -
         question: 'What is the console command to create a new entity?'
         answers:
-            - {value: php app/console doctrine:generate:entity, correct: true}
-            - {value: php app/console generate:entity,          correct: false}
-            - {value: php app/console database:create:entity,   correct: false}
-            - {value: php app/console doctrine:create:entity,   correct: false}
+            - {value: php bin/console doctrine:generate:entity, correct: false}
+            - {value: php bin/console generate:entity,          correct: false}
+            - {value: php bin/console database:create:entity,   correct: false}
+            - {value: php bin/console doctrine:create:entity,   correct: false}
+            - {value: php bin/console make:entity,   correct: true}
+            - {value: php bin/console entity:make,   correct: false}
     -
         question: 'What is the command to update the database from entities?'
         answers:
-            - {value: php app/console doctrine:schema:update,   correct: true}
-            - {value: php app/console doctrine:entity:update,   correct: false}
-            - {value: php app/console doctrine:entity --create, correct: false}
-            - {value: php app/console doctrine:schema:create,   correct: false}
+            - {value: php bin/console doctrine:schema:update,   correct: false}
+            - {value: php bin/console doctrine:entity:update,   correct: false}
+            - {value: php bin/console doctrine:entity --create, correct: false}
+            - {value: php bin/console doctrine:schema:create,   correct: false}
+            - {value: php bin/console make:migration; php bin/console doctrine:migrations:migrate,   correct: true}
     -
         question: 'What is the right command name to load Doctrine fixtures?'
         answers:
-            - {value: php app/console doctrine:fixtures:load,   correct: true}
-            - {value: php app/console doctrine:load:fixtures,   correct: false}
-            - {value: php app/console doctrine:fixtures,        correct: false}
-            - {value: php app/console doctrine:fixtures:import, correct: false}
+            - {value: php bin/console doctrine:fixtures:load,   correct: true}
+            - {value: php bin/console doctrine:load:fixtures,   correct: false}
+            - {value: php bin/console doctrine:fixtures,        correct: false}
+            - {value: php bin/console doctrine:fixtures:import, correct: false}
     -
         question: 'Symfony Console: which one(s) are valid verbosity levels ?'
         answers:
@@ -130,7 +135,9 @@ questions:
             - {value: OutputInterface::VERBOSITY_NORMAL,          correct: true}
             - {value: OutputInterface::VERBOSITY_VERBOSE,         correct: true}
             - {value: OutputInterface::VERBOSITY_VERY_VERBOSE,    correct: true}
-            - {value: OutputInterface::DEBUG,                     correct: false}
+            - {value: OutputInterface::VERBOSITY_DEBUG,           correct: true}
+            - {value: OutputInterface::VERBOSITY_VERY_VERY_VERBOSE,   correct: false}
+            - {value: OutputInterface::VERBOSITY_ALERT,   correct: false}
     -
         question: 'Symfony Console: InputArgument::REQUIRED, InputArgument::OPTIONAL and ... ?'
         answers:
@@ -144,7 +151,7 @@ questions:
             - {value: 'initialize() and configure() are invoked before the ConsoleEvents::COMMAND', correct: false}
             - {value: 'ConsoleEvents::TERMINATE is dispatched even when an exception is thrown' ,   correct: true}
             - {value: 'initialize has InputInterface, OutputInterface parameters',                  correct: true}
-            - {value: 'ConsoleEvents can be disabled',                                              correct: true}            
+            - {value: 'Events can disable the command',                                              correct: true}
     -
         question: 'Which function are mandatory to your command class ?'
         answers:

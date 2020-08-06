@@ -12,8 +12,10 @@ questions:
         answers:
             - {value: constructor, correct: true}
             - {value: property,    correct: true}
-            - {value: method,      correct: true}
+            - {value: setter,      correct: true}
+            - {value: immutable setter,      correct: true}
             - {value: constant,    correct: false}
+            - {value: getter,    correct: false}
     -
         question: 'Using XML, which of these lines are correct to inject a service?'
         answers:
@@ -40,8 +42,11 @@ questions:
         answers:
             - {value: modify(),             correct: false}
             - {value: processContainer(),   correct: false}
+            - {value: build(),              correct: false}
             - {value: process(),            correct: true}
             - {value: modifyContainer(),    correct: false}
+        help: |
+            https://github.com/symfony/dependency-injection/blob/master/Compiler/CompilerPassInterface.php
     -
         question: 'Using Dependency Injection, what is the correct way to override a service class using ContainerBuilder class?'
         answers:
@@ -61,16 +66,21 @@ questions:
         answers:
             - {value: "PassConfig::TYPE_BEFORE_OPTIMIZATION", correct: true}
             - {value: "PassConfig::TYPE_OPTIMIZE",            correct: true}
+            - {value: "PassConfig::TYPE_AFTER_OPTIMIZATION",  correct: false}
             - {value: "PassConfig::TYPE_BEFORE_REMOVING",     correct: true}
             - {value: "PassConfig::TYPE_REMOVE",              correct: true}
+            - {value: "PassConfig::TYPE_AFTER_REMOVE",        correct: true}
             - {value: "PassConfig::TYPE_AFTER_COMPILING",     correct: false}
+            - {value: "PassConfig::TYPE_COMPILE",              correct: false}
+            - {value: "PassConfig::TYPE_BEFORE_COMPILING",     correct: false}
     -
         question: "As dev environment, what is the name of dumped container ?"
         answers:
-            - {value: "appDevDebugProjectContainer.php",    correct: true}
+            - {value: "srcApp_KernelDevDebugContainer.php",    correct: true}
+            - {value: "appDevDebugProjectContainer.php",    correct: false}
             - {value: "appDevProjectContainer.php",         correct: false}
             - {value: "appDevDebugProjectServiceContainer", correct: false}
-            - {value: "appDevDebugContainer",               correct: false}
+            - {value: "srcApp_DevDebugContainer.php",               correct: false}
     -
         question: "True or false, parameters can also contain array values ?"
         answers:
@@ -100,3 +110,11 @@ questions:
         answers:
             - {value: "true", correct: true}
             - {value: "false", correct: false}
+
+    -
+        question: 'What is the correct load() method definition in Symfony\Component\DependencyInjection\Extension\ExtensionInterface?'
+        answers:
+            - {value: "public function load(array $configs, ContainerBuilder $container)", correct: true}
+            - {value: "public function load(array $config, ContainerBuilder $container)",  correct: false}
+            - {value: "public function load(ContainerBuilder $container, array $configs)", correct: false}
+            - {value: "public function load(ContainerBuilder $container, array $config)",  correct: false}
