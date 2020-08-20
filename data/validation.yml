@@ -1,0 +1,58 @@
+category: Validation
+questions:
+    -
+        question: 'In order to use validation group, which interface will you implement on your object?'
+        answers:
+            - {value: Symfony\Component\Validator\GroupValidationInterface,         correct: false}
+            - {value: Symfony\Component\Validator\GroupValidationProviderInterface, correct: false}
+            - {value: Symfony\Component\Validator\GroupProviderInterface,           correct: false}
+            - {value: Symfony\Component\Validator\GroupSequenceProviderInterface,   correct: true}
+    -
+        question: 'Using Validator component, which method is used to validate a value against a constraint?'
+        answers:
+            - {value: "$validator->validate($object, $constraint)",      correct: true}
+            - {value: "$validator->validateValue($object, $constraint)", correct: false}
+            - {value: "$validator->isValid($object, $constraint)",       correct: false}
+            - {value: "$validator->validation($object, $constraint)",    correct: false}
+    -
+        question: 'True or False ? All entities have at least 2 validation groups.'
+        answers:
+            - {value: "True",    correct: true}
+            - {value: "False",   correct: false}
+    -
+        question: 'True or False ? We can also apply constraints on class getters with ``addPropertyConstraint()``'
+        answers:
+            - {value: "True",    correct: false}
+            - {value: "False",   correct: true}
+    -
+        question: 'True or False ? We can also apply constraints on class getters with ``addGetterConstraint()``'
+        answers:
+            - {value: "True",    correct: true}
+            - {value: "False",   correct: false}
+    -
+        question: 'True or False ? In Symfony:'
+        answers:
+            - {value: "Annotations mapping are enabled by default",                correct: false}
+            - {value: "UniqueEntity is provided by Doctrine Bundle",               correct: false}
+            - {value: "We can validate partial object with @Assert\\GroupSequence", correct: true}
+            - {value: "All assertions above are valid",                            correct: false}
+    -
+        question: 'Which constraints exist?'
+        answers:
+            - {value: "Blank", correct: true}
+            - {value: "IdenticalTo", correct: true}
+            - {value: "EqualTo", correct: true}
+            - {value: "SameAs", correct: false}
+    -
+        question: 'Which annotation are valid ?'
+        answers:
+            - {value: '@Assert\Choice({"male", "female", "other"})', correct: true}
+            - {value: '@Assert\Choice(choices = {"male", "female", "other"})', correct: true}
+            - {value: '@Assert\Choices({"male", "female", "other"})', correct: false}
+            - {value: '@Assert\Choices(choices = {"male", "female", "other"})', correct: false}
+    -
+        question: 'How to tell the validator to use a specific group ?'
+        answers:
+            - {value: 'pass one or more group names as the third argument of $validator->validate()', correct: true}
+            - {value: 'pass one or more group names as the second argument of $validator->validate()', correct: false}
+            - {value: 'use $validator->setValidationGroups(array)', correct: false}
