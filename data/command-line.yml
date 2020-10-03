@@ -12,6 +12,8 @@ questions:
             - {value: FileHelper,     correct: true}
             - {value: DialogHelper,   correct: true}
             - {value: InformationHelper,   correct: true}
+        help: |
+            'https://symfony.com/doc/current/components/console/helpers/index.html'
     -
         question: 'Which event is not available in the Console Component?'
         answers:
@@ -23,6 +25,8 @@ questions:
             - {value: ConsoleEvents::BEGIN,    correct: true}
             - {value: ConsoleEvents::END,    correct: true}
             - {value: ConsoleEvents::EXCEPTION,    correct: true}
+        help: |
+            'https://symfony.com/doc/current/components/console/events.html'
     -
         question: 'Using Console component, which of these class allows to create custom output styles?'
         answers:
@@ -30,14 +34,19 @@ questions:
             - {value: Symfony\Component\Console\OutputStyleFormatter, correct: false}
             - {value: Symfony\Component\Console\OutputStyle,          correct: false}
             - {value: Symfony\Component\Console\OutputFormatter,      correct: false}
+        help: |
+            'https://symfony.com/doc/current/console/coloring.html#using-color-styles'
     -
         question: 'Which argument can be passed to the debug:router command?'
         answers:
-            - {value: No argument can be passed, correct: false}
+            - {value: No argument can be passed, correct: true}
             - {value: A regexp search filter,    correct: false}
             - {value: A route limit,             correct: false}
             - {value: The route URL,             correct: false}
             - {value: A route name,              correct: true}
+        help: |
+            'https://symfony.com/doc/current/routing.html#debugging-routes'
+
     -
         question: 'Which argument can be passed to the router:match command?'
         answers:
@@ -46,6 +55,8 @@ questions:
             - {value: A route limit,             correct: false}
             - {value: The route URL,             correct: true}
             - {value: A route name,              correct: false}
+        help: |
+            'https://symfony.com/doc/current/routing.html#debugging-routes'
     -
         question: 'What is the command to check the syntax of a Twig template?'
         answers:
@@ -53,6 +64,8 @@ questions:
             - {value: php bin/console twig:lint,     correct: false}
             - {value: php bin/console twig:validate, correct: false}
             - {value: php bin/console twig:syntax,   correct: false}
+        help: |
+            'https://symfony.com/doc/current/templates.html#linting-twig-templates'
     -
         question: 'What is the console command to clear cache?'
         answers:
@@ -60,6 +73,8 @@ questions:
             - {value: php bin/console clear:cache,      correct: false}
             - {value: php bin/console cache:clean,      correct: false}
             - {value: php bin/console cache:invalidate, correct: false}
+        help: |
+            'https://symfony.com/doc/current/cache.html#clearing-the-cache'
     -
         question: 'Which tag name you should use when you register command as service?'
         answers:
@@ -68,6 +83,8 @@ questions:
             - {value: console.console_command,              correct: false}
             - {value: command,              correct: false}
             - {value: console,              correct: false}
+        help: |
+            'https://symfony.com/doc/current/console/commands_as_services.html'
     -
         question: 'What is the command line to list all known entities by doctrine 2 in your project ?'
         answers:
@@ -78,6 +95,7 @@ questions:
         help:
             'http://assets.andreiabohner.org/symfony/sf42-console-cheat-sheet.pdf'
     -
+        # CHECKME this has been removed for symfony 5 docs but console still support it, is it obsolete ?
         question: 'What is the command line to validate the doctrine mapping files ?'
         answers:
             - {value: 'php bin/console doctrine:schema:validate',          correct: true}
@@ -86,24 +104,35 @@ questions:
             - {value: 'php bin/console doctrine:schema:update --force',    correct: false}
             - {value: 'php bin/console doctrine:mapping:convert',          correct: false}
             - {value: 'php bin/console doctrine:mapping:import',           correct: false}
+        help: |
+            'https://symfony.com/doc/3.3/doctrine.html#add-mapping-information'
     -
+        # FIXED calling config:dump-reference work both with extension alias and bundle name; config:dump is an alias for config:dump-reference (tested but not documented => remove from answers?)
+        # debug:config will work to display config of a bundle WITH a bundle name or alias as param 
         question: "How do you display complete configuration of a bundle ?"
         answers:
             - {value: "php bin/console dump:config acme",                   correct: false}
             - {value: "php bin/console config:dump-reference acme",         correct: true}
-            - {value: "php bin/console config:dump AcmeBundle",             correct: false}
-            - {value: "php bin/console config:dump-reference AcmeBundle",   correct: false}
-            - {value: "php bin/console debug:config",   correct: true}
+            - {value: "php bin/console config:dump AcmeBundle",             correct: true}
+            - {value: "php bin/console config:dump-reference AcmeBundle",   correct: true}
+            - {value: "php bin/console debug:config",   correct: false}
+        help: |
+            'https://symfony.com/doc/current/bundles/configuration.html#dump-the-configuration https://symfony.com/doc/current/reference/configuration/debug.html'
     -
+        # FIXME ambiguous question. descriptors are methods, NOT objects. also there is no mention of the term 'descriptor' in the doc 
         question: 'Descriptors are objects to render documentation on Symfony Console Apps?'
         answers:
             - {value: 'Yes', correct: true}
             - {value: 'No',  correct: false}
+        help: |
+            'https://symfony.com/doc/current/console.html#configuring-the-command'
     -
         question: 'Does the Symfony Console component needs PHP globals internals variables to work?'
         answers:
             - {value: 'Yes', correct: false}
             - {value: 'No',  correct: true}
+        help: |
+            'https://symfony.com/doc/current/components/console.html#installation'
     -
         question: 'What is the console command to create a new entity?'
         answers:
@@ -113,6 +142,8 @@ questions:
             - {value: php bin/console doctrine:create:entity,   correct: false}
             - {value: php bin/console make:entity,   correct: true}
             - {value: php bin/console entity:make,   correct: false}
+        help: |
+            'https://symfony.com/doc/current/doctrine.html#creating-an-entity-class'
     -
         question: 'What is the command to update the database from entities?'
         answers:
@@ -121,6 +152,8 @@ questions:
             - {value: php bin/console doctrine:entity --create, correct: false}
             - {value: php bin/console doctrine:schema:create,   correct: false}
             - {value: php bin/console make:migration; php bin/console doctrine:migrations:migrate,   correct: true}
+        help: |
+            'https://symfony.com/doc/current/doctrine.html#migrations-creating-the-database-tables-schema'
     -
         question: 'What is the right command name to load Doctrine fixtures?'
         answers:
@@ -128,6 +161,8 @@ questions:
             - {value: php bin/console doctrine:load:fixtures,   correct: false}
             - {value: php bin/console doctrine:fixtures,        correct: false}
             - {value: php bin/console doctrine:fixtures:import, correct: false}
+        help: |
+            'https://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html#loading-fixtures'
     -
         question: 'Symfony Console: which one(s) are valid verbosity levels ?'
         answers:
@@ -138,6 +173,8 @@ questions:
             - {value: OutputInterface::VERBOSITY_DEBUG,           correct: true}
             - {value: OutputInterface::VERBOSITY_VERY_VERY_VERBOSE,   correct: false}
             - {value: OutputInterface::VERBOSITY_ALERT,   correct: false}
+        help: |
+            'https://symfony.com/doc/current/console/verbosity.html'
     -
         question: 'Symfony Console: InputArgument::REQUIRED, InputArgument::OPTIONAL and ... ?'
         answers:
@@ -145,6 +182,8 @@ questions:
             - {value: InputArgument::IS_ARRAY,   correct: true}
             - {value: InputArgument::LIST,       correct: false}
             - {value: InputArgument::ENUM,       correct: false}
+        help: |
+            'https://symfony.com/doc/current/console/input.html#using-command-arguments'
     -
         question: 'Symfony Console: which of the following sentences are true?'
         answers:
@@ -152,13 +191,21 @@ questions:
             - {value: 'ConsoleEvents::TERMINATE is dispatched even when an exception is thrown' ,   correct: true}
             - {value: 'initialize has InputInterface, OutputInterface parameters',                  correct: true}
             - {value: 'Events can disable the command',                                              correct: true}
+        help: |
+            'https://symfony.com/doc/current/components/console/events.html 
+             https://symfony.com/doc/current/components/console/events.html#disable-commands-inside-listeners
+             https://github.com/symfony/console/blob/master/Command/Command.php'
     -
+        # CHECKME source file https://github.com/symfony/console/blob/master/Command/Command.php says only execute() is mandatory; 
+        # besides, doc doesnt say configure is mandatory 
         question: 'Which function are mandatory to your command class ?'
         answers:
             - {value: "configure()", correct: true}
             - {value: "execute(InputInterface $input, OutputInterface $output)", correct: true}
             - {value: "interact()", correct: false}
             - {value: "initialize()", correct: false}
+        help: |
+            'https://symfony.com/doc/current/console.html#creating-a-command'
     -
         question: 'Which Question class are available ?'
         answers:
@@ -167,6 +214,8 @@ questions:
             - {value: "Symfony\\Component\\Console\\Question\\ConfirmationQuestion", correct: true}
             - {value: "Symfony\\Component\\Console\\Question\\SelectQuestion", correct: false}
             - {value: "Symfony\\Component\\Console\\Question\\ValidQuestion", correct: false}
+        help: |
+            'https://symfony.com/doc/current/components/console/helpers/questionhelper.html'
     -
         question: 'How to Call Other Commands in a command ?'
         answers:
@@ -174,3 +223,5 @@ questions:
             - {value: "$command->run($input, $output);", correct: true}
             - {value: "$command->call($input, $output);", correct: false}
             - {value: "$command->forward($input, $output);", correct: false}
+        help: |
+            'https://symfony.com/doc/current/console/calling_commands.html'

@@ -1,6 +1,7 @@
 category: Standardization
 questions:
     -
+        # FIXME didnt find relevant doc to answer
         question: 'Using Console, what is the correct filename for a command?'
         answers:
             - {value: "MyTestCommand.php",        correct: true}

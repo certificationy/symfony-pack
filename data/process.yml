@@ -7,3 +7,6 @@ questions:
             - {value: 'SIGKILL',        correct: true}
             - {value: 'Process::STOP',  correct: false}
             - {value: '9',              correct: true}
+        help: |
+            https://symfony.com/doc/current/components/process.html#stopping-a-process
+            https://www.computerhope.com/unix/signals.htm#system-specific

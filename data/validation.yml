@@ -7,6 +7,8 @@ questions:
             - {value: Symfony\Component\Validator\GroupValidationProviderInterface, correct: false}
             - {value: Symfony\Component\Validator\GroupProviderInterface,           correct: false}
             - {value: Symfony\Component\Validator\GroupSequenceProviderInterface,   correct: true}
+        help: |
+           https://symfony.com/doc/current/validation/sequence_provider.html#group-sequence-providers
     -
         question: 'Using Validator component, which method is used to validate a value against a constraint?'
         answers:
@@ -14,28 +16,40 @@ questions:
             - {value: "$validator->validateValue($object, $constraint)", correct: false}
             - {value: "$validator->isValid($object, $constraint)",       correct: false}
             - {value: "$validator->validation($object, $constraint)",    correct: false}
+        help: |
+            https://symfony.com/doc/current/components/validator.html#installation
     -
         question: 'True or False ? All entities have at least 2 validation groups.'
         answers:
             - {value: "True",    correct: true}
             - {value: "False",   correct: false}
+        help: |
+            https://symfony.com/doc/current/validation/groups.html
     -
         question: 'True or False ? We can also apply constraints on class getters with ``addPropertyConstraint()``'
         answers:
             - {value: "True",    correct: false}
             - {value: "False",   correct: true}
+        help: |
+            https://symfony.com/doc/current/components/validator/metadata.html
     -
         question: 'True or False ? We can also apply constraints on class getters with ``addGetterConstraint()``'
         answers:
             - {value: "True",    correct: true}
             - {value: "False",   correct: false}
+        help: |
+            https://symfony.com/doc/current/components/validator/metadata.html
     -
-        question: 'True or False ? In Symfony:'
+        question: 'Which of these sentences is true ? In Symfony:'
         answers:
             - {value: "Annotations mapping are enabled by default",                correct: false}
             - {value: "UniqueEntity is provided by Doctrine Bundle",               correct: false}
             - {value: "We can validate partial object with @Assert\\GroupSequence", correct: true}
             - {value: "All assertions above are valid",                            correct: false}
+        help: |
+            https://symfony.com/doc/current/reference/constraints/UniqueEntity.html
+            https://symfony.com/doc/current/validation/sequence_provider.html
+            https://symfony.com/doc/current/validation.html#configuration
     -
         question: 'Which constraints exist?'
         answers:
@@ -43,6 +57,8 @@ questions:
             - {value: "IdenticalTo", correct: true}
             - {value: "EqualTo", correct: true}
             - {value: "SameAs", correct: false}
+        help: |
+            https://symfony.com/doc/current/reference/constraints.html
     -
         question: 'Which annotation are valid ?'
         answers:
@@ -50,9 +66,13 @@ questions:
             - {value: '@Assert\Choice(choices = {"male", "female", "other"})', correct: true}
             - {value: '@Assert\Choices({"male", "female", "other"})', correct: false}
             - {value: '@Assert\Choices(choices = {"male", "female", "other"})', correct: false}
+        help: |
+            https://symfony.com/doc/current/reference/constraints/Choice.html#basic-usage
     -
         question: 'How to tell the validator to use a specific group ?'
         answers:
             - {value: 'pass one or more group names as the third argument of $validator->validate()', correct: true}
             - {value: 'pass one or more group names as the second argument of $validator->validate()', correct: false}
             - {value: 'use $validator->setValidationGroups(array)', correct: false}
+        help: |
+            https://symfony.com/doc/current/validation/groups.html

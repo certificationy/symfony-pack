@@ -7,6 +7,8 @@ questions:
             - {value: array,  correct: true}
             - {value: enum,   correct: true}
             - {value: string, correct: false}
+        help: |
+            'https://symfony.com/doc/current/components/config/definition.html#node-type'
     -
         question: 'Which of these methods are existing?'
         answers:
@@ -16,7 +18,7 @@ questions:
             - {value: setDefaultValue(),   correct: false}
             - {value: setValidation(),     correct: false}
         help:
-            defaultValue
+            'https://symfony.com/doc/current/components/config/definition.html'
     -
         question: 'Which class is used to define hierarchy of configuration values?'
         answers:
@@ -24,3 +26,5 @@ questions:
             - {value: Symfony\Component\Config\Definition\Builder\HierarchyBuilder, correct: false}
             - {value: Symfony\Component\Config\Definition\Builder\NodeBuilder,      correct: false}
             - {value: Symfony\Component\Config\Definition\Builder\Builder,          correct: false}
+        help: |
+            'https://symfony.com/doc/current/components/config/definition.html#defining-a-hierarchy-of-configuration-values-using-the-treebuilder'

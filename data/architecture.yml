@@ -7,6 +7,8 @@ questions:
             - {value: framework.session.cookie.lifetime,    correct: false}
             - {value: framework.parameters.cookie_lifetime, correct: false}
             - {value: framework.cookie_lifetime,            correct: false}
+        help: |
+            'https://symfony.com/doc/current/reference/configuration/framework.html'
     -
         question: 'Which design pattern implements the EventDispatcher component?'
         answers:
@@ -14,6 +16,8 @@ questions:
             - {value: Decorator,   correct: false}
             - {value: Observer,    correct: true}
             - {value: Mediator,    correct: true}
+        help: |
+            'https://symfony.com/doc/current/components/event_dispatcher.html#introduction'
     -
         question: 'What is the right parameter path to set a version number for assets?'
         answers:
@@ -32,6 +36,9 @@ questions:
             - {value: "getSubscribedEvents()",           correct: true}
             - {value: "getSubscribed()",                 correct: false}
             - {value: "getSubscribedEventsList()",       correct: false}
+        help: |
+            'https://symfony.com/doc/current/event_dispatcher.html#creating-an-event-subscriber'
+
     -
         question: 'Which method from Symfony\Contracts\EventDispatcherEventDispatcherInterface forwarding an event to all registered listeners?'
         answers:
@@ -39,6 +46,8 @@ questions:
             - {value: "send(object $event, string $eventName = null): object",              correct: false}
             - {value: "fire(object $event, string $eventName = null): object",              correct: false}
             - {value: "sendOff(object $event, string $eventName = null): object",           correct: false}
+        help: |
+            'https://symfony.com/doc/current/components/event_dispatcher.html#dispatch-the-event'
     -
         question: 'Which method of the Symfony\Component\EventDispatcher\EventDispatcherInterface belongs to its parent Symfony\Contracts\EventDispatcher\EventDispatcherInterface'
         answers:
@@ -46,6 +55,8 @@ questions:
             - {value: 'addListener(string $eventName, $listener, int $priority = 0)', correct: false}
             - {value: 'hasListeners(string $eventName = null)', correct: false}
             - {value: 'removeListener(string $eventName, $listener)', correct: false}
+        help: |
+            'source file vendor/symfony/event-dispatcher(-contracts)/EventDispatcherInterface.php'
     -
         question: 'Which method allows to prevent any other Event listeners from being called?'
         answers:
@@ -53,6 +64,8 @@ questions:
             - {value: "preventDefault()",    correct: false}
             - {value: "stop()",              correct: false}
             - {value: "off()",               correct: false}
+        help: |
+              'https://symfony.com/doc/current/components/event_dispatcher.html#stopping-event-flow-propagation'
     -
         question: 'Is it possible to detect if an Event was stopped during runtime?'
         answers:
@@ -60,6 +73,8 @@ questions:
             - {value: "yes",                 correct: true}
             - {value: "yes, but not always", correct: false}
             - {value: "yes, but only once",  correct: false}
+        help: |
+            'https://symfony.com/doc/current/components/event_dispatcher.html#stopping-event-flow-propagation'
     -
         question: 'Using FrameworkBundle configuration, what is the correct path to fill proxies IP?'
         answers:
@@ -67,6 +82,8 @@ questions:
             - {value: "proxies_trusted", correct: false}
             - {value: "proxies",         correct: false}
             - {value: "proxies_list",    correct: false}
+        help: |
+            'trusted_proxies was removed in 3.3, method setTrustedProxies now used https://symfony.com/doc/current/reference/configuration/framework.html#trusted-proxies'
     -
         question: 'Using FrameworkBundle configuration, what is the default framework.assets.version_format value?'
         answers:
@@ -83,6 +100,9 @@ questions:
             - {value: "public function __construct(bool $debug, string $environment)",               correct: false}
             - {value: "public function __construct(string $name, string $environment, bool $debug)",        correct: false}
             - {value: "public function __construct(string $environment, bool $debug, string $name = null)", correct: false}
+        help: |
+            'https://github.com/symfony/symfony/blob/4.2/src/Symfony/Component/HttpKernel/Kernel.php'
+
     -
         question: 'What is the prefix of environment variables used by Symfony?'
         answers:
@@ -92,6 +112,8 @@ questions:
             - {value: "SF__",      correct: false}
             - {value: "SYMFONY-",  correct: false}
             - {value: "SF-",       correct: false}
+        help: |
+            'no answer found, however, for symfonycloud, the prefix is SYMFONY_ https://symfony.com/doc/current/cloud/cookbooks/env.html#symfonycloud-environment-variables'
     -
         question: 'In Symfony\Component\HttpKernel\Kernel class, which method do you need to redefine if you want to have multiple configuration files (config_dev.yml, config_test.yml, ...)?'
         answers:
@@ -99,6 +121,9 @@ questions:
             - {value: "public function registerConfigurationContainer(LoaderInterface $loader)", correct: false}
             - {value: "public function registerConfiguration(LoaderInterface $loader)",          correct: false}
             - {value: "public function registerConfigurationPath(LoaderInterface $loader)",      correct: false}
+        help: |
+            'OBSOLETE Symfony 2.3! https://symfony.com/doc/2.3/cookbook/configuration/configuration_organization.html
+             in Symfony 5, this is achieved by using env vars https://symfony.com/doc/current/configuration.html#configuration-based-on-environment-variables'
     -
         question: 'According to Symfony best practices, ____ is/are located in _____ file/folder.'
         answers:
@@ -110,17 +135,25 @@ questions:
             - {value: "assets, public/",                                   correct: false}
             - {value: "services, src/Resources/services.yaml",             correct: false}
             - {value: "translations, Resources/translations/",             correct: false}
+        help: |
+            'https://symfony.com/doc/current/best_practices.html#use-the-default-directory-structure
+             however, routes are recommended to be defined as annotations and assets are stored in public/build folder'
     -
         question: 'Where can you find the file `form_table_layout.html.twig` ?'
         answers:
             - {value: "In Twig Bundle",                                         correct: false}
             - {value: "In Twig Bridge",                                         correct: true}
             - {value: "In FrameworkExtraBundle",                                correct: false}
+        help: |
+            'https://github.com/symfony/symfony/blob/master/src/Symfony/Bridge/Twig/Resources/views/Form/form_table_layout.html.twig'
     -
         question: 'If you pass 0 (zero) as third parameter (int $indent) in \Symfony\Component\Yaml\Yaml::dump, the generated YAML string will be indented with tabs'
         answers:
             - {value: "True", correct: false}
             - {value: "False", correct: true}
+        help:
+            'tabs are not allowed in yaml https://yaml.org/faq.html'
+
     -
         question: 'Symfony is released under which license ?'
         answers:
@@ -128,6 +161,8 @@ questions:
             - {value: "ISC License", correct: false}
             - {value: "BSD license", correct: false}
             - {value: "MIT license", correct: true}
+        help: |
+            'https://symfony.com/doc/current/contributing/code/license.html'
     -
         question: 'Which kernel event exist ?'
         answers:
@@ -142,11 +177,15 @@ questions:
             - {value: "kernel.terminate", correct: true}
             - {value: "kernel.start", correct: false}
             - {value: "kernel.exception", correct: true}
+        help: |
+            'https://symfony.com/doc/current/components/http_kernel.html#creating-an-event-listener'
     -
-        question: 'Arguments are resolve before to Call Controller ?'
+        question: 'Arguments are resolved before calling the Controller ?'
         answers:
             - {value: "yes", correct: true}
             - {value: "no", correct: false}
+        help: |
+            'https://symfony.com/doc/current/components/http_kernel.html#the-workflow-of-a-request'
     -
         question: 'How do you detect if an Event was stopped during runtime?'
         answers:
@@ -154,3 +193,45 @@ questions:
             - {value: "$event->isStopped()", correct: false}
             - {value: "$event->isPropagationStop()", correct: false}
             - {value: "$event->isStop()", correct: false}
+        help: |
+            'https://symfony.com/doc/current/components/event_dispatcher.html#stopping-event-flow-propagation'
+
+    -
+        question: 'What is/are the recommended way to create a new Symfony web application'
+        answers:
+            - {value: "Symfony installer", correct: false}
+            - {value: "composer create-project symfony/skeleton my_project_name", correct: true}
+            - {value: "composer new-project symfony/skeleton my_project_name", correct: false}
+            - {value: "php bin/console new-project my_project_name", correct: false}
+            - {value: "symfony new my_project_name --full", correct: true}
+        help: |
+            'https://symfony.com/doc/4.0/setup/flex.html#using-symfony-flex-in-new-applications'
+
+    -
+        question: 'Using Flex is mandatory since Symfony 4.0'
+        answers:
+            - {value: "False", correct: true}
+            - {value: "True", correct: false}
+        help: |
+            'https://symfony.com/doc/4.0/setup/flex.html#upgrading-existing-applications-to-flex'
+
+    -
+        question: 'Which file should be edited in order to customize the default server error page ?'
+        answers:
+            - {value: "templates/bundles/TwigBundle/Exception/error.html.twig", correct: true}
+            - {value: "templates/bundles/TwigBundle/Exception/error500.html.twig", correct: false}
+            - {value: "src/Controller/ExceptionController", correct: false}
+        help: |
+            'https://symfony.com/doc/current/controller/error_pages.html#overriding-the-default-error-templates'
+
+#    -
+#        question: ''
+#        answers:
+#            - {value: "", correct: }
+#            - {value: "", correct: }
+#            - {value: "", correct: }
+#            - {value: "", correct: }
+#            - {value: "", correct: }
+#        help: |
+#            ''
+
