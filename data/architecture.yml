@@ -40,7 +40,7 @@ questions:
             'https://symfony.com/doc/current/event_dispatcher.html#creating-an-event-subscriber'
 
     -
-        question: 'Which method from Symfony\Contracts\EventDispatcherEventDispatcherInterface forwarding an event to all registered listeners?'
+        question: 'Which method from Symfony\Contracts\EventDispatcher\EventDispatcherInterface forwarding an event to all registered listeners?'
         answers:
             - {value: "dispatch(object $event, string $eventName = null): object",          correct: true}
             - {value: "send(object $event, string $eventName = null): object",              correct: false}
