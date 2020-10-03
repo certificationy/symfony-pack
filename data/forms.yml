@@ -7,6 +7,8 @@ questions:
             - {value: Add an option 'widget' => 'text',        correct: false}
             - {value: Add an option 'widget' => 'single_text', correct: true}
             - {value: Add an option 'widget' => 'input',       correct: false}
+        help: |
+            https://symfony.com/doc/current/reference/forms/types/date.html#widget
     -
         question: 'Which method allows you to handle the request on a form instance?'
         answers:
@@ -14,6 +16,8 @@ questions:
             - {value: $form->handleRequest($request), correct: true}
             - {value: $form->handle($request),        correct: false}
             - {value: $form->request($request),       correct: false}
+        help: |
+            https://symfony.com/doc/current/forms.html#processing-forms
     -
         question: 'From a Form instance, which method can you call to obtain a FormView instance?'
         answers:
@@ -21,6 +25,8 @@ questions:
             - {value: $form->renderView(), correct: false}
             - {value: $form->view(),       correct: false}
             - {value: $form->createView(), correct: true}
+        help: |
+            https://symfony.com/doc/current/forms.html#processing-forms
     -
         question: 'In a Twig template, which function render a form field?'
         answers:
@@ -28,6 +34,8 @@ questions:
             - {value: "{{ form_render(form.field) }}", correct: false}
             - {value: "{{ form_widget(form.field) }}", correct: true}
             - {value: "{{ form_view(form.field) }}",   correct: false}
+        help: |
+            https://symfony.com/doc/current/form/form_customization.html#form-widget-form-view-variables
     -
         question: 'Using Form factory, how to define a CSRF provider?'
         answers:
@@ -35,26 +43,36 @@ questions:
             - {value: $formFactory->setExtension(new CsrfExtension($csrfManager));,     correct: false}
             - {value: $formFactory->addCsrfExtension(new CsrfExtension($csrfManager));, correct: false}
             - {value: $formFactory->addExtension(new Csrf($csrfManager));,              correct: false}
+        help: |
+            https://symfony.com/doc/current/components/form.html#csrf-protection
     -
-        question: 'Using Form component, which option can you use into setDefaultOptions() method to define CSRF field name?'
+        # FIXME setDefaultOptions now deprecated in favor of configureOptions https://github.com/symfony/symfony/pull/12891
+        question: 'Using Form component, which option can you use into configureOptions() method to define CSRF field name?'
         answers:
             - {value: csrf_field_name, correct: true}
             - {value: csrf_fieldname,  correct: false}
             - {value: csrf_field,      correct: false}
             - {value: csrf_name,       correct: false}
             - {value: csrf_protection, correct: false}
+        help: |
+            https://symfony.com/doc/current/security/csrf.html#csrf-protection-in-symfony-forms
     -
-        question: 'Using Form component, which option can you use into setDefaultOptions() method to disabled CSRF protection?'
+        question: 'Using Form component, which option can you use into configureOptions() method to enable CSRF protection?'
         answers:
             - {value: '"csrf_protection" => true', correct: true}
             - {value: '"csrf_field" => true', correct: false}
             - {value: '"csrf" => "enabled"', correct: false}
             - {value: '"csrf" => true', correct: false}
+        help: |
+            https://symfony.com/doc/current/security/csrf.html#csrf-protection-in-symfony-forms
     -
-        question: 'Using Form component, option csrf_error_message can be use in setDefaultOptions() to define a custom CSRF error message?'
+        question: 'Using Form component, option csrf_error_message can be used in configureOptions() to define a custom CSRF error message?'
         answers:
             - {value: Yes, correct: false}
             - {value: No,  correct: true}
+        help: |
+            https://symfony.com/doc/current/security/csrf.html#csrf-protection-in-symfony-forms
+
     -
         question: 'Using Form component, which option will allow you to specify groups used for validation?'
         answers:
@@ -62,6 +80,8 @@ questions:
             - {value: groups_validation, correct: false}
             - {value: validator_groups,  correct: false}
             - {value: groups_validator,  correct: false}
+        help: |
+            https://symfony.com/doc/current/form/validation_groups.html#validation-groups
     -
         question: 'Which form event exist?'
         answers:
@@ -74,6 +94,8 @@ questions:
             - {value: "FormEvents::POST_REQUEST",   correct: false}
             - {value: "FormEvents::REQUEST",   correct: false}
             - {value: "FormEvents::PRE_REQUEST",   correct: false}
+        help: |
+            https://symfony.com/doc/current/form/events.html
     -
         question: 'What data is inside FormEvent object at FormEvents::PRE_SET_DATA?'
         answers:
@@ -81,6 +103,8 @@ questions:
             - {value: "Normalized data", correct: false}
             - {value: "Request data",    correct: false}
             - {value: "View data",       correct: false}
+        help: |
+            https://symfony.com/doc/current/form/events.html#registering-event-listeners-or-event-subscribers
     -
         question: 'What data is inside FormEvent object at FormEvents::PRE_SUBMIT?'
         answers:
@@ -88,6 +112,8 @@ questions:
             - {value: "Normalized data", correct: false}
             - {value: "Request data",    correct: true}
             - {value: "View data",       correct: false}
+        help: |
+            https://symfony.com/doc/current/form/events.html#registering-event-listeners-or-event-subscribers
     -
         question: 'What data is inside FormEvent object at FormEvents::POST_SET_DATA?'
         answers:
@@ -95,6 +121,8 @@ questions:
             - {value: "Normalized data", correct: false}
             - {value: "Request data",    correct: false}
             - {value: "View data",       correct: false}
+        help: |
+            https://symfony.com/doc/current/form/events.html#registering-event-listeners-or-event-subscribers
     -
         question: 'What data is inside FormEvent object at FormEvents::SUBMIT?'
         answers:
@@ -102,6 +130,8 @@ questions:
             - {value: "Normalized data", correct: true}
             - {value: "Request data",    correct: false}
             - {value: "View data",       correct: false}
+        help: |
+            https://symfony.com/doc/current/form/events.html#registering-event-listeners-or-event-subscribers
     -
         question: 'What data is inside FormEvent object at FormEvents::POST_SUBMIT?'
         answers:
@@ -109,16 +139,21 @@ questions:
             - {value: "Normalized data", correct: false}
             - {value: "Request data",    correct: false}
             - {value: "View data",       correct: true}
+        help: |
+            https://symfony.com/doc/current/form/events.html#registering-event-listeners-or-event-subscribers
     -
+        # FIXME all non numeric text fields extend from TextType. 
+        # Looking from the source they extend AbstractType but their getParent method return TextType and doc says they extend TextType
         question: 'Which one of these types extends from TextType?'
         answers:
             - {value: "MoneyType",    correct: false}
             - {value: "CurrencyType", correct: false}
             - {value: "TextareaType", correct: true}
-            - {value: "UrlType",  correct: false}
-            - {value: "Password",  correct: false}
-            - {value: "EmailType",  correct: false}
+            - {value: "UrlType",  correct: true}
+            - {value: "Password",  correct: true}
+            - {value: "EmailType",  correct: true}
         help: |
+            https://symfony.com/doc/current/reference/forms/types.html#text-fields
             https://github.com/symfony/symfony/tree/master/src/Symfony/Component/Form/Extension/Core/Type
     -
         question: 'Which date type exist?'
@@ -127,6 +162,8 @@ questions:
             - {value: "datetime",   correct: true}
             - {value: "time",       correct: true}
             - {value: "timestamp",  correct: false}
+        help: |
+            https://symfony.com/doc/current/reference/forms/types.html#date-and-time-fields
     -
         question: 'How do you bind a constraint to a form field?'
         answers:
@@ -134,11 +171,16 @@ questions:
             - {value: "Passing constraint instance in $this->createFormBuilder()",  correct: false}
             - {value: "Invoke $formBuilder->setConstraints() method",               correct: false}
             - {value: "Add an annotation in model",                                 correct: true}
+        help: |
+            https://symfony.com/doc/current/forms.html#validating-forms
+            https://symfony.com/doc/current/components/form.html#component-form-intro-validation
     -
         question: 'Using form component, option "error_bubbling" will include error in current field.'
         answers:
             - {value: "True",  correct: false}
             - {value: "False", correct: true}
+        help: |
+            https://symfony.com/doc/current/reference/forms/types/text.html#error-bubbling
     -
         question: 'How do you set default value?'
         answers:
@@ -146,18 +188,25 @@ questions:
             - {value: "$this->createFormBuilder(null, $defaultEntityOrArray)",          correct: false}
             - {value: "$this->createFormBuilder()->setDefaults($defaultEntityOrArray)", correct: false}
             - {value: "$this->createFormBuilder()->addDefaults($defaultEntityOrArray)", correct: false}
+        help: |
+            https://symfony.com/doc/current/components/form.html#setting-default-values
     -
         question: 'Your Form class must extends ____ '
         answers:
             - {value: Symfony\Component\Form\FormType,                      correct: false}
             - {value: Symfony\Component\Form\AbstractType,                  correct: true}
             - {value: Symfony\Component\Form\AbstractFormType,              correct: false}
+        help: |
+            https://symfony.com/doc/current/forms.html#creating-form-classes
     -
+        # TESTME is the first answer really correct ?
         question: 'How to add an extra field `extra` with the form ?'
         answers:
             - {value: "$builder->add('extra', null, ['mapped' => false])",    correct: true}
             - {value: "$builder->add('extra', 'hidden', ['mapped' => false])",  correct: true}
             - {value: "$builder->add('extra', null, ['validation' => false]", correct: false}
+        help: |
+            https://symfony.com/doc/current/forms.html#unmapped-fields
     -
         question: 'How do you render all the form fields in twig ?'
         answers:
@@ -165,6 +214,8 @@ questions:
             - {value: "form_render(form)", correct: false}
             - {value: "form_fields(form)", correct: false}
             - {value: "render_form(form)", correct: false}
+        help: |
+            https://symfony.com/doc/current/form/form_customization.html#form-widget-form-view-variables
     -
         question: 'If you use form_widget() on a single fields, which parts are render ?'
         answers:
@@ -173,12 +224,16 @@ questions:
             - {value: "error", correct: false}
             - {value: "label and input", correct: false}
             - {value: "error, label and input", correct: false}
+        help: |
+            https://symfony.com/doc/current/form/form_customization.html#form-rendering-functions
     -
         question: 'According to Symfony best practices, where you should add buttons ?'
         answers:
             - {value: "Template", correct: true}
             - {value: "Form", correct: false}
             - {value: "Controller", correct: false}
+        help: |
+            https://symfony.com/doc/current/best_practices.html#add-form-buttons-in-templates
     -
         question: 'Which Field type exist?'
         answers:
@@ -189,6 +244,8 @@ questions:
             - {value: "SelectType",  correct: false}
             - {value: "FloatType",  correct: false}
             - {value: "BooleanType",  correct: false}
+        help: |
+            https://github.com/symfony/symfony/tree/master/src/Symfony/Component/Form/Extension/Core/Type
     -
         question: 'How to Disable the Validation of Submitted Data'
         answers:
@@ -197,6 +254,8 @@ questions:
             - {value: "set the enable_validation option to false", correct: false}
             - {value: "$this->createFormBuilder()->isValidated(false)", correct: false}
             - {value: "By using false as third parameter for createFormBuilder", correct: false}
+        help: |
+            https://symfony.com/doc/current/form/disabling_validation.html
     -
         question: 'Which form event dont exist?'
         answers:
@@ -204,6 +263,8 @@ questions:
             - {value: "FormEvents::SUBMIT", correct: false}
             - {value: "FormEvents::POST_SUBMIT", correct: false}
             - {value: "FormEvents::SET_DATA", correct: true}
+        help: |
+            https://symfony.com/doc/current/form/events.html
     -
         question: 'How do you upload a UploadedFile ?'
         answers:
@@ -211,9 +272,13 @@ questions:
             - {value: "$file->upload(string $directory, string $name = null)", correct: false}
             - {value: "$file->uploadFile(string $directory, string $name = null)", correct: false}
             - {value: "$file->save(string $directory, string $name = null)",  correct: false}
+        help: |
+              https://symfony.com/doc/current/controller/upload_file.html#creating-an-uploader-service
     -
         question: 'How to Use Data Transformers ?'
         answers:
             - {value: "$builder->get('tags')->addModelTransformer(...);", correct: true}
             - {value: "$builder->add($builder->create('tags', TextType::class)->addModelTransformer(...));", correct: true}
             - {value: "$builder->add('tags', TextType::class)->addModelTransformer(...);", correct: false}
+        help: |
+            https://symfony.com/doc/current/form/data_transformers.html

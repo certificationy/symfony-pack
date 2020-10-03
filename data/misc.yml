@@ -27,6 +27,8 @@ questions:
                            defaults:
                                template: static/privacy.html.twig
                 correct: true
+        help: |
+            https://symfony.com/doc/current/templates.html#rendering-a-template-directly-from-a-route
     -
         question: 'What is the LoggerInterface correct namespace?'
         answers:
@@ -34,29 +36,43 @@ questions:
             - {value: Psr\Log\LoggerInterface,                    correct: true}
             - {value: Symfony\Bridge\Monolog\LoggerInterface,     correct: false}
             - {value: Symfony\Bridge\Monolog\Log\LoggerInterface, correct: false}
+        help: |
+            https://symfony.com/doc/current/logging.html#logging-a-message
+
+        # FIXME this question is obsolete, sym 5 seems to have url_generating_routes.php but could not locate doc
+#   -
+#       question: 'Using a dev environment, what is the correct cached file name of the generated configuration routes?'        
+#       answers:
+#           - {value: "appDevUrlGenerator.php", correct: false}
+#           - {value: "appDevGeneratorUrl.php", correct: false}
+#           - {value: "appDevUrlDump.php",      correct: false}
+#           - {value: "UrlGenerator.php",    correct: true}
+#       help:
+ #           https://symfony.com/doc/4.1/configuration/environments.html#environments-and-the-cache-directory           
     -
-        question: 'Using a dev environment, what is the correct cached file name of the generated configuration routes?'
-        answers:
-            - {value: "appDevUrlGenerator.php", correct: false}
-            - {value: "appDevGeneratorUrl.php", correct: false}
-            - {value: "appDevUrlDump.php",      correct: false}
-            - {value: "UrlGenerator.php",    correct: true}
-    -
-        question: 'Using Symfony\Component\Debug\Debug static class, what is the only method available?'
+        # https://github.com/symfony/error-handler/blob/master/Debug.php is not in the Debug NS anymore, now in Component/ErrorHandler
+        question: 'Using Symfony\Component\ErrorHandler\Debug static class, what is the only method available?'
         answers:
             - {value: "public static function enable()", correct: true}
             - {value: "public static function create()", correct: false}
             - {value: "public static function load()",   correct: false}
             - {value: "public static function start()",  correct: false}
             - {value: "public static function register()",  correct: false}
+        help: |
+            https://github.com/symfony/symfony/blob/master/src/Symfony/Component/ErrorHandler/Debug.php
+    
+        # https://github.com/symfony/error-handler/blob/master/ErrorHandler.php is not in the Debug NS anymore, now in Component/ErrorHandler
+        # also, register() doesnt seem to be the only method available ? 
     -
-        question: 'Using Symfony\Component\Debug\ErrorHandler static class, what is the only method available?'
+        question: 'Using Symfony\Component\ErrorHandler\ErrorHandler static class, what is the only method available?'
         answers:
             - {value: "public static function enable(self $handler = null, bool $replace = true)", correct: false}
             - {value: "public static function create(self $handler = null, bool $replace = true)", correct: false}
             - {value: "public static function load(self $handler = null, bool $replace = true)",   correct: false}
             - {value: "public static function start(self $handler = null, bool $replace = true)",  correct: false}
             - {value: "public static function register(self $handler = null, bool $replace = true)",  correct: true}
+        help: |
+            https://github.com/symfony/error-handler
     -
         question: 'In order to be able to use render_hinclude(url(...)), we need to add this configuration in ``framework` section:'
         answers:
@@ -67,6 +83,8 @@ questions:
                         {path:/_fragment}
                 correct: false
             - {value: 'none of the above',             correct: true}
+        help: |
+            https://symfony.com/doc/current/templating/hinclude.html
     -
         question: 'What is the correct CssSelector class namespace?'
         answers:
@@ -74,9 +92,12 @@ questions:
             - {value: Symfony\Component\BrowserKit\CssSelector,   correct: false}
             - {value: Symfony\Component\DomCrawler\CssSelector,   correct: false}
             - {value: Symfony\Bundle\FrameworkBundle\CssSelector, correct: false}
+        help: |
+            https://symfony.com/doc/current/components/css_selector.html#id1
     -
         question: 'Event Listeners is use to Regrouping multiple listeners inside a single class ?'
         answers:
             - {value: "False",  correct: true}
             - {value: "True",   correct: false}
-
+        help: |
+            https://symfony.com/doc/current/event_dispatcher.html#creating-an-event-listener

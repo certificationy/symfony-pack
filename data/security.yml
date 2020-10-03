@@ -7,6 +7,8 @@ questions:
             - {value: "- { path: ^/admin, acl: ROLE_ADMIN }",   correct: false}
             - {value: "- { url: ^/admin, roles: ROLE_ADMIN }",  correct: false}
             - {value: "- { url: ^/admin, acl: ROLE_ADMIN }",    correct: false}
+        help: |
+            https://symfony.com/doc/current/security/access_control.html#matching-options
     -
         question: 'After a login success, what is the parameter name to redirect on referer URL?'
         answers:
@@ -14,6 +16,8 @@ questions:
             - {value: security.firewalls.<name>.form_login.after_login_referer, correct: false}
             - {value: security.firewalls.<name>.form_login.referer,             correct: false}
             - {value: security.firewalls.<name>.form_login.success_referer,     correct: false}
+        help: |
+            https://symfony.com/doc/current/security/form_login.html#using-the-referring-url
     -
         question: 'In Symfony Security component:'
         answers:
@@ -21,6 +25,8 @@ questions:
             - {value: 'Symfony\Bundle\SecurityBundle\Security\FirewallContext services are privately created that correspond to each context you create under your security.yml, a context is also known as per each firewall', correct: false}
             - {value: 'Symfony\Bundle\SecurityBundle\Security\FirewallContext services are synthetically created that correspond to each context you create under your security.yml, each context is linked to an authenticator', correct: false}
             - {value: 'Symfony\Bundle\SecurityBundle\Security\FirewallContext services are publicly created that correspond to each context you create under your security.yml, a context is related to each FirewallContext directly but is overall handled by a generic Symfony\Bundle\SecurityBundle\Security\Firewall object', correct: true}
+        help: |
+            https://symfony.com/doc/current/reference/configuration/security.html#firewalls
     -
         question: 'Is user authenticated in all of security firewalls after a successful login:'
         answers:
@@ -28,6 +34,9 @@ questions:
             - {value: 'Yes, if firewalls have the same value of the `context` option', correct: true}
             - {value: 'Yes, if option `shared` is set to true', correct: false}
             - {value: 'No, it is not possible, firewalls are independent from each other', correct: false}
+        help: |
+            https://symfony.com/doc/current/security.html#frequently-asked-questions
+            https://symfony.com/doc/current/reference/configuration/security.html#reference-security-firewall-context
     -
         question: 'How to force a secure area to use the HTTPS protocol in the security config?'
         answers:
@@ -41,6 +50,8 @@ questions:
             - {value: 'Encode user passwords using given algorithm', correct: true}
             - {value: 'Encrypt a HTTP response', correct: false}
             - {value: 'Encode all data in the application database', correct: false}
+        help: |
+            https://symfony.com/doc/current/reference/configuration/security.html#encoders
 
     -
         question: 'Which authentication events exist in the Security component?'
@@ -53,6 +64,8 @@ questions:
             - {value: 'security.logout_on_change', correct: true}
             - {value: 'security.authentication.start', correct: false}
             - {value: 'security.remember_me_login', correct: false}
+        help: |
+            https://symfony.com/doc/current/components/security/authentication.html#authentication-events
     -
         question: 'What does the default strategy `affirmative` of the access decision manager mean?'
         answers:
@@ -60,6 +73,8 @@ questions:
             - {value: 'Access is granted if there are more voters granting access than denying', correct: false}
             - {value: 'Access is granted if all voters grant acces', correct: false}
             - {value: 'Access is granted if no voters throw an exception', correct: false}
+        help: |
+            https://symfony.com/doc/current/components/security/authorization.html#access-decision-manager
     -
         question: 'What does the strategy `consensus` of the access decision manager mean?'
         answers:
@@ -67,6 +82,8 @@ questions:
             - {value: 'Access is granted if there are more voters granting access than denying', correct: true}
             - {value: 'Access is granted if all voters grant acces', correct: false}
             - {value: 'Access is granted if no voters throw an exception', correct: false}
+        help: |
+            https://symfony.com/doc/current/components/security/authorization.html#access-decision-manager
     -
         question: 'What does the strategy `unanimous` of the access decision manager mean?'
         answers:
@@ -74,6 +91,8 @@ questions:
             - {value: 'Access is granted if there are more voters granting access than denying', correct: false}
             - {value: 'Access is granted if all voters grant acces', correct: true}
             - {value: 'Access is granted if no voters throw an exception', correct: false}
+        help: |
+            https://symfony.com/doc/current/components/security/authorization.html#access-decision-manager
     -
         question: 'What decision strategy exist ?'
         answers:
@@ -82,6 +101,8 @@ questions:
             - {value: 'unanimous', correct: true}
             - {value: 'positive', correct: false}
             - {value: 'negative', correct: false}
+        help: |
+            https://symfony.com/doc/current/components/security/authorization.html#access-decision-manager
     -
         question: 'How to Restrict Firewalls to a Specific Request Pattern ?'
         answers:
@@ -89,10 +110,15 @@ questions:
             - {value: 'route: ^/(myurl)/', correct: false}
             - {value: 'url: ^/(myurl)/', correct: false}
             - {value: 'path: ^/(myurl)/', correct: false}
+        help: |
+            https://symfony.com/doc/current/security/firewall_restriction.html#restricting-by-path
     -
+        
+        #CHECKME obsolete answers ?
+        #@Security(has_roles() -> @Security(is_granted() symfony 5
         question: 'Which annotation is valid to check role ?'
         answers:
-            - {value: '@Security("has_role("ROLE_ADMIN")")', correct: true}
+#            - {value: '@Security("has_role("ROLE_ADMIN")")', correct: true}
             - {value: '@Security("is_granted("ROLE_ADMIN")")', correct: true}
             - {value: '@IsGranted("ROLE_ADMIN")', correct: true}
             - {value: '@Security("restrict_for("ROLE_ADMIN")")', correct: false}
@@ -104,24 +130,30 @@ questions:
             - {value: 'IS_AUTHENTICATED_FULLY', correct: true}
             - {value: 'IS_AUTHENTICATED_ANONYMOUSLY', correct: true}
             - {value: 'IS_NOT_AUTHENTICATED', correct: false}
+        help: |
+            https://symfony.com/doc/current/components/security/authorization.html#authenticatedvoter
     -
+        #CHECKME obsolete answers ?
+        #@Security(has_roles() -> @Security(is_granted() symfony 5
+        # security.authorization_checker > gone from doc
         question: 'How can you deny access to user in your controller ?'
         answers:
             - {value: "$this->denyAccessUnlessGranted('ROLE_ADMIN')", correct: true}
-            - {value: '@Security("has_role("ROLE_ADMIN")")', correct: true}
-            - {value: "if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) { throw $this->createAccessDeniedException(); }", correct: true}
+            - {value: '@Security("is_granted("ROLE_ADMIN")")', correct: true}
+        #    - {value: "if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) { throw $this->createAccessDeniedException(); }", correct: true}
             - {value: "$this->user->denyAccessUnlessGranted('ROLE_ADMIN')", correct: false}
     -
         question: 'For implements Symfony\Component\Security\Core\User\UserInterface which method you have to define ?'
         answers:
             - {value: "getRoles()", correct: true}
-            - {value: "getPassword()", correct: true}
             - {value: "getSalt()", correct: true}
             - {value: "getUsername()", correct: true}
             - {value: "eraseCredentials()", correct: true}
             - {value: "getCredentials()", correct: false}
             - {value: "getHash()", correct: false}
             - {value: "getId()", correct: false}
+        help: |
+            https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Security/Core/User/UserInterface.php
     -
         question: 'For implements Symfony\Component\Security\Core\User\UserProviderInterface which method you have to define ?'
         answers:
@@ -131,3 +163,5 @@ questions:
             - {value: "getUser($username)", correct: false}
             - {value: "supports($class)", correct: false}
             - {value: "supportsClass($class)", correct: true}
+        help: |
+            https://symfony.com/doc/current/security/user_provider.html#creating-a-custom-user-provider

@@ -11,3 +11,5 @@ questions:
             - {value: '"/path/to/file.yml"',                    correct: false}
             - {value: 'file_get_contents("/path/to/file.yml")', correct: true}
             - {value: 'Both are valid',                         correct: false}
+        help: |
+            https://symfony.com/doc/current/components/yaml.html#reading-yaml-contents
