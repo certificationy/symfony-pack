@@ -114,15 +114,6 @@ questions:
             - {value: "SF-",       correct: false}
         help: |
             'no answer found, however, for symfonycloud, the prefix is SYMFONY_ https://symfony.com/doc/current/cloud/cookbooks/env.html#symfonycloud-environment-variables'
-    -
-        question: 'In Symfony\Component\HttpKernel\Kernel class, which method do you need to redefine if you want to have multiple configuration files (config_dev.yml, config_test.yml, ...)?'
-        answers:
-            - {value: "public function registerContainerConfiguration(LoaderInterface $loader)", correct: true}
-            - {value: "public function registerConfigurationContainer(LoaderInterface $loader)", correct: false}
-            - {value: "public function registerConfiguration(LoaderInterface $loader)",          correct: false}
-            - {value: "public function registerConfigurationPath(LoaderInterface $loader)",      correct: false}
-        help: |
-            'OBSOLETE Symfony 2.3! https://symfony.com/doc/2.3/cookbook/configuration/configuration_organization.html
              in Symfony 5, this is achieved by using env vars https://symfony.com/doc/current/configuration.html#configuration-based-on-environment-variables'
     -
         question: 'According to Symfony best practices, ____ is/are located in _____ file/folder.'
