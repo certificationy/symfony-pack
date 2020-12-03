@@ -135,7 +135,7 @@ questions:
         help: |
             http://php.net/manual/en/language.oop5.static.php
     -
-        question: 'Wich keyword permit to use the late static binding ?'
+        question: 'Which keyword permit to use the late static binding ?'
         answers:
             - {value: "self",    correct: false}
             - {value: "static",   correct: true}

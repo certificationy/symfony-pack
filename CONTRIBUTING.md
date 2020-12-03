@@ -54,7 +54,7 @@ To contribute to the Symfony Pack, you can add questions in each category in YAM
 
 Check if the question is not present, to avoid duplications.
 
-Finaly, validate your YAML files: you can use the built-in command of Symfony:
+Finally, validate your YAML files: you can use the built-in command of Symfony:
 
 ```bash
 $ php app/console lint:yaml /path/to/your/yaml/file.yaml
