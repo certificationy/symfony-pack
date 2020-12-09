@@ -7,13 +7,19 @@ questions:
             - {value: <argument type="argument" id="my.custom.service" />, correct: false}
             - {value: <argument type="service" id="my.custom.service" />,  correct: true}
             - {value: <service id="my.custom.service" />,                  correct: false}
+        help: |
+            https://symfony.com/doc/current/service_container.html#choose-a-specific-service
     -
         question: 'Which types of injection are available in the component?'
         answers:
             - {value: constructor, correct: true}
             - {value: property,    correct: true}
-            - {value: method,      correct: true}
+            - {value: setter,      correct: true}
+            - {value: immutable setter,      correct: true}
             - {value: constant,    correct: false}
+            - {value: getter,    correct: false}
+        help: |
+            https://symfony.com/doc/current/service_container/injection_types.html
     -
         question: 'Using XML, which of these lines are correct to inject a service?'
         answers:
@@ -21,13 +27,18 @@ questions:
             - {value: <argument type="service" id="my.service" />,                                      correct: true}
             - {value: <method setter="setService"><argument type="service" id="my.service" /></method>, correct: false}
             - {value: <call method="setService"><argument type="service" id="my.service" /></call>,     correct: true}
-    -
-        question: 'Which of these methods are available in ContainerInterface?'
-        answers:
-            - {value: setScope($name),   correct: false}
-            - {value: getScope($name),   correct: false}
-            - {value: addScope($name),   correct: true}
-            - {value: enterScope($name), correct: true}
+        help: |
+            https://symfony.com/doc/current/service_container/injection_types.html
+#    -
+        # FIXME seems obsolete, couldn't find any of those methods both in doc or source files...
+#        question: 'Which of these methods are available in ContainerInterface?'
+#        answers:
+#            - {value: setScope($name),   correct: false}
+#            - {value: getScope($name),   correct: false}
+#            - {value: addScope($name),   correct: false}
+#            - {value: enterScope($name), correct: false}
+#        help: |
+#            https://www.php-fig.org/psr/psr-11/
     -
         question: 'Using YML, which line allows to inject proxy of the service?'
         answers:
@@ -35,13 +46,19 @@ questions:
             - {value: "lazy: true",          correct: true}
             - {value: "proxy: enabled",      correct: false}
             - {value: "proxy: true",         correct: false}
+        help: |
+            https://symfony.com/doc/current/service_container/lazy_services.html#configuration
     -
         question: 'Which method from CompilerPassInterface can modify the container here before it is dumped to PHP code?'
         answers:
             - {value: modify(),             correct: false}
             - {value: processContainer(),   correct: false}
+            - {value: build(),              correct: false}
             - {value: process(),            correct: true}
             - {value: modifyContainer(),    correct: false}
+        help: |
+            https://github.com/symfony/dependency-injection/blob/master/Compiler/CompilerPassInterface.php
+            https://symfony.com/doc/current/service_container/compiler_passes.html
     -
         question: 'Using Dependency Injection, what is the correct way to override a service class using ContainerBuilder class?'
         answers:
@@ -49,6 +66,8 @@ questions:
             - {value: "$container->getService('my.service')->setDefinition('My\\Service\\Class')", correct: false}
             - {value: "$container->getDefinition('my.service')->setService('My\\Service\\Class')", correct: false}
             - {value: "$container->getService('my.service')->setClass('My\\Service\\Class')",      correct: false}
+        help: |
+            https://symfony.com/doc/current/service_container/definitions.html
     -
         question: 'Using a compiler pass, how do you retrieve a definition of service ?'
         answers:
@@ -56,38 +75,62 @@ questions:
             - {value: "$container->findDefinition('my.service')",       correct: true}
             - {value: "$container->retrieveDefinition('my.service')",   correct: false}
             - {value: "$container->getService('my.service')",           correct: false}
+        help: |
+            https://github.com/symfony/dependency-injection/blob/master/ContainerBuilder.php
     -
         question: 'What are existing compiler pass order ?'
         answers:
             - {value: "PassConfig::TYPE_BEFORE_OPTIMIZATION", correct: true}
             - {value: "PassConfig::TYPE_OPTIMIZE",            correct: true}
+            - {value: "PassConfig::TYPE_AFTER_OPTIMIZATION",  correct: false}
             - {value: "PassConfig::TYPE_BEFORE_REMOVING",     correct: true}
             - {value: "PassConfig::TYPE_REMOVE",              correct: true}
+            - {value: "PassConfig::TYPE_AFTER_REMOVING",        correct: true}
             - {value: "PassConfig::TYPE_AFTER_COMPILING",     correct: false}
+            - {value: "PassConfig::TYPE_COMPILE",              correct: false}
+            - {value: "PassConfig::TYPE_BEFORE_COMPILING",     correct: false}
+        help: |
+            'https://symfony.com/doc/current/components/dependency_injection/compilation.html#controlling-the-pass-ordering'
+
     -
+        # FIXME unclear question text and contradictory answers 
+        # ls -al => App_KernelDevDebugContainer.php (symfony 5)
+        # <> Symfony doc => appDevDebugProjectContainer.php (symfony 5)
+        # <> certificationy => srcApp_KernelDevDebugContainer.php (symfony ?) 
         question: "As dev environment, what is the name of dumped container ?"
         answers:
-            - {value: "appDevDebugProjectContainer.php",    correct: true}
+            - {value: "srcApp_KernelDevDebugContainer.php",    correct: false}
+            - {value: "App_KernelDevDebugContainer.php",    correct: true}
+            - {value: "appDevDebugProjectContainer.php",    correct: false}
             - {value: "appDevProjectContainer.php",         correct: false}
             - {value: "appDevDebugProjectServiceContainer", correct: false}
-            - {value: "appDevDebugContainer",               correct: false}
+            - {value: "srcApp_DevDebugContainer.php",               correct: false}
+        help: |
+            '# ls -al var/cache/dev
+             https://symfony.com/doc/current/configuration/front_controllers_and_kernel.html#environments-and-the-cache-directory'
     -
         question: "True or false, parameters can also contain array values ?"
         answers:
             - {value: "true", correct: true}
             - {value: "false", correct: false}
+        help: |
+            https://symfony.com/doc/current/configuration.html#configuration-parameters
     -
         question: "What is the correct syntax to inject a service app.mailer ?"
         answers:
             - {value: "arguments: ['@app.mailer']", correct: true}
             - {value: "arguments: ['%app.mailer%']", correct: false}
             - {value: "arguments: ['app.mailer']", correct: false}
+        help: |
+            https://symfony.com/doc/current/service_container.html#service-parameters
     -
         question: "What is the correct syntax to inject a parameter mailer.transport ?"
         answers:
             - {value: "arguments: ['@mailer.transport']", correct: false}
             - {value: "arguments: ['%mailer.transport%']", correct: true}
             - {value: "arguments: ['mailer.transport']", correct: false}
+        help: |
+            https://symfony.com/doc/current/configuration.html#configuration-parameters
     -
         question: "How to define a service as private ?"
         answers:
@@ -95,8 +138,29 @@ questions:
             - {value: "scope: private", correct: false}
             - {value: "public: false", correct: true}
             - {value: "private: true", correct: false}
+        help: |
+            'Services are private by default. https://symfony.com/doc/current/service_container.html#public-versus-private-services'
     -
         question: "True or False, With default configuration each time you retrieve the service, you'll get the same instance ?"
         answers:
             - {value: "true", correct: true}
             - {value: "false", correct: false}
+        help: |
+            https://symfony.com/doc/current/service_container.html#creating-configuring-services-in-the-container
+
+    -
+        question: 'What is the correct load() method definition in Symfony\Component\DependencyInjection\Extension\ExtensionInterface?'
+        answers:
+            - {value: "public function load(array $configs, ContainerBuilder $container)", correct: true}
+            - {value: "public function load(array $config, ContainerBuilder $container)",  correct: false}
+            - {value: "public function load(ContainerBuilder $container, array $configs)", correct: false}
+            - {value: "public function load(ContainerBuilder $container, array $config)",  correct: false}
+        help: |
+            https://symfony.com/doc/current/components/dependency_injection/compilation.html#managing-configuration-with-extensions
+
+        question: 'Service parameters can be set at runtime'
+        answers:
+            - {value: "true", correct: false}
+            - {value: "false", correct: true}
+        help: |
+            https://symfony.com/doc/current/service_container.html#service-parameters

@@ -7,6 +7,8 @@ questions:
             - {value: Add a "host" attribute,      correct: true}
             - {value: Add a "path" attribute,      correct: false}
             - {value: Add a "subdomain" attribute, correct: false}
+        help: |
+            https://symfony.com/doc/current/routing.html#sub-domain-routing
     -
         question: 'What variable can be used as controller argument to get the name of the route name?'
         answers:
@@ -14,6 +16,8 @@ questions:
             - {value: $_controller,       correct: false}
             - {value: $_method,           correct: false}
             - {value: $_action,           correct: false}
+        help: |
+            https://symfony.com/doc/current/routing.html#getting-the-route-name-and-parameters
     -
         question: 'Using XML, how to ensure that a route is accessed via HTTPS?'
         answers:
@@ -21,16 +25,23 @@ questions:
             - {value: https="true",     correct: false}
             - {value: protocol="https", correct: false}
             - {value: ensure="https",   correct: false}
+        help: |
+            https://symfony.com/doc/current/routing.html#forcing-https-on-generated-urls
     -
-        question: 'Three special routing parameters are available in Symfony:'
+        question: 'Which special routing parameters are available in Symfony:'
         answers:
-            - {value: "_controller, _locale, _schemes",      correct: false}
-            - {value: "_route, _controller, _action",        correct: false}
-            - {value: "_controller, _locale, _format",       correct: true}
-            - {value: "_locale, _format and another one.",   correct: false}
+            - {value: "_controller",      correct: true}
+            - {value: "_format",      correct: true}
+            - {value: "_fragment",      correct: true}
+            - {value: "_locale",      correct: true}
+            - {value: "_route",      correct: false}
+        help: |
+            https://symfony.com/doc/current/routing.html#special-parameters
     -
         question: 'How to generate absolute URL for a given route in controller ?'
         answers:
             - {value: "By using UrlGeneratorInterface::ABSOLUTE_URL as third parameter for generateUrl", correct: true}
             - {value: "generateUrl generate absolute URL by default", correct: false}
             - {value: "$this->generateAbsoluteUrl()", correct: false}
+        help: |
+            https://symfony.com/doc/current/routing.html#generating-urls-in-controllers

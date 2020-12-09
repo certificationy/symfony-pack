@@ -1,0 +1,15 @@
+category: Yaml
+questions:
+    -
+        question: |
+            What can be placed in ????? to be valid?
+
+              use Symfony\Component\Yaml\Yaml;
+
+              $value = Yaml::parse(?????);
+        answers:
+            - {value: '"/path/to/file.yml"',                    correct: false}
+            - {value: 'file_get_contents("/path/to/file.yml")', correct: true}
+            - {value: 'Both are valid',                         correct: false}
+        help: |
+            https://symfony.com/doc/current/components/yaml.html#reading-yaml-contents

@@ -8,6 +8,8 @@ questions:
             - {value: Expires,        correct: false}
             - {value: Last-Modified,  correct: false}
             - {value: Cache-Control,  correct: false}
+        help: |
+            https://github.com/for-GET/know-your-http-well/blob/master/headers.md
     -
         question: 'Which one of these Response methods check if cache must be revalidated?'
         answers:
@@ -15,6 +17,8 @@ questions:
             - {value: $response->isRevalidated(),     correct: false}
             - {value: $response->getRevalidated(),    correct: false}
             - {value: $response->mustBeRevalidated(), correct: false}
+        help: |
+            https://github.com/symfony/symfony/blob/5.1/src/Symfony/Component/HttpFoundation/Response.php
     -
         question: 'Using a Response instance, which of these methods are available to check status code?'
         answers:
@@ -23,6 +27,8 @@ questions:
             - {value: $response->isRedirection(),   correct: true}
             - {value: $response->isInvalid(),       correct: true}
             - {value: $response->isError(),         correct: false}
+        help: |
+            https://github.com/symfony/symfony/blob/5.1/src/Symfony/Component/HttpFoundation/Response.php
     -
         question: 'How to access the `foo` GET parameter from Request object $request ?'
         answers:
@@ -30,6 +36,8 @@ questions:
             - {value: "$request->request->get('foo');",   correct: false}
             - {value: "{$request->query->all()}['foo'];", correct: true}
             - {value: "$request->get('foo');",            correct: true}
+        help: |
+            https://symfony.com/doc/current/components/http_foundation.html#accessing-request-data
     -
         question: 'How to access the `bar` POST parameter from Request object $request ?'
         answers:
@@ -37,6 +45,8 @@ questions:
             - {value: "$request->request->get('bar');",   correct: true}
             - {value: "{$request->query->all()}['baz'];", correct: false}
             - {value: "$request->post('bar');",           correct: false}
+        help: |
+            https://symfony.com/doc/current/components/http_foundation.html#accessing-request-data
     -
         question: 'The method getLanguages() from Request object:'
         answers:
@@ -44,6 +54,8 @@ questions:
             - {value: 'return an array of languages available in translations',  correct: false}
             - {value: 'return an array of languages the client accepts',         correct: true}
             - {value: 'does not exists',                                         correct: false}
+        help: |
+            https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpFoundation/Request.php#L1653
     -
         question: 'How to get the Content Type from Request ?'
         answers:
@@ -51,12 +63,18 @@ questions:
             - {value: "$request->headers->get('content-type');", correct: true}
             - {value: "$request->headers->get('Content-Type');", correct: true}
             - {value: "$request->getContentType();",             correct: true}
+        help: |
+            'headers are not case sensitive https://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html#sec4.2
+             underscore are legals but with issues https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/?highlight=disappearing%20http%20headers#missing-disappearing-http-headers
+             getContentType() exist https://github.com/symfony/symfony/blob/5.1/src/Symfony/Component/HttpFoundation/Request.php'
     -
         question: 'How to check if a request has been sent using AJAX ?'
         answers:
             - {value: $request->isXmlHttpRequest();,                                   correct: true}
             - {value: $request->isAJAX();,                                             correct: false}
             - {value: "$this->headers->get('X-Requested-With') === 'XMLHttpRequest';", correct: true}
+        help: |
+            https://github.com/symfony/symfony/blob/5.1/src/Symfony/Component/HttpFoundation/Request.php
     -
         question: 'Which Response subclasses are available?'
         answers:
@@ -64,6 +82,8 @@ questions:
             - {value: StreamResponse,     correct: false}
             - {value: BinaryFileResponse, correct: true}
             - {value: XmlResponse,        correct: false}
+        help: |
+            'https://symfony.com/doc/current/components/http_foundation.html#response'
     -
         question: 'Which HTTP status code should be used for a resource that moved temporarily ?'
         answers:
@@ -71,6 +91,8 @@ questions:
             - {value: 302, correct: true}
             - {value: 201, correct: false}
             - {value: 204, correct: false}
+        help: |
+            https://github.com/for-GET/know-your-http-well/blob/master/status-codes.md
     -
         question: 'Which HTTP status code should be used for a resource that moved permanently ?'
         answers:
@@ -81,10 +103,12 @@ questions:
         help: |
             https://tools.ietf.org/html/rfc2616#section-10.3.2
     -
-        question: 'True or False ? Server returns an 403 HTTP status code when you are not allowed to access a resource'
+        question: 'True or False ? Server returns an  status code when you are not allowed to access a resource'
         answers:
             - {value: "True",    correct: true}
             - {value: "False",   correct: false}
+        help: |
+            https://github.com/for-GET/know-your-http-well/blob/master/status-codes.md
     -
         question: 'Which method exist in Symfony\Component\HttpFoundation\Request ?'
         answers:
@@ -94,6 +118,9 @@ questions:
             - {value: "getHeaders",   correct: false}
             - {value: "getHttpHost",   correct: true}
             - {value: "getUrl",   correct: false}
+            - {value: "getUri",   correct: true}
+        help: |
+           https://github.com/symfony/symfony/blob/5.1/src/Symfony/Component/HttpFoundation/Request.php
     -
         question: 'How can you set status code of Symfony\Component\HttpFoundation\Response'
         answers:
@@ -101,12 +128,16 @@ questions:
             - {value: "By using setStatusCode()",   correct: true}
             - {value: "By using setCodeStatus()",   correct: false}
             - {value: "By using setHttpCode()",   correct: false}
+        help: |
+            https://symfony.com/doc/current/components/http_foundation.html#response
     -
         question: 'To override the 404 error template for HTML page, how should you name the template ?'
         answers:
             - {value: "error404.html.twig",    correct: true}
             - {value: "404.html.twig",   correct: false}
             - {value: "twig.404.html.twig",   correct: false}
+        help: |
+            'https://symfony.com/doc/current/controller/error_pages.html#overriding-the-default-error-templates'
     -
         question: 'Which of the following HTTP headers can be used by the server to the client to exchange informations about cookies ?'
         answers:

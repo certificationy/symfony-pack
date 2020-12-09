@@ -7,6 +7,8 @@ questions:
             - {value: alert,   correct: false}
             - {value: severe,  correct: true}
             - {value: warning, correct: false}
+        help: |
+            https://www.php-fig.org/psr/psr-3/#5-psrlogloglevel
     -
         question: "Which methods is not in Psr-3"
         answers:
@@ -14,13 +16,17 @@ questions:
             - {value: set,   correct: true}
             - {value: dump,  correct: true}
             - {value: print, correct: true}
+        help: |
+            https://www.php-fig.org/psr/psr-3/#3-psrlogloggerinterface
     -
         question: 'In Psr-3 what delimiter is used for placeholder names ?'
         answers:
             - {value: '( name )',   correct: false}
             - {value: '[ name ]',   correct: false}
             - {value: '{{ name }}', correct: false}
-            - {value: '{ name }',   correct: true}            
+            - {value: '{ name }',   correct: true}
+        help: |
+            https://www.php-fig.org/psr/psr-3/#12-message
     -
         question: 'Which Psr is about autoloading ?'
         answers:
@@ -28,13 +34,18 @@ questions:
             - {value: Psr-11,  correct: false}
             - {value: Psr-4,   correct: true}
             - {value: Psr-6,   correct: false}                
+        help: |
+            https://www.php-fig.org/psr/
+
     -
         question: 'According to Psr-2, Which code is correct ?'
         answers:
             - {value: '$foo->bar($arg1);',  correct: true}
             - {value: '$Foo->bar($arg1);',  correct: false}
             - {value: 'class Foo extends Bar implements FooInterface',   correct: true}
-            - {value: 'class foo extends Bar implements FooInterface',   correct: false}                           
+            - {value: 'class foo extends Bar implements FooInterface',   correct: false}                       
+        help: |
+            https://www.php-fig.org/psr/psr-1/#1-overview    
     -
         question: 'According to Psr-1 methods have to be declared like ?'
         answers:
@@ -42,6 +53,8 @@ questions:
             - {value: 'MyMethod();',   correct: false}
             - {value: 'my_method();',  correct: false}
             - {value: 'My_Method();',  correct: false}                
+        help: |
+            https://www.php-fig.org/psr/psr-1/
     -
         question: 'Which Psr is about caching ?'
         answers:
@@ -50,10 +63,14 @@ questions:
             - {value: 'Psr-16',  correct: true}
             - {value: 'Psr-1',   correct: false}               
             - {value: 'Psr-2',   correct: false}       
+        help: |
+            https://www.php-fig.org/psr/
     -
         question: 'Which Psr is deprecated now ?'
         answers:
             - {value: 'Psr-1 (Basic Coding Standard)', correct: false}
             - {value: 'Psr-6 (Caching Interface)',     correct: false}
             - {value: 'Psr-0 (Autoloading Standard)',  correct: true}
-            - {value: 'Psr-11 (Container Interface)',  correct: false}                                    
+            - {value: 'Psr-11 (Container Interface)',  correct: false}
+        help: |
+            https://www.php-fig.org/psr/#deprecated                                    
