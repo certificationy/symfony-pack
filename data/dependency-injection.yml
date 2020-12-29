@@ -157,7 +157,7 @@ questions:
             - {value: "public function load(ContainerBuilder $container, array $config)",  correct: false}
         help: |
             https://symfony.com/doc/current/components/dependency_injection/compilation.html#managing-configuration-with-extensions
-
+    -
         question: 'Service parameters can be set at runtime'
         answers:
             - {value: "true", correct: false}
