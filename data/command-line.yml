@@ -39,22 +39,22 @@ questions:
     -
         question: 'Which argument can be passed to the debug:router command?'
         answers:
-            - {value: No argument can be passed, correct: true}
-            - {value: A regexp search filter,    correct: false}
-            - {value: A route limit,             correct: false}
-            - {value: The route URL,             correct: false}
-            - {value: A route name,              correct: true}
+            - {value: An argument can be omitted, correct: true}
+            - {value: A regexp search filter,     correct: false}
+            - {value: A route limit,              correct: false}
+            - {value: The route URL,              correct: false}
+            - {value: A route name,               correct: true}
         help: |
             'https://symfony.com/doc/current/routing.html#debugging-routes'
 
     -
         question: 'Which argument can be passed to the router:match command?'
         answers:
-            - {value: No argument can be passed, correct: false}
-            - {value: A regexp search filter,    correct: false}
-            - {value: A route limit,             correct: false}
-            - {value: The route URL,             correct: true}
-            - {value: A route name,              correct: false}
+            - {value: An argument can be omitted, correct: false}
+            - {value: A regexp search filter,     correct: false}
+            - {value: A route limit,              correct: false}
+            - {value: The route URL,              correct: true}
+            - {value: A route name,               correct: false}
         help: |
             'https://symfony.com/doc/current/routing.html#debugging-routes'
     -
