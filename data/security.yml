@@ -89,7 +89,7 @@ questions:
         answers:
             - {value: 'Access is granted as soon as there is one voter granting access', correct: false}
             - {value: 'Access is granted if there are more voters granting access than denying', correct: false}
-            - {value: 'Access is granted if all voters grant acces', correct: true}
+            - {value: 'Access is granted if there is no voter denying access', correct: true}
             - {value: 'Access is granted if no voters throw an exception', correct: false}
         help: |
             https://symfony.com/doc/current/components/security/authorization.html#access-decision-manager
