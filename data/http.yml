@@ -158,7 +158,7 @@ questions:
         help: |
             https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation
     -
-        question: 'Which of the following HTTP headers can be used by the client to the server to exchange informations about about content negotiation ?'
+        question: 'Which of the following HTTP headers can be used by the client to the server to exchange informations about content negotiation ?'
         answers:
             - {value: 'Accept-Charset', correct: true}
             - {value: 'Content-Encoding', correct: false}
