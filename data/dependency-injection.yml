@@ -2,7 +2,6 @@ category: Dependency Injection
 questions:
     -
         question: 'When setting up the container with configuratio XML files and Config component, how to inject my.custome.service ?'
-        help: https://symfony.com/doc/current/service_container/injection_types.html#constructor-injection
         answers:
             - {value: <argument id="my.custom.service" />,                 correct: false}
             - {value: <argument type="argument" id="my.custom.service" />, correct: false}
@@ -12,7 +11,6 @@ questions:
             https://symfony.com/doc/current/service_container.html#choose-a-specific-service
     -
         question: 'Which types of injection are available in the component?'
-        help: https://symfony.com/doc/current/service_container/injection_types.html
         answers:
             - {value: constructor, correct: true}
             - {value: property,    correct: true}
@@ -25,7 +23,6 @@ questions:
             https://symfony.com/doc/current/service_container/injection_types.html
     -
         question: 'Using XML, which of these lines are correct to inject a service?'
-        help: https://symfony.com/doc/current/service_container/injection_types.html
         answers:
             - {value: <service id="my.service" />,                                                      correct: false}
             - {value: <argument type="service" id="my.service" />,                                      correct: true}
@@ -36,7 +33,6 @@ questions:
             https://symfony.com/doc/current/service_container/injection_types.html
     -
         question: 'Using YML, which line allows to inject proxy of exceptionnaly large services when working with symfony/proxy-manager-bridge ?'
-        help: https://symfony.com/doc/current/service_container/lazy_services.html
         answers:
             - {value: "proxy_service: true", correct: false}
             - {value: "lazy: true",          correct: true}
@@ -110,7 +106,6 @@ questions:
             - {value: "$container->getService('my.service')",           correct: false}
     -
         question: 'Using a compiler pass, how do you retrieve a definition of service ?'
-        help: https://symfony.com/doc/current/service_container/definitions.html#getting-and-setting-service-definitions
         answers:
             - {value: "$container->getDefinition('my.service')",        correct: true}
             - {value: "$container->findDefinition('my.service')",       correct: true}
@@ -120,7 +115,6 @@ questions:
             https://github.com/symfony/dependency-injection/blob/master/ContainerBuilder.php
     -
         question: 'What are existing compiler pass order ?'
-        help: https://symfony.com/doc/current/components/dependency_injection/compilation.html#controlling-the-pass-ordering
         answers:
             - {value: "PassConfig::TYPE_BEFORE_OPTIMIZATION", correct: true}
             - {value: "PassConfig::TYPE_OPTIMIZE",            correct: true}
